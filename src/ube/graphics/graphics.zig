@@ -1,0 +1,1 @@
+usingnamespace @import("Shader.zig");
