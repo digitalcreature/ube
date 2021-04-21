@@ -13,7 +13,7 @@ const SCR_WIDTH: u32 = 1920;
 const SCR_HEIGHT: u32 = 1080;
 
 const vertexShaderSource: [:0]const u8 =
-    \\#version 460 core
+    \\#version 450 core
     \\layout (location = 0) in vec3 aPos;
     \\layout (location = 1) in vec3 aColor;
     \\uniform vec3 some_uniform;
@@ -25,7 +25,7 @@ const vertexShaderSource: [:0]const u8 =
     \\};
 ;
 const fragmentShaderSource: [:0]const u8 =
-    \\#version 460 core
+    \\#version 450 core
     \\in vec3 color;
     \\out vec4 FragColor;
     \\void main()
@@ -59,7 +59,7 @@ pub fn main() !void {
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     // glfw: initialize and configure
-    var window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "Learn OpenGL", null, null);
+    var window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "ube", null, null);
     if (window == null) {
         panic("Failed to create GLFW window\n", .{});
     }
@@ -109,18 +109,15 @@ pub fn main() !void {
     };
     var vertex_array = gl.VertexArray.init();
     defer vertex_array.deinit();
-    var vertex_buffer = gl.VertexBuffer.init();
+    var vertex_buffer = gl.VertexBuffer(Vertex).initData(&vertices, .StaticDraw);
     defer vertex_buffer.deinit();
-    var index_buffer = gl.IndexBuffer.init();
+    var index_buffer = gl.IndexBuffer32.initData(&indices, .StaticDraw);
     defer index_buffer.deinit();
 
 
-    vertex_buffer.data(&vertices, .StaticDraw);
-    index_buffer.data(&indices, .StaticDraw);
-
-    vertex_array.addVertexBuffer(0, vertex_buffer, Vertex, 0);
+    vertex_array.addVertexBuffer(0, vertex_buffer, 0, 0);
     vertex_array.addIndexBuffer(index_buffer);
-    vertex_array.attribFormat(0, Vertex, 0);
+    // vertex_array.attribFormat(0, Vertex, 0);
 
     // var max_texunits : c_int = undefined;
     // glGetIntegerv(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS, &max_texunits);

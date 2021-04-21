@@ -2,13 +2,13 @@ usingnamespace @import("c.zig");
 usingnamespace @import("types.zig");
 
 pub const BufferTarget = enum(c_uint) {
-    Array = GL_ARRAY_BUFFER,
+    Vertex = GL_ARRAY_BUFFER,
     // AtomicCounter = GL_ATOMIC_COUNTER_BUFFER,
     CopyRead = GL_COPY_READ_BUFFER,
     CopyWrite = GL_COPY_WRITE_BUFFER,
     // DispatchIndirect = GL_DISPATCH_INDIRECT_BUFFER,
     // DrawIndirect = GL_DRAW_INDIRECT_BUFFER,
-    ElementArray = GL_ELEMENT_ARRAY_BUFFER,
+    Index = GL_ELEMENT_ARRAY_BUFFER,
     PixelPack = GL_PIXEL_PACK_BUFFER,
     PixelUnpack = GL_PIXEL_UNPACK_BUFFER,
     // Query = GL_QUERY_BUFFER,
@@ -30,13 +30,25 @@ pub const BufferUsage = enum(c_uint) {
     DynamicCopy = GL_DYNAMIC_COPY,
 };
 
-pub const VertexBuffer = Buffer(.Array);
-pub const IndexBuffer = Buffer(.ElementArray);
+pub fn VertexBuffer(comptime Element : type) type {
+    return Buffer(.Vertex, Element);
+}
+pub fn IndexBuffer(comptime Element : type) type {
+    return Buffer(.Index, Element);
+}
 
-pub fn Buffer(comptime target : BufferTarget) type {
+pub const IndexBuffer8 = IndexBuffer(u8);
+pub const IndexBuffer16 = IndexBuffer(u16);
+pub const IndexBuffer32 = IndexBuffer(u32);
+
+pub fn Buffer(comptime target : BufferTarget, comptime T : type) type {
 
     return struct {
         handle : Handle,
+
+        pub const Element = T;
+
+        pub const Target = target;
 
         const Self = @This();
 
@@ -46,59 +58,48 @@ pub fn Buffer(comptime target : BufferTarget) type {
             return Self{ .handle = handle };
         } 
 
+        pub fn initData(data_slice : []Element, usage : BufferUsage) Self {
+            const buffer = init();
+            buffer.data(data_slice, usage);
+            return buffer;
+        }
+
+        pub fn initAlloc(size : usize, usage : BufferUsage) Self {
+            const buffer = init();
+            buffer.alloc(size, usage);
+            return buffer;
+        }
+
         pub fn deinit(self : Self) void {
             glDeleteBuffers(1, &self.handle);
         }
 
         pub fn bind(self : Self) void {
-            glBindBuffer(@enumToInt(target), self.handle);
+            glBindBuffer(@enumToInt(Target), self.handle);
         }
 
         pub fn unbind(self : Self) void {
-            glBindBuffer(@enumToInt(target), 0);
+            glBindBuffer(@enumToInt(Target), 0);
         }
 
-        fn data_size(comptime T : type) c_longlong {
-            const info = @typeInfo(T);
-            var ptr : *const c_void = undefined;
-            var len : usize = undefined;
-            comptime var Child : type = undefined;
-            const Pointer = info.Pointer;
-            switch (Pointer.size) {
-                .One => switch (@typeInfo(Pointer.child)) {
-                    .Array => |Array| {
-                        len = Array.len;
-                        Child = Array.child;
-                    },
-                    else => @compileError("only slices or array pointers are supported " ++ @typeName(T)),
-                },
-                .Slice => |Slice| {
-                    len = val.len;
-                    Child = Slice.child;
-                },
-                else => @compileError("only slices or array pointers are supported " ++ @typeName(T)),
-            }
-           return @intCast(c_longlong, len * @sizeOf(Child));
+        pub fn alloc(self : Self, size : usize, usage : BufferUsage) void {
+            glNamedBufferData(self.handle, @intcast(c_longlong, size * @sizeOf(Element)), NULL, @enumToInt(usage));
         }
 
-        pub fn alloc(self : Self, size : usize, draw_type : BufferUsage) void {
-            glNamedBufferData(self.handle, size, NULL, @enumToInt(draw_type));
+        pub fn data(self : Self, data_slice : []Element, usage : BufferUsage) void {
+            const ptr = @ptrCast(* const c_void, data_slice.ptr);
+            const size = @intCast(c_longlong, @sizeOf(Element) * data_slice.len);
+            glNamedBufferData(self.handle, size, ptr, @enumToInt(usage));
         }
 
-        pub fn data(self : Self, data_ptr : anytype, draw_type : BufferUsage) void {
-            const ptr = @ptrCast(* const c_void, data_ptr);
-            const size = data_size(@TypeOf(data_ptr));
-            glNamedBufferData(self.handle, size, ptr, @enumToInt(draw_type));
-        }
-
-        pub fn subdata(self: Self, data_ptr : anytype, offset : usize) void {
-            const ptr = @ptrCast(* const c_void, data_ptr);
-            const size = data_size(@TypeOf(data_ptr));
+        pub fn subdata(self: Self, data_slice : []Element, offset : usize) void {
+            const ptr = @ptrCast(* const c_void, data_slice.ptr);
+            const size = @intCast(c_longlong, @sizeOf(Element) * data_slice.len);
             glNamedBufferSubData(self.handle, offset, size, ptr);
         }
 
-        pub fn update(self : Self, data_ptr : anytype) void {
-            self.subdata(data_ptr, 0);
+        pub fn update(self : Self, data_slice : []Element) void {
+            self.subdata(data_slice, 0);
         }
     };
 }
@@ -126,32 +127,32 @@ pub const VertexArray = struct {
         glBindVertexArray(0);
     }
 
-    // pub fn attrib_pointer(self : Self, index : c_uint) void {
-    //     // glVertexAttribPointer();
-    // }
-
-    pub fn addVertexBuffer(self : Self, bindPoint : u32, buffer : VertexBuffer, comptime V : type, offset : usize) void {
-        glVertexArrayVertexBuffer(self.handle, bindPoint, buffer.handle, @intCast(c_longlong, offset), @sizeOf(V));
-    }
-
-    pub fn addIndexBuffer(self : Self, buffer : IndexBuffer) void {
-        glVertexArrayElementBuffer(self.handle, buffer.handle);
-    }
-
-    pub fn attribFormat(self : Self, bindPoint : u32, comptime V : type, start_attrib : comptime_int) void {
-        const info = @typeInfo(V);
+    pub fn addVertexBuffer(self : Self, bindPoint : u32, buffer : anytype, offset : usize, comptime attribs : anytype) void {
+        const Element = @TypeOf(buffer).Element;
+        const target = @TypeOf(buffer).Target;
+        if (target != .Vertex) {
+            @compileError("Cannot add vertex buffer: target must be .Vertex, not ." ++ @tagName(target));
+        }
+        glVertexArrayVertexBuffer(self.handle, bindPoint, buffer.handle, @intCast(c_longlong, offset), @sizeOf(Element));
+        const info = @typeInfo(Element);
         switch (info) {
             .Struct => {
                 if (info.Struct.layout == .Extern) {
                     const fields = info.Struct.fields;
                     inline for (fields) |field, i| {
-                        const ftype = field.field_type;
-                        const elem_count = elementCount(ftype);
-                        const elem_type = elementType(ftype);
-                        const offset = @byteOffsetOf(V, field.name);
-                        glEnableVertexArrayAttrib(self.handle, start_attrib + i);
-                        glVertexArrayAttribFormat(self.handle, start_attrib + i, elem_count, elem_type, GL_FALSE, offset);
-                        glVertexArrayAttribBinding(self.handle, start_attrib + i, bindPoint);
+                        const field_type = field.field_type;
+                        const elem_count = elementCount(field_type);
+                        const elem_type = elementType(field_type);
+                        const field_offset = @byteOffsetOf(Element, field.name);
+                        const attrib = switch (@TypeOf(attribs)) {
+                            u32, comptime_int => attribs + i,
+                            [fields.len]u32, [fields.len]comptime_int => attribs[i],
+                            *[fields.len]u32, *[fields.len]comptime_int => attribs.*[i],
+                            else => |A| @compileError("invalid type for attribs: " ++ @typeName(A)),
+                        };
+                        glEnableVertexArrayAttrib(self.handle, attrib);
+                        glVertexArrayAttribFormat(self.handle, attrib, elem_count, elem_type, GL_FALSE, field_offset);
+                        glVertexArrayAttribBinding(self.handle, attrib, bindPoint);
                     }
                 }
                 else {
@@ -160,6 +161,14 @@ pub const VertexArray = struct {
             },
             else => @compileError("cannot read layout of non-struct " ++ @typeName(T)),
         }
+    }
+
+    pub fn addIndexBuffer(self : Self, buffer : anytype) void {
+        const target = @TypeOf(buffer).Target;
+        if (target != .Index) {
+            @compileError("Cannot add index buffer: target must be .Index, not ." ++ @tagName(target));
+        }
+        glVertexArrayElementBuffer(self.handle, buffer.handle);
     }
 
     pub fn vertexBindingDivisor(self : Self, bindPoint : u32, divisor : u32) void {
