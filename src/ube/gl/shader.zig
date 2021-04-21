@@ -89,7 +89,7 @@ pub fn Program(comptime Uniforms : type) type {
             glUseProgram(self.handle);
         }
 
-        pub fn get_uniform_locations(self : Self, comptime T : type) T {
+        pub fn getUniformLocations(self : Self, comptime T : type) T {
             var locs : T = undefined;
             inline for (@typeInfo(T).Struct.fields) |field, i| {
                 const name = field.name ++ "";
@@ -101,6 +101,7 @@ pub fn Program(comptime Uniforms : type) type {
 }
 
 pub const UniformLocation = c_int;
+
 fn UniformMixin(comptime Self : type, comptime T : type) type {
     return switch(@typeInfo(T)) {
         .Array => |Array| struct {

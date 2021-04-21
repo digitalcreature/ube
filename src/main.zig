@@ -54,8 +54,8 @@ pub fn main() !void {
     }
     defer glfwTerminate();
 
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 4);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
     // glfw: initialize and configure
@@ -107,37 +107,24 @@ pub fn main() !void {
         0, 1, 3, // first Triangle
         1, 2, 3, // second Triangle
     };
-    var VAO = gl.VertexArray.init();
-    defer VAO.deinit();
-    var VBO = gl.Buffer(.Array).init();
-    defer VBO.deinit();
-    var EBO = gl.Buffer(.ElementArray).init();
-    defer EBO.deinit();
-    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
-    VAO.bind();
-
-    VBO.bind();
-    VBO.data(&vertices, .StaticDraw);
-
-    EBO.bind();
-    EBO.data(&indices, .StaticDraw);
+    var vertex_array = gl.VertexArray.init();
+    defer vertex_array.deinit();
+    var vertex_buffer = gl.VertexBuffer.init();
+    defer vertex_buffer.deinit();
+    var index_buffer = gl.IndexBuffer.init();
+    defer index_buffer.deinit();
 
 
-    VAO.attrib_pointers(Vertex, 0);
+    vertex_buffer.data(&vertices, .StaticDraw);
+    index_buffer.data(&indices, .StaticDraw);
 
-    // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
-    VBO.unbind();
+    vertex_array.addVertexBuffer(0, vertex_buffer, Vertex, 0);
+    vertex_array.addIndexBuffer(index_buffer);
+    vertex_array.attribFormat(0, Vertex, 0);
 
-    // remember: do NOT unbind the EBO while a VAO is active as the bound element buffer object IS stored in the VAO; keep the EBO bound.
-    // EBO.unbind();
-
-    // You can unbind the VAO afterwards so other VAO calls won't accidentally modify this VAO, but this rarely happens. Modifying other
-    // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
-    VAO.unbind();
-
-    var max_texunits : c_int = undefined;
-    glGetIntegerv(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS, &max_texunits);
-    std.log.info("Max texture units: {d}", .{max_texunits});
+    // var max_texunits : c_int = undefined;
+    // glGetIntegerv(GL_MAX_COMBINED_TEXTURE_IMAGE_UNITS, &max_texunits);
+    // std.log.info("Max texture units: {d}", .{max_texunits});
 
     // uncomment this call to draw in wireframe polygons.
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
@@ -149,20 +136,14 @@ pub fn main() !void {
         processInput(window);
         // render
 
-        // glClearColor(0.2, 0.3, 0.3, 1.0);
-        // glClear(GL_COLOR_BUFFER_BIT);
 
-        gl.clear_color(color.rgbf(0.2, 0.3, 0.3));
+        gl.clearColor(color.rgbf(0.2, 0.3, 0.3));
         gl.clear(.Color);
 
         // draw our first triangle
         shaderProgram.use();
-        VAO.bind();
-        // glBindVertexArray(VAO); // seeing as we only have a single VAO there's no need to bind it every time, but we'll do so to keep things a bit more organized
-        //glDrawArrays(GL_TRIANGLES, 0, 6);
-        gl.draw_elements(.Triangles, 6, u32, 0);
-        // glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, null);
-        // glBindVertexArray(0); // no need to unbind it every time
+        vertex_array.bind();
+        gl.drawElements(.Triangles, 6, u32, 0);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 

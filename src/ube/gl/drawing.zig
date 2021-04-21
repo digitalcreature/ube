@@ -16,7 +16,7 @@ pub const PrimitiveType = enum(c_uint) {
     // Patches = GL_PATCHES,
 };
 
-pub fn draw_elements(mode : PrimitiveType, count : i32, comptime Index : type, offset : u32) void {
+pub fn drawElements(mode : PrimitiveType, count : i32, comptime Index : type, offset : u32) void {
     const index_type = switch(Index) {
         u8 => GL_UNSIGNED_BYTE,
         u16 => GL_UNSIGNED_SHORT,
@@ -26,11 +26,11 @@ pub fn draw_elements(mode : PrimitiveType, count : i32, comptime Index : type, o
     glDrawElements(@enumToInt(mode), count, index_type, @intToPtr(?*c_void, offset));
 }
 
-pub fn clear_color(col : color.ColorF) void {
+pub fn clearColor(col : color.ColorF) void {
     glClearColor(col.x, col.y, col.z, col.w);
 }
 
-pub fn clear_depth(depth : anytype) void {
+pub fn clearDepth(depth : anytype) void {
     switch (@TypeOf(depth)) {
         f32 => glClearDepthf(depth),
         f64 => glClearDepth(depth),
@@ -38,7 +38,7 @@ pub fn clear_depth(depth : anytype) void {
     }
 }
 
-pub fn clear_stencil(stencil : i32) void {
+pub fn clearStencil(stencil : i32) void {
     glClearStencil(stencil);
 }
 

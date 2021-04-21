@@ -30,6 +30,9 @@ pub const BufferUsage = enum(c_uint) {
     DynamicCopy = GL_DYNAMIC_COPY,
 };
 
+pub const VertexBuffer = Buffer(.Array);
+pub const IndexBuffer = Buffer(.ElementArray);
+
 pub fn Buffer(comptime target : BufferTarget) type {
 
     return struct {
@@ -39,7 +42,7 @@ pub fn Buffer(comptime target : BufferTarget) type {
 
         pub fn init() Self {
             var handle : Handle = undefined;
-            glGenBuffers(1, &handle);
+            glCreateBuffers(1, &handle);
             return Self{ .handle = handle };
         } 
 
@@ -79,19 +82,19 @@ pub fn Buffer(comptime target : BufferTarget) type {
         }
 
         pub fn alloc(self : Self, size : usize, draw_type : BufferUsage) void {
-            glBufferData(@enumToInt(target), size, NULL, @enumToInt(draw_type));
+            glNamedBufferData(self.handle, size, NULL, @enumToInt(draw_type));
         }
 
         pub fn data(self : Self, data_ptr : anytype, draw_type : BufferUsage) void {
             const ptr = @ptrCast(* const c_void, data_ptr);
             const size = data_size(@TypeOf(data_ptr));
-            glBufferData(@enumToInt(target), size, ptr, @enumToInt(draw_type));
+            glNamedBufferData(self.handle, size, ptr, @enumToInt(draw_type));
         }
 
         pub fn subdata(self: Self, data_ptr : anytype, offset : usize) void {
             const ptr = @ptrCast(* const c_void, data_ptr);
             const size = data_size(@TypeOf(data_ptr));
-            glBufferSubData(@enumToInt(target), offset, size, ptr);
+            glNamedBufferSubData(self.handle, offset, size, ptr);
         }
 
         pub fn update(self : Self, data_ptr : anytype) void {
@@ -107,7 +110,7 @@ pub const VertexArray = struct {
 
     pub fn init() Self {
         var handle : Handle = undefined;
-        glGenVertexArrays(1, &handle);
+        glCreateVertexArrays(1, &handle);
         return Self{ .handle = handle };
     }
 
@@ -127,7 +130,43 @@ pub const VertexArray = struct {
     //     // glVertexAttribPointer();
     // }
 
-    pub fn element_count(comptime T : type) comptime_int {
+    pub fn addVertexBuffer(self : Self, bindPoint : u32, buffer : VertexBuffer, comptime V : type, offset : usize) void {
+        glVertexArrayVertexBuffer(self.handle, bindPoint, buffer.handle, @intCast(c_longlong, offset), @sizeOf(V));
+    }
+
+    pub fn addIndexBuffer(self : Self, buffer : IndexBuffer) void {
+        glVertexArrayElementBuffer(self.handle, buffer.handle);
+    }
+
+    pub fn attribFormat(self : Self, bindPoint : u32, comptime V : type, start_attrib : comptime_int) void {
+        const info = @typeInfo(V);
+        switch (info) {
+            .Struct => {
+                if (info.Struct.layout == .Extern) {
+                    const fields = info.Struct.fields;
+                    inline for (fields) |field, i| {
+                        const ftype = field.field_type;
+                        const elem_count = elementCount(ftype);
+                        const elem_type = elementType(ftype);
+                        const offset = @byteOffsetOf(V, field.name);
+                        glEnableVertexArrayAttrib(self.handle, start_attrib + i);
+                        glVertexArrayAttribFormat(self.handle, start_attrib + i, elem_count, elem_type, GL_FALSE, offset);
+                        glVertexArrayAttribBinding(self.handle, start_attrib + i, bindPoint);
+                    }
+                }
+                else {
+                    @compileError("cannot read layout of non-extern struct " ++ @typeName(T));
+                }
+            },
+            else => @compileError("cannot read layout of non-struct " ++ @typeName(T)),
+        }
+    }
+
+    pub fn vertexBindingDivisor(self : Self, bindPoint : u32, divisor : u32) void {
+        glVertexArrayBindingDivisor(self.handle, bindPoint, divisor);
+    }
+
+    pub fn elementCount(comptime T : type) comptime_int {
         const info = @typeInfo(T);
         return switch (info) {
             .Float => {
@@ -147,7 +186,7 @@ pub const VertexArray = struct {
         };
     }
 
-    pub fn element_type(comptime T : type) c_uint {
+    pub fn elementType(comptime T : type) c_uint {
         const info = @typeInfo(T);
         return switch (info) {
             .Float => |float| switch (float.bits) {
@@ -170,35 +209,8 @@ pub const VertexArray = struct {
                     else => @compileError("unsupported unsigned int type " ++ @typeName(T)),
                 },
             },
-            .Struct => element_type(T.Component),   // vector types store their componenet types in their Component declaration
+            .Struct => elementType(T.Component),   // vector types store their componenet types in their Component declaration
             else => @compileError("unsupported type " ++ @typeName(T)),
         };
     }
-
-    pub fn attrib_pointers(self : Self, comptime T : type, start_attrib : comptime_int) void {
-        const info = @typeInfo(T);
-        switch (info) {
-            .Struct => {
-                if (info.Struct.layout == .Extern) {
-                    const stride = @sizeOf(T);
-                    // std.log.info("struct {s}: stride {d} bytes", .{@typeName(T), @sizeOf(T)});
-                    const fields = info.Struct.fields;
-                    inline for (fields) |field, i| {
-                        const ftype = field.field_type;
-                        const elem_count = element_count(ftype);
-                        const elem_type = element_type(ftype);
-                        const offset = @byteOffsetOf(T, field.name);
-                        glVertexAttribPointer(start_attrib + i, elem_count, elem_type, 0, stride, @intToPtr(?*c_void, offset));
-                        glEnableVertexAttribArray(start_attrib + i);
-                        // std.log.info("glAttribPointer({d}, {d}, {d}, 0, {d}, @intToPtr(?*c_void, {d}));", .{start_attrib + i, elem_count, elem_type, stride, offset});
-                    }
-                }
-                else {
-                    @compileError("cannot read layout of non-extern struct " ++ @typeName(T));
-                }
-            },
-            else => @compileError("cannot read layout of non-struct " ++ @typeName(T)),
-        }
-    }
-
 };
