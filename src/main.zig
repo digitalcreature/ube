@@ -137,10 +137,11 @@ pub fn main() !void {
         gl.clearColor(color.rgbf(0.2, 0.3, 0.3));
         gl.clear(.Color);
 
-        // draw our first triangle
         shaderProgram.use();
-        vertex_array.bind();
-        gl.drawElements(.Triangles, 6, u32, 0);
+        const vao = vertex_array.bind();        // bind() returns a special struct that allows us to call gl functions using the bound array
+                                                // this makes sure you cant call these functions without binding something first!
+        vao.drawElements(.Triangles, 6, 0);     // drawElements uses the global states bound VAO, so we can only call it
+                                                // as a method on the special "Bound" version of the array
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 

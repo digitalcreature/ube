@@ -106,6 +106,7 @@ pub fn Buffer(comptime target : BufferTarget, comptime T : type) type {
 
 pub const VertexArray = struct {
     handle : Handle,
+    indexType : ?u32 = null,
 
     const Self = @This();
 
@@ -119,12 +120,9 @@ pub const VertexArray = struct {
         glDeleteVertexArrays(1, &self.handle);
     }
 
-    pub fn bind(self : Self) void {
+    pub fn bind(self : Self) Bound {
         glBindVertexArray(self.handle);
-    }
-
-    pub fn unbind(self : Self) void {
-        glBindVertexArray(0);
+        return .{.array = self };
     }
 
     pub fn addVertexBuffer(self : Self, bindPoint : u32, buffer : anytype, offset : usize, comptime attribs : anytype) void {
@@ -163,12 +161,18 @@ pub const VertexArray = struct {
         }
     }
 
-    pub fn addIndexBuffer(self : Self, buffer : anytype) void {
+    pub fn addIndexBuffer(self : *Self, buffer : anytype) void {
         const target = @TypeOf(buffer).Target;
         if (target != .Index) {
             @compileError("Cannot add index buffer: target must be .Index, not ." ++ @tagName(target));
         }
-        glVertexArrayElementBuffer(self.handle, buffer.handle);
+        glVertexArrayElementBuffer(self.*.handle, buffer.handle);
+        self.*.indexType = switch(@TypeOf(buffer).Element) {
+            u8 => GL_UNSIGNED_BYTE,
+            u16 => GL_UNSIGNED_SHORT,
+            u32 => GL_UNSIGNED_INT,
+            else => unreachable,
+        };
     }
 
     pub fn vertexBindingDivisor(self : Self, bindPoint : u32, divisor : u32) void {
@@ -222,4 +226,35 @@ pub const VertexArray = struct {
             else => @compileError("unsupported type " ++ @typeName(T)),
         };
     }
+
+    pub const Bound = struct {
+        array : Self,
+
+        const BSelf = @This();
+
+        pub fn drawElements(self : BSelf, mode : PrimitiveType, count : i32, offset : u32) void {
+            const index_type = self.array.indexType;
+            glDrawElements(@enumToInt(mode), count, index_type.?, @intToPtr(?*c_void, offset));
+        }
+
+        // pub fn unbind(self : BSelf) void {
+        //     glBindVertexArray(0);
+        // }
+
+    };
+};
+
+pub const PrimitiveType = enum(c_uint) {
+    Points = GL_POINTS,
+    LineStrip = GL_LINE_STRIP,
+    LineLoop = GL_LINE_LOOP,
+    Lines = GL_LINES,
+    LineStripAdjacency = GL_LINE_STRIP_ADJACENCY,
+    LinesAdjacency = GL_LINES_ADJACENCY,
+    TriangleStrip = GL_TRIANGLE_STRIP,
+    TriangleFan = GL_TRIANGLE_FAN,
+    Triangles = GL_TRIANGLES,
+    TriangleStripAdjacency = GL_TRIANGLE_STRIP_ADJACENCY,
+    TrianglesAdjacency = GL_TRIANGLES_ADJACENCY,
+    // Patches = GL_PATCHES,
 };
