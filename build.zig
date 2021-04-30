@@ -1,4 +1,4 @@
-const Builder = @import("std").build.Builder;
+usingnamespace @import("std").build;
 
 pub fn build(b: *Builder) void {
     // Standard target options allows the person running `zig build` to choose
@@ -24,6 +24,14 @@ pub fn build(b: *Builder) void {
     exe.linkSystemLibrary("gdi32");
     exe.linkSystemLibrary("shell32");
     exe.linkSystemLibrary("opengl32");
+
+    const math : Pkg = .{
+        .name = "math",
+        .path = "src/math/lib.zig",
+        .dependencies = null,
+    };
+
+    exe.addPackage(math);
 
     // exe.addIncludeDir("SDL/include");
     // exe.addLibPath("SDL/lib/x64");
