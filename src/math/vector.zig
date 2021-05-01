@@ -1,5 +1,4 @@
 const std = @import("std");
-const fmt = std.fmt;
 const meta = std.meta;
 usingnamespace @import("meta.zig");
 
@@ -11,6 +10,20 @@ pub fn ops(comptime Self : type) type {
     const field_names = self_info.field_names;
 
     return struct {
+
+        pub const default_format = struct {
+            
+            pub fn format(self: Self, comptime fmt: []const u8, options: std.fmt.FormatOptions, stream: anytype) !void {
+                try stream.writeAll("(");
+                inline for (field_names) |name, i| {
+                    try stream.print("{" ++ fmt ++ "}", .{@field(self, name)});
+                    if (i < dimensions - 1) {
+                        try stream.writeAll(", ");
+                    }
+                }
+                try stream.writeAll(")");
+            }
+        };
 
         pub const basic = struct {
 
@@ -243,21 +256,21 @@ pub fn ops(comptime Self : type) type {
             }
 
             pub fn dot(self : Self, rhs : anytype) Element {
-                return self.mul(rhs).sum();
+                return sum(mul(self, rhs));
             }
 
             pub fn len2(self : Self) Element {
-                return self.dot(self);
+                return dot(self, self);
             }
 
             pub fn len(self : Self) Element {
-                return std.math.sqrt(self.len2());
+                return std.math.sqrt(len2(self));
             }
 
             pub fn normalize(self: Self) Self {
-                var len = self.len();
-                if (len != 0.0) {
-                    return self.scale(1.0 / len);
+                var l = len(self);
+                if (l != 0.0) {
+                    return scale(self, 1.0 / l);
                 }
                 else {
                     return zero;
@@ -266,12 +279,11 @@ pub fn ops(comptime Self : type) type {
 
             pub fn project(self : Self, rhs : anytype) Self {
                 const a = self;
-                const b = from(rhs);
-                return b.scale(a.dot(b) / b.dot(b));
+                return ops(@TypeOf(rhs)).arithmetic.scale(rhs, dot(a, b) / dot(b, b));
             }
 
             pub fn reject(self : Self, rhs : anytype) Self {
-                return self.sub(self.project(rhs));
+                return sub(self, project(self, rhs));
             }
 
             pub usingnamespace switch(dimensions) {
@@ -280,13 +292,14 @@ pub fn ops(comptime Self : type) type {
                     pub fn cross(self : Self, rhs : anytype) Self {
                         const info = vectorTypeInfo(@TypeOf(rhs)).assert();
                         comptime info.assertSimilar(Self);
-                        const a = self;
-                        const b = from(rhs);
-                        var result : Self = undefined;
-                        result.set(0, a.get(1) * b.get(2) - a.get(2) * b.get(1));
-                        result.set(1, a.get(2) * b.get(0) - a.get(0) * b.get(2));
-                        result.set(2, a.get(0) * b.get(1) - a.get(1) * b.get(0));
-                        return result;
+                        const a = toArray(self);
+                        const b_ops = ops(@TypeOf(rhs)).linear;
+                        const b = b_ops.toArray(rhs);
+                        var result : [dimensions]Element = undefined;
+                        result[0] = a[1] * b[2] - a[2] * b[1];
+                        result[1] = a[2] * b[0] - a[0] * b[2];
+                        result[2] = a[0] * b[1] - a[1] * b[0];
+                        return new(result);
                     }
 
                     const V4 = Vector(Element, 4);
@@ -309,19 +322,26 @@ pub fn ops(comptime Self : type) type {
                         });
                     }
 
-                    pub fn fromAffinePosition(v : V4) Self {
-                        return Self.new(.{
-                            v.x / v.w,
-                            v.y / v.w,
-                            v.z / v.w,
+                    pub fn fromAffinePosition(v : anytype) Self {
+                        const info = vectorTypeInfo(@TypeOf(v));
+                        info.assertDimensions(4);
+                        info.assertElementType(Element);
+                        const w = @field(v, info.field_names[3]);
+                        return new(.{
+                            @field(v, info.field_names[0]) / w,
+                            @field(v, info.field_names[1]) / w,
+                            @field(v, info.field_names[2]) / w,
                         });
                     }
 
-                    pub fn fromAffineDirection(v : V4) Self {
-                        return Self.new(.{
-                            v.x,
-                            v.y,
-                            v.z, 
+                    pub fn fromAffineDirection(v : anytype) Self {
+                        const info = vectorTypeInfo(@TypeOf(v));
+                        info.assertDimensions(4);
+                        info.assertElementType(Element);
+                        return new(.{
+                            @field(v, info.field_names[0]),
+                            @field(v, info.field_names[1]),
+                            @field(v, info.field_names[2]), 
                         });
                     }
 
@@ -340,6 +360,7 @@ pub fn Vector(comptime Element : type, comptime dimensions : comptime_int) type 
             y : Element,
 
             pub usingnamespace ops(@This()).linear;
+            pub usingnamespace ops(@This()).default_format;
         },
         3 => extern struct {
             x : Element,
@@ -347,6 +368,7 @@ pub fn Vector(comptime Element : type, comptime dimensions : comptime_int) type 
             z : Element,
 
             pub usingnamespace ops(@This()).linear;
+            pub usingnamespace ops(@This()).default_format;
         },
         4 => extern struct {
             x : Element,
@@ -355,6 +377,7 @@ pub fn Vector(comptime Element : type, comptime dimensions : comptime_int) type 
             w : Element,
 
             pub usingnamespace ops(@This()).linear;
+            pub usingnamespace ops(@This()).default_format;
         },
         else => @compileError("this function only generates 2, 3, and 4 dimensional vectors. custom structs can be made with any number of dimensions"),
     };
@@ -430,9 +453,9 @@ test "vector type info" {
     std.testing.expectEqual(info.Element, f32);
     info.assertDimensions(3);
     info.assertElementType(f32);
-    std.testing.expectEqual(info.field_names[0], "x");
-    std.testing.expectEqual(info.field_names[1], "y");
-    std.testing.expectEqual(info.field_names[2], "z");
+    std.testing.expectEqualStrings(info.field_names[0], "x");
+    std.testing.expectEqualStrings(info.field_names[1], "y");
+    std.testing.expectEqualStrings(info.field_names[2], "z");
     std.testing.expectEqual(info.field_names.len, 3);
 }
 

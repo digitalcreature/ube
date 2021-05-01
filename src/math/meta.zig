@@ -48,7 +48,7 @@ pub const VectorTypeInfo = struct {
     }
 
     pub fn assertSimilar(comptime self : VectorTypeInfo, comptime T : type) void {
-        const info = vectorTypeInfoAssert(T);
+        const info = vectorTypeInfo(T).assert();
         self.assertDimensions(info.dimensions);
         self.assertElementType(info.Element);
     }
@@ -90,6 +90,36 @@ pub const MatrixTypeInfo = struct {
     row_count : comptime_int,
     col_count : comptime_int,
     field_name : [] const u8,
+
+    const Self = @This();
+
+    pub fn isSquare(comptime self : Self) bool {
+        return self.row_count == self.col_count;
+    }
+
+    pub fn assertSquare(comptime self : Self) void {
+        if (!self.isSquare()) {
+            comptime compileError("matrix must be square, not {d}x{d}", .{self.row_count, self.col_count});
+        }
+    }
+
+    pub fn assertDimensions(comptime self : Self, comptime rows : comptime_int, comptime cols : comptime_int) void {
+        if (self.row_count != rows or self.col_count != cols) {
+            comptime compileError("expected {d}x{d} matrix, found {d}x{d} matrix", .{rows, cols, self.row_count, self.col_count});
+        }
+    }
+
+    pub fn assertElementType(comptime self : Self, comptime T : type) void {
+        if (T != self.Element) {
+            @compileError("expected " ++ @typeName(T) ++ " matrix, found " ++ @typeName(self.Element) ++ "matrix");
+        }
+    }
+
+    pub fn assertSimilar(comptime self : Self, comptime T : type) void {
+        const info = matrixTypeInfo(T).assert();
+        self.assertDimensions(info.row_count, info.col_count);
+        self.assertElementType(info.Element);
+    }
 };
 
 pub fn matrixTypeInfo(comptime M : type) TypeInfoOrError(MatrixTypeInfo) {
