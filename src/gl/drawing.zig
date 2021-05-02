@@ -1,7 +1,7 @@
 usingnamespace @import("c.zig");
-const color = @import("../math/color.zig");
+const color = @import("math").color;
 
-pub fn clearColor(col : color.ColorF) void {
+pub fn clearColor(col : color.ColorF32) void {
     glClearColor(col.x, col.y, col.z, col.w);
 }
 

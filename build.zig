@@ -30,8 +30,14 @@ pub fn build(b: *Builder) void {
         .path = "src/math/lib.zig",
         .dependencies = null,
     };
+    const gl : Pkg = .{
+        .name = "gl",
+        .path = "src/gl/lib.zig",
+        .dependencies = .{math}
+    };
 
     exe.addPackage(math);
+    exe.addPackage(gl);
 
     // exe.addIncludeDir("SDL/include");
     // exe.addLibPath("SDL/lib/x64");

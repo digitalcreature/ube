@@ -1,6 +1,8 @@
 usingnamespace @import("c.zig");
 usingnamespace @import("types.zig");
 
+const math = @import("math");
+
 pub const BufferTarget = enum(c_uint) {
     Vertex = GL_ARRAY_BUFFER,
     // AtomicCounter = GL_ATOMIC_COUNTER_BUFFER,
@@ -189,7 +191,8 @@ pub const VertexArray = struct {
                 1;
             },
             .Struct => blk: {
-                const count = T.component_count;
+                const info = math.meta.vectorTypeInfo(T).assert();
+                const count = info.dimensions;
                 if (count < 1 or count > 4) {
                     @compileError("element count for vector types must be 1, 2, 3, or 4 (not " ++ count ++ ")");
                 }
@@ -222,7 +225,7 @@ pub const VertexArray = struct {
                     else => @compileError("unsupported unsigned int type " ++ @typeName(T)),
                 },
             },
-            .Struct => elementType(T.Component),   // vector types store their componenet types in their Component declaration
+            .Struct => elementType(math.meta.vectorTypeInfo(T).assert().Element),
             else => @compileError("unsupported type " ++ @typeName(T)),
         };
     }

@@ -252,7 +252,6 @@ fn UniformMixin(comptime Self : type, comptime T : type) type {
 
 pub fn Uniform(comptime T : type) type {
 
-
     return struct {
         location : UniformLocation,
         const Self = @This();
@@ -261,6 +260,5 @@ pub fn Uniform(comptime T : type) type {
         }
         pub usingnamespace UniformMixin(Self, T);
 
-        
     };
 }
