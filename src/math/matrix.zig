@@ -1,5 +1,4 @@
 const std = @import("std");
-const meta = std.meta;
 const vector = @import("vector.zig");
 usingnamespace @import("meta.zig");
 
@@ -82,7 +81,7 @@ pub fn ops(comptime Self : type) type {
                     result[r][c] = sum;
                 }
             }
-            return new(result);
+            return Self.new(result);
         }
 
         pub fn transpose(self : Self) Self {
