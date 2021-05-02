@@ -2,7 +2,7 @@ const std = @import("std");
 const fmt = std.fmt;
 const meta = std.meta;
 
-pub fn TypeInfoOrError(comptime T : type) type {
+pub fn CompileErrorUnion(comptime T : type) type {
     return union(enum) {
         info : T,
         err : [] const u8,
@@ -54,7 +54,7 @@ pub const VectorTypeInfo = struct {
     }
 };
 
-pub fn vectorTypeInfo(comptime T : type) TypeInfoOrError(VectorTypeInfo) {
+pub fn vectorTypeInfo(comptime T : type) CompileErrorUnion(VectorTypeInfo) {
     var info = @typeInfo(T);
     switch (info) {
         .Struct => |Struct| {
@@ -122,7 +122,7 @@ pub const MatrixTypeInfo = struct {
     }
 };
 
-pub fn matrixTypeInfo(comptime M : type) TypeInfoOrError(MatrixTypeInfo) {
+pub fn matrixTypeInfo(comptime M : type) CompileErrorUnion(MatrixTypeInfo) {
     const info = @typeInfo(M);
     switch (info) {
         .Struct => |Struct| {

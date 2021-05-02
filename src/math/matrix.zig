@@ -178,6 +178,127 @@ pub fn ops(comptime Self : type) type {
                     return new(result);
                 }
 
+                /// Creates a look-at matrix.
+                /// The matrix will create a transformation that can be used
+                /// as a camera transform.
+                /// the camera is located at `eye` and will look at `center`.
+                /// `up` is the direction from the screen center to the upper screen border.
+                pub fn createLookAt(eye: anytype, center: anytype, up: anytype) Self {
+                    return createLook(eye, vector.ops(@TypeOf(center)).arithmetic.sub(center, eye), up);
+                }
+
+                /// creates a perspective transformation matrix.
+                /// `fov` is the field of view in radians,
+                /// `aspect` is the screen aspect ratio (width / height)
+                /// `near` is the distance of the near clip plane, whereas `far` is the distance to the far clip plane.
+                pub fn createPerspective(fov: Element, aspect: Element, near: Element, far: Element) Self {
+                    std.debug.assert(std.math.fabs(aspect - 0.001) > 0);
+
+                    const tanHalfFovy = std.math.tan(fov / 2);
+
+                    var result = @field(zero, field_name);
+                    result[0][0] = 1.0 / (aspect * tanHalfFovy);
+                    result[1][1] = 1.0 / (tanHalfFovy);
+                    result[2][2] = far / (far - near);
+                    result[2][3] = 1;
+                    result[3][2] = -(far * near) / (far - near);
+                    return new(result);
+                }
+
+                /// creates an orthogonal projection matrix.
+                /// `left`, `right`, `bottom` and `top` are the borders of the screen whereas `near` and `far` define the
+                /// distance of the near and far clipping planes.
+                pub fn createOrthogonal(left: Element, right: Element, bottom: Element, top: Element, near: Element, far: Element) Self {
+                    var result = @field(identity, field_name);
+                    result[0][0] = 2 / (right - left);
+                    result[1][1] = 2 / (top - bottom);
+                    result[2][2] = 1 / (far - near);
+                    result[3][0] = -(right + left) / (right - left);
+                    result[3][1] = -(top + bottom) / (top - bottom);
+                    result[3][2] = -near / (far - near);
+                    return new(result);
+                }
+
+                /// creates a rotation matrix around a certain axis.
+                pub fn createAngleAxis(axis: anytype, angle: Element) Self {
+                    const info = vectorTypeInfo(@TypeOf(axis)).assert();
+                    comptime info.assertDimensions(3);
+                    comptime info.assertElementType(Element);
+                    const cos = std.math.cos(angle);
+                    const sin = std.math.sin(angle);
+                    const x = @field(axis, info.field_names[0]);
+                    const y = @field(axis, info.field_names[1]);
+                    const z = @field(axis, info.field_names[2]);
+
+                    return new(.{
+                        .{ cos + x * x * (1 - cos), x * y * (1 - cos) - z * sin, x * z * (1 - cos) + y * sin, 0 },
+                        .{ y * x * (1 - cos) + z * sin, cos + y * y * (1 - cos), y * z * (1 - cos) - x * sin, 0 },
+                        .{ z * x * (1 * cos) - y * sin, z * y * (1 - cos) + x * sin, cos + z * z * (1 - cos), 0 },
+                        .{ 0, 0, 0, 1 },
+                    });
+                }
+
+                /// creates matrix that will scale a homogeneous matrix.
+                pub fn createUniformScale(scale: Element) Self {
+                    return createScaleXYZ(scale, scale, scale);
+                }
+
+                /// Creates a non-uniform scaling matrix
+                pub fn createScaleXYZ(x: Element, y: Element, z: Element) Self {
+                    return new(.{
+                        .{ x, 0, 0, 0 },
+                        .{ 0, y, 0, 0 },
+                        .{ 0, 0, z, 0 },
+                        .{ 0, 0, 0, 1 },
+                    });
+                }
+
+                /// Creates a non-uniform scaling matrix
+                pub fn createScale(scale : anytype) Self {
+                    const info = vectorTypeInfo(@TypeOf(scale)).assert();
+                    comptime info.assertDimensions(3);
+                    comptime info.assertElementType(Element);
+                    const x = @field(scale, info.field_names[0]);
+                    const y = @field(scale, info.field_names[1]);
+                    const z = @field(scale, info.field_names[2]);
+                    return createScaleXYZ(x, y, z);
+                }
+
+                /// creates matrix that will translate a homogeneous matrix.
+                pub fn createTranslationXYZ(x: Element, y: Element, z: Element) Self {
+                    return new(.{
+                        .{ 1, 0, 0, 0 },
+                        .{ 0, 1, 0, 0 },
+                        .{ 0, 0, 1, 0 },
+                        .{ x, y, z, 1 },
+                    });
+                }
+
+                /// creates matrix that will scale a homogeneous matrix.
+                pub fn createTranslation(translation: anytype) Self {
+                    const info = vectorTypeInfo(@TypeOf(translation)).assert();
+                    comptime info.assertDimensions(3);
+                    comptime info.assertElementType(Element);
+                    const x = @field(translation, info.field_names[0]);
+                    const y = @field(translation, info.field_names[1]);
+                    const z = @field(translation, info.field_names[2]);
+                    return createTranslationXYZ(x, y, z);
+                } 
+
+                /// Batch matrix multiplication. Will multiply all matrices from "first" to "last".
+                pub fn batchMul(items: []const Self) Self {
+                    if (items.len == 0)
+                        return identity;
+                    if (items.len == 1)
+                        return items[0];
+                    var value = items[0];
+                    var i: usize = 1;
+                    while (i < items.len) : (i += 1) {
+                        value = mul(value, items[i]);
+                    }
+                    return value;
+                }
+
                 pub fn invert(self: Self) ?Self {
                     // https://github.com/stackgl/gl-mat4/blob/master/invert.js
                     const a = @bitCast([16]Element, @field(self, field_name));
@@ -253,6 +374,18 @@ pub fn Matrix(comptime Element : type, comptime dimensions : comptime_int) type 
         pub usingnamespace ops(@This());
     };
 }
+
+pub const glm = struct {
+
+    pub const Mat2 = Matrix(f32, 2);
+    pub const Mat3 = Matrix(f32, 3);
+    pub const Mat4 = Matrix(f32, 4);
+
+    pub const DMat2 = Matrix(f64, 2);
+    pub const DMat3 = Matrix(f64, 3);
+    pub const DMat4 = Matrix(f64, 4);
+
+};
 
 test "matrices" {
     const m = Matrix(f32, 3).identity;
