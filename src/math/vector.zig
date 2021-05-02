@@ -25,7 +25,7 @@ pub fn ops(comptime Self : type) type {
             }
         };
 
-        pub const basic = struct {
+        pub const basic_noformat = struct {
 
             // constructors
 
@@ -149,7 +149,7 @@ pub fn ops(comptime Self : type) type {
 
         };
 
-        pub const arithmetic = struct {
+        pub const arithmetic_noformat = struct {
             
             pub usingnamespace basic;
 
@@ -238,7 +238,7 @@ pub fn ops(comptime Self : type) type {
             }
         };
 
-        pub const linear = struct {
+        pub const linear_noformat = struct {
 
             pub usingnamespace arithmetic;
 
@@ -350,6 +350,21 @@ pub fn ops(comptime Self : type) type {
             };
 
         };
+
+        pub const basic = struct {
+            pub usingnamespace default_format;
+            pub usingnamespace basic_noformat;
+        };
+
+        pub const arithmetic = struct {
+            pub usingnamespace default_format;
+            pub usingnamespace arithmetic_noformat;
+        };
+
+        pub const linear = struct {
+            pub usingnamespace default_format;
+            pub usingnamespace linear_noformat;
+        };
     };
 }
 
@@ -360,7 +375,6 @@ pub fn Vector(comptime Element : type, comptime dimensions : comptime_int) type 
             y : Element,
 
             pub usingnamespace ops(@This()).linear;
-            pub usingnamespace ops(@This()).default_format;
         },
         3 => extern struct {
             x : Element,
@@ -368,7 +382,6 @@ pub fn Vector(comptime Element : type, comptime dimensions : comptime_int) type 
             z : Element,
 
             pub usingnamespace ops(@This()).linear;
-            pub usingnamespace ops(@This()).default_format;
         },
         4 => extern struct {
             x : Element,
@@ -377,7 +390,6 @@ pub fn Vector(comptime Element : type, comptime dimensions : comptime_int) type 
             w : Element,
 
             pub usingnamespace ops(@This()).linear;
-            pub usingnamespace ops(@This()).default_format;
         },
         else => @compileError("this function only generates 2, 3, and 4 dimensional vectors. custom structs can be made with any number of dimensions"),
     };
