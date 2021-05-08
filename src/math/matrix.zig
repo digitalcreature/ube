@@ -399,10 +399,3 @@ test "transform" {
     const b = Matrix(f32, 3).identity.transform(a);
     std.testing.expectEqual(a, b);
 }
-
-const glm = vector.glm;
-
-pub fn main() void {
-    const m = Matrix(f32, 4).createLook(glm.vec3(10, 5, -1), glm.vec3(2, 3, 5), glm.Vec3.unit("y"));
-    std.log.err("{d}", .{m});
-}
