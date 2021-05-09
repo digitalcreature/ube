@@ -2,12 +2,11 @@ const std = @import("std");
 const builtin = @import("builtin");
 const panic = std.debug.panic;
 
-const gl = @import("ube/gl/gl.zig");
+const gl = @import("gl");
 usingnamespace gl.c;
-usingnamespace @import("ube/math/vector.zig");
-const color = @import("ube/math/color.zig");
+const math = @import("math");
+usingnamespace math.glm;
 
-const foo = gl;
 // settings
 const SCR_WIDTH: u32 = 1920;
 const SCR_HEIGHT: u32 = 1080;
@@ -35,11 +34,11 @@ const fragmentShaderSource: [:0]const u8 =
 ;
 
 const Vertex = extern struct {
-    position : V3f,
-    color : V3f,
+    position : Vec3,
+    color : Vec3,
 };
 
-fn vertex(pos : V3f, col : V3f) Vertex {
+fn vertex(pos : Vec3, col : Vec3) Vertex {
     return Vertex {
         .position = pos,
         .color = col,
@@ -80,7 +79,7 @@ pub fn main() !void {
     fragShader.source(fragmentShaderSource);
     try fragShader.compile();
     var shaderProgram = gl.Program(struct {
-        some_uniform : gl.Uniform([1]V3f),
+        some_uniform : gl.Uniform([1]Vec3),
     }).init();
     defer shaderProgram.deinit();
     shaderProgram.attach(vertexShader);
@@ -92,22 +91,24 @@ pub fn main() !void {
 
 
     shaderProgram.use();
-    const some_uniform : [1]V3f = .{
-        v3f(1, 1, 0),
+    const some_uniform : [1]Vec3 = .{
+        vec3(1, 1, 0),
     };
     shaderProgram.uniforms.some_uniform.set(&some_uniform);
 
     var vertices = [_]Vertex{
-        vertex(v3f(0.5, 0.5, 0.0), v3f(1, 0, 1)), // top right
-        vertex(v3f(0.5, -0.5, 0.0), v3f(0, 1, 0)), // bottom right
-        vertex(v3f(-0.5, -0.5, 0.0), v3f(1, 1, 0)), // bottom let
-        vertex(v3f(-0.5, 0.5, 0.0), v3f(0, 1, 1)), // top left
+        vertex(vec3(0.5, 0.5, 0.0), vec3(1, 0, 1)), // top right
+        vertex(vec3(0.5, -0.5, 0.0), vec3(0, 1, 0)), // bottom right
+        vertex(vec3(-0.5, -0.5, 0.0), vec3(1, 1, 0)), // bottom let
+        vertex(vec3(-0.5, 0.5, 0.0), vec3(0, 1, 1)), // top left
     };
     var indices = [_]u32{ // note that we start from 0!
         0, 1, 3, // first Triangle
         1, 2, 3, // second Triangle
     };
-    var vertex_array = gl.VertexArray.init();
+    var vertex_array = gl.VertexArray(struct {
+        verts : gl.VertexBufferBind(Vertex, 0, 0)
+    }, u32).init();
     defer vertex_array.deinit();
     var vertex_buffer = gl.VertexBuffer(Vertex).initData(&vertices, .StaticDraw);
     defer vertex_buffer.deinit();
@@ -115,8 +116,8 @@ pub fn main() !void {
     defer index_buffer.deinit();
 
 
-    vertex_array.addVertexBuffer(0, vertex_buffer, 0, 0);
-    vertex_array.addIndexBuffer(index_buffer);
+    vertex_array.vertices.verts.bindBuffer(vertex_buffer);
+    vertex_array.bindIndexBuffer(index_buffer);
     // vertex_array.attribFormat(0, Vertex, 0);
 
     // var max_texunits : c_int = undefined;
@@ -134,14 +135,12 @@ pub fn main() !void {
         // render
 
 
-        gl.clearColor(color.rgbf(0.2, 0.3, 0.3));
+        gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
         gl.clear(.Color);
 
         shaderProgram.use();
-        const vao = vertex_array.bind();        // bind() returns a special struct that allows us to call gl functions using the bound array
-                                                // this makes sure you cant call these functions without binding something first!
-        vao.drawElements(.Triangles, 6, 0);     // drawElements uses the global states bound VAO, so we can only call it
-                                                // as a method on the special "Bound" version of the array
+        vertex_array.bind();
+        gl.drawElements(.Triangles, 6, u32);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 

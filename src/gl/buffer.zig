@@ -106,158 +106,143 @@ pub fn Buffer(comptime target : BufferTarget, comptime T : type) type {
     };
 }
 
-pub const VertexArray = struct {
-    handle : Handle,
-    indexType : ?u32 = null,
+// pub const VertexArray = struct {
+//     handle : Handle,
+//     indexType : ?u32 = null,
 
-    const Self = @This();
+//     const Self = @This();
 
-    pub fn init() Self {
-        var handle : Handle = undefined;
-        glCreateVertexArrays(1, &handle);
-        return Self{ .handle = handle };
-    }
+//     pub fn init() Self {
+//         var handle : Handle = undefined;
+//         glCreateVertexArrays(1, &handle);
+//         return Self{ .handle = handle };
+//     }
 
-    pub fn deinit(self : Self) void {
-        glDeleteVertexArrays(1, &self.handle);
-    }
+//     pub fn deinit(self : Self) void {
+//         glDeleteVertexArrays(1, &self.handle);
+//     }
 
-    pub fn bind(self : Self) Bound {
-        glBindVertexArray(self.handle);
-        return .{.array = self };
-    }
+//     pub fn bind(self : Self) Bound {
+//         glBindVertexArray(self.handle);
+//         return .{.array = self };
+//     }
 
-    pub fn addVertexBuffer(self : Self, bindPoint : u32, buffer : anytype, offset : usize, comptime attribs : anytype) void {
-        const Element = @TypeOf(buffer).Element;
-        const target = @TypeOf(buffer).Target;
-        if (target != .Vertex) {
-            @compileError("Cannot add vertex buffer: target must be .Vertex, not ." ++ @tagName(target));
-        }
-        glVertexArrayVertexBuffer(self.handle, bindPoint, buffer.handle, @intCast(c_longlong, offset), @sizeOf(Element));
-        const info = @typeInfo(Element);
-        switch (info) {
-            .Struct => {
-                if (info.Struct.layout == .Extern) {
-                    const fields = info.Struct.fields;
-                    inline for (fields) |field, i| {
-                        const field_type = field.field_type;
-                        const elem_count = elementCount(field_type);
-                        const elem_type = elementType(field_type);
-                        const field_offset = @byteOffsetOf(Element, field.name);
-                        const attrib = switch (@TypeOf(attribs)) {
-                            u32, comptime_int => attribs + i,
-                            [fields.len]u32, [fields.len]comptime_int => attribs[i],
-                            *[fields.len]u32, *[fields.len]comptime_int => attribs.*[i],
-                            else => |A| @compileError("invalid type for attribs: " ++ @typeName(A)),
-                        };
-                        glEnableVertexArrayAttrib(self.handle, attrib);
-                        glVertexArrayAttribFormat(self.handle, attrib, elem_count, elem_type, GL_FALSE, field_offset);
-                        glVertexArrayAttribBinding(self.handle, attrib, bindPoint);
-                    }
-                }
-                else {
-                    @compileError("cannot read layout of non-extern struct " ++ @typeName(T));
-                }
-            },
-            else => @compileError("cannot read layout of non-struct " ++ @typeName(T)),
-        }
-    }
+//     pub fn addVertexBuffer(self : Self, bindPoint : u32, buffer : anytype, offset : usize, comptime attribs : anytype) void {
+//         const Element = @TypeOf(buffer).Element;
+//         const target = @TypeOf(buffer).Target;
+//         if (target != .Vertex) {
+//             @compileError("Cannot add vertex buffer: target must be .Vertex, not ." ++ @tagName(target));
+//         }
+//         glVertexArrayVertexBuffer(self.handle, bindPoint, buffer.handle, @intCast(c_longlong, offset), @sizeOf(Element));
+//         const info = @typeInfo(Element);
+//         switch (info) {
+//             .Struct => {
+//                 if (info.Struct.layout == .Extern) {
+//                     const fields = info.Struct.fields;
+//                     inline for (fields) |field, i| {
+//                         const field_type = field.field_type;
+//                         const elem_count = elementCount(field_type);
+//                         const elem_type = elementType(field_type);
+//                         const field_offset = @byteOffsetOf(Element, field.name);
+//                         const attrib = switch (@TypeOf(attribs)) {
+//                             u32, comptime_int => attribs + i,
+//                             [fields.len]u32, [fields.len]comptime_int => attribs[i],
+//                             *[fields.len]u32, *[fields.len]comptime_int => attribs.*[i],
+//                             else => |A| @compileError("invalid type for attribs: " ++ @typeName(A)),
+//                         };
+//                         glEnableVertexArrayAttrib(self.handle, attrib);
+//                         glVertexArrayAttribFormat(self.handle, attrib, elem_count, elem_type, GL_FALSE, field_offset);
+//                         glVertexArrayAttribBinding(self.handle, attrib, bindPoint);
+//                     }
+//                 }
+//                 else {
+//                     @compileError("cannot read layout of non-extern struct " ++ @typeName(T));
+//                 }
+//             },
+//             else => @compileError("cannot read layout of non-struct " ++ @typeName(T)),
+//         }
+//     }
 
-    pub fn addIndexBuffer(self : *Self, buffer : anytype) void {
-        const target = @TypeOf(buffer).Target;
-        if (target != .Index) {
-            @compileError("Cannot add index buffer: target must be .Index, not ." ++ @tagName(target));
-        }
-        glVertexArrayElementBuffer(self.*.handle, buffer.handle);
-        self.*.indexType = switch(@TypeOf(buffer).Element) {
-            u8 => GL_UNSIGNED_BYTE,
-            u16 => GL_UNSIGNED_SHORT,
-            u32 => GL_UNSIGNED_INT,
-            else => unreachable,
-        };
-    }
+//     pub fn addIndexBuffer(self : *Self, buffer : anytype) void {
+//         const target = @TypeOf(buffer).Target;
+//         if (target != .Index) {
+//             @compileError("Cannot add index buffer: target must be .Index, not ." ++ @tagName(target));
+//         }
+//         glVertexArrayElementBuffer(self.*.handle, buffer.handle);
+//         self.*.indexType = switch(@TypeOf(buffer).Element) {
+//             u8 => GL_UNSIGNED_BYTE,
+//             u16 => GL_UNSIGNED_SHORT,
+//             u32 => GL_UNSIGNED_INT,
+//             else => unreachable,
+//         };
+//     }
 
-    pub fn vertexBindingDivisor(self : Self, bindPoint : u32, divisor : u32) void {
-        glVertexArrayBindingDivisor(self.handle, bindPoint, divisor);
-    }
+//     pub fn vertexBindingDivisor(self : Self, bindPoint : u32, divisor : u32) void {
+//         glVertexArrayBindingDivisor(self.handle, bindPoint, divisor);
+//     }
 
-    pub fn elementCount(comptime T : type) comptime_int {
-        const info = @typeInfo(T);
-        return switch (info) {
-            .Float => {
-                1;
-            },
-            .Int => {
-                1;
-            },
-            .Struct => blk: {
-                const info = math.meta.vectorTypeInfo(T).assert();
-                const count = info.dimensions;
-                if (count < 1 or count > 4) {
-                    @compileError("element count for vector types must be 1, 2, 3, or 4 (not " ++ count ++ ")");
-                }
-                break :blk count;
-            },
-            else => @compileError("unsupported type " ++ @typeName(T)),
-        };
-    }
+//     pub fn elementCount(comptime T : type) comptime_int {
+//         const info = @typeInfo(T);
+//         return switch (info) {
+//             .Float => {
+//                 1;
+//             },
+//             .Int => {
+//                 1;
+//             },
+//             .Struct => blk: {
+//                 const info = math.meta.vectorTypeInfo(T).assert();
+//                 const count = info.dimensions;
+//                 if (count < 1 or count > 4) {
+//                     @compileError("element count for vector types must be 1, 2, 3, or 4 (not " ++ count ++ ")");
+//                 }
+//                 break :blk count;
+//             },
+//             else => @compileError("unsupported type " ++ @typeName(T)),
+//         };
+//     }
 
-    pub fn elementType(comptime T : type) c_uint {
-        const info = @typeInfo(T);
-        return switch (info) {
-            .Float => |float| switch (float.bits) {
-                16 => GL_HALF_FLOAT,
-                32 => GL_FLOAT,
-                64 => GL_DOUBLE,
-                else => @compileError("unsupported float type " ++ @typeName(T)),
-            },
-            .Int => |int| switch (int.signedness) {
-                .signed => switch (int.bits) {
-                    8 => GL_BYTE,
-                    16 => GL_SHORT,
-                    32 => GL_INT,
-                    else => @compileError("unsupported signed int type " ++ @typeName(T)),
-                },
-                .unsigned => switch (int.bits) {
-                    8 => GL_UNSIGNED_BYTE,
-                    16 => GL_UNSIGNED_SHORT,
-                    32 => GL_UNSIGNED_INT,
-                    else => @compileError("unsupported unsigned int type " ++ @typeName(T)),
-                },
-            },
-            .Struct => elementType(math.meta.vectorTypeInfo(T).assert().Element),
-            else => @compileError("unsupported type " ++ @typeName(T)),
-        };
-    }
+//     pub fn elementType(comptime T : type) c_uint {
+//         const info = @typeInfo(T);
+//         return switch (info) {
+//             .Float => |float| switch (float.bits) {
+//                 16 => GL_HALF_FLOAT,
+//                 32 => GL_FLOAT,
+//                 64 => GL_DOUBLE,
+//                 else => @compileError("unsupported float type " ++ @typeName(T)),
+//             },
+//             .Int => |int| switch (int.signedness) {
+//                 .signed => switch (int.bits) {
+//                     8 => GL_BYTE,
+//                     16 => GL_SHORT,
+//                     32 => GL_INT,
+//                     else => @compileError("unsupported signed int type " ++ @typeName(T)),
+//                 },
+//                 .unsigned => switch (int.bits) {
+//                     8 => GL_UNSIGNED_BYTE,
+//                     16 => GL_UNSIGNED_SHORT,
+//                     32 => GL_UNSIGNED_INT,
+//                     else => @compileError("unsupported unsigned int type " ++ @typeName(T)),
+//                 },
+//             },
+//             .Struct => elementType(math.meta.vectorTypeInfo(T).assert().Element),
+//             else => @compileError("unsupported type " ++ @typeName(T)),
+//         };
+//     }
 
-    pub const Bound = struct {
-        array : Self,
+//     pub const Bound = struct {
+//         array : Self,
 
-        const BSelf = @This();
+//         const BSelf = @This();
 
-        pub fn drawElements(self : BSelf, mode : PrimitiveType, count : i32, offset : u32) void {
-            const index_type = self.array.indexType;
-            glDrawElements(@enumToInt(mode), count, index_type.?, @intToPtr(?*c_void, offset));
-        }
+//         pub fn drawElements(self : BSelf, mode : PrimitiveType, count : i32, offset : u32) void {
+//             const index_type = self.array.indexType;
+//             glDrawElements(@enumToInt(mode), count, index_type.?, @intToPtr(?*c_void, offset));
+//         }
 
-        // pub fn unbind(self : BSelf) void {
-        //     glBindVertexArray(0);
-        // }
+//         // pub fn unbind(self : BSelf) void {
+//         //     glBindVertexArray(0);
+//         // }
 
-    };
-};
-
-pub const PrimitiveType = enum(c_uint) {
-    Points = GL_POINTS,
-    LineStrip = GL_LINE_STRIP,
-    LineLoop = GL_LINE_LOOP,
-    Lines = GL_LINES,
-    LineStripAdjacency = GL_LINE_STRIP_ADJACENCY,
-    LinesAdjacency = GL_LINES_ADJACENCY,
-    TriangleStrip = GL_TRIANGLE_STRIP,
-    TriangleFan = GL_TRIANGLE_FAN,
-    Triangles = GL_TRIANGLES,
-    TriangleStripAdjacency = GL_TRIANGLE_STRIP_ADJACENCY,
-    TrianglesAdjacency = GL_TRIANGLES_ADJACENCY,
-    // Patches = GL_PATCHES,
-};
+//     };
+// };

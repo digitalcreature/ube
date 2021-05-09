@@ -3,19 +3,25 @@ const meta = std.meta;
 // const math = @import("math");
 const math = @import("../math/lib.zig");
 
+usingnamespace @import("c.zig");
+usingnamespace @import("types.zig");
+
+pub const UniformLocation = c_int;
+
 pub fn Uniform(comptime T : type) type {
     return struct {
       
         pub const Element = T;
 
-        location : u32 = 0,
-        program : c_uint = 0,
+        location : UniformLocation = 0,
+        program : Handle = 0,
 
         const Self = @This();
 
         const self_info = uniformInfo(Self);
+        const element_info = UniformInfo.ElementInfo.from(Element);
 
-        pub usingnamespace switch(self_info.element_info.kind) {
+        pub usingnamespace switch(element_info.kind) {
             .single => |single| struct {
 
                 pub fn set(self : Self, value : Element) void {
@@ -23,40 +29,41 @@ pub fn Uniform(comptime T : type) type {
                         .primitive => |primitive| {
                             switch (primitive) {
                                 i32 => {
-                                    std.log.debug("glProgramUniform1i(self.program, self.location, value)", .{});
+                                    glProgramUniform1i(self.program, self.location, value);
                                 },
                                 u32 => {
-                                    std.log.debug("glProgramUniform1ui(self.program, self.location, value)", .{});
+                                    glProgramUniform1ui(self.program, self.location, value);
                                 },
                                 f32 => {
-                                    std.log.debug("glProgramUniform1f(self.program, self.location, value)", .{});
+                                    glProgramUniform1f(self.program, self.location, value);
                                 },
                                 else => unreachable,
                             }
                         },
                         .vector => |vector| {
+                            const ptr = element_info.primitiveCPtrCast(&value);
                             switch (vector.Element) {
                                 i32 => {
                                     switch (vector.dimensions) {
-                                        2 => std.log.debug("glProgramUniform2i(self.program, self.location, value.x, value.y", .{}),
-                                        3 => std.log.debug("glProgramUniform3i(self.program, self.location, value.x, value.y, value.z", .{}),
-                                        4 => std.log.debug("glProgramUniform4i(self.program, self.location, value.x, value.y, value.z, value.w", .{}),
+                                        2 => glProgramUniform2iv(self.program, self.location, 1, ptr),
+                                        3 => glProgramUniform3iv(self.program, self.location, 1, ptr),
+                                        4 => glProgramUniform4iv(self.program, self.location, 1, ptr),
                                         else => unreachable,
                                     }
                                 },
                                 u32 => {
                                     switch (vector.dimensions) {
-                                        2 => std.log.debug("glProgramUniform2ui(self.program, self.location, value.x, value.y", .{}),
-                                        3 => std.log.debug("glProgramUniform3ui(self.program, self.location, value.x, value.y, value.z", .{}),
-                                        4 => std.log.debug("glProgramUniform4ui(self.program, self.location, value.x, value.y, value.z, value.w", .{}),
+                                        2 => glProgramUniform2uiv(self.program, self.location, 1, ptr),
+                                        3 => glProgramUniform3uiv(self.program, self.location, 1, ptr),
+                                        4 => glProgramUniform4uiv(self.program, self.location, 1, ptr),
                                         else => unreachable,
                                     }
                                 },
                                 f32 => {
                                     switch (vector.dimensions) {
-                                        2 => std.log.debug("glProgramUniform2f(self.program, self.location, value.x, value.y", .{}),
-                                        3 => std.log.debug("glProgramUniform3f(self.program, self.location, value.x, value.y, value.z", .{}),
-                                        4 => std.log.debug("glProgramUniform4f(self.program, self.location, value.x, value.y, value.z, value.w", .{}),
+                                        2 => glProgramUniform2fv(self.program, self.location, 1, ptr),
+                                        3 => glProgramUniform3fv(self.program, self.location, 1, ptr),
+                                        4 => glProgramUniform4fv(self.program, self.location, 1, ptr),
                                         else => unreachable,
                                     }
                                 },
@@ -66,9 +73,9 @@ pub fn Uniform(comptime T : type) type {
                         .matrix => |matrix| {
                             const transpose = false;
                             switch (matrix.row_count) { // we dont need to worry about col_count because we know its square
-                                2 => std.log.debug("glProgramUniformMatrix2fv(self.program, self.location, 1, transpose, &value.field[0][0])", .{}),
-                                3 => std.log.debug("glProgramUniformMatrix3fv(self.program, self.location, 1, transpose, &value.field[0][0])", .{}),
-                                4 => std.log.debug("glProgramUniformMatrix4fv(self.program, self.location, 1, transpose, &value.field[0][0])", .{}),
+                                2 => glProgramUniformMatrix2fv(self.program, self.location, 1, transpose, ptr),
+                                3 => glProgramUniformMatrix3fv(self.program, self.location, 1, transpose, ptr),
+                                4 => glProgramUniformMatrix4fv(self.program, self.location, 1, transpose, ptr),
                                 else => unreachable,
                             }
                         },
@@ -79,17 +86,19 @@ pub fn Uniform(comptime T : type) type {
             .array => |array| struct {
 
                 pub fn set(self : Self, value : [] const array.Child) void {
+                    const len = @intCast(c_int, value.len);
+                    const ptr = element_info.primitiveCPtrCast(value.ptr);
                     switch (array.element_kind) {
                         .primitive => |primitive| {
                             switch (primitive) {
                                 i32 => {
-                                    std.log.debug("glProgramUniform1iv(self.program, self.location, value.len value.ptr)", .{});
+                                    glProgramUniform1iv(self.program, self.location, len, ptr);
                                 },
                                 u32 => {
-                                    std.log.debug("glProgramUniform1uiv(self.program, self.location, value.len value.ptr)", .{});
+                                    glProgramUniform1uiv(self.program, self.location, len, ptr);
                                 },
                                 f32 => {
-                                    std.log.debug("glProgramUniform1fv(self.program, self.location, value.len value.ptr)", .{});
+                                    glProgramUniform1fv(self.program, self.location, len ,ptr);
                                 },
                                 else => unreachable,
                             }
@@ -98,25 +107,25 @@ pub fn Uniform(comptime T : type) type {
                             switch (vector.Element) {
                                 i32 => {
                                     switch (vector.dimensions) {
-                                        2 => std.log.debug("glProgramUniform2iv(self.program, self.location, value.len, value.ptr", .{}),
-                                        3 => std.log.debug("glProgramUniform3iv(self.program, self.location, value.len, value.ptr", .{}),
-                                        4 => std.log.debug("glProgramUniform4iv(self.program, self.location, value.len, value.ptr", .{}),
+                                        2 => glProgramUniform2iv(self.program, self.location, len, ptr),
+                                        3 => glProgramUniform3iv(self.program, self.location, len, ptr),
+                                        4 => glProgramUniform4iv(self.program, self.location, len, ptr),
                                         else => unreachable,
                                     }
                                 },
                                 u32 => {
                                     switch (vector.dimensions) {
-                                        2 => std.log.debug("glProgramUniform2uiv(self.program, self.location, value.len, value.ptr", .{}),
-                                        3 => std.log.debug("glProgramUniform3uiv(self.program, self.location, value.len, value.ptr", .{}),
-                                        4 => std.log.debug("glProgramUniform4uiv(self.program, self.location, value.len, value.ptr", .{}),
+                                        2 => glProgramUniform2uiv(self.program, self.location, len, ptr),
+                                        3 => glProgramUniform3uiv(self.program, self.location, len, ptr),
+                                        4 => glProgramUniform4uiv(self.program, self.location, len, ptr),
                                         else => unreachable,
                                     }
                                 },
                                 f32 => {
                                     switch (vector.dimensions) {
-                                        2 => std.log.debug("glProgramUniform2fv(self.program, self.location, value.len, value.ptr", .{}),
-                                        3 => std.log.debug("glProgramUniform3fv(self.program, self.location, value.len, value.ptr", .{}),
-                                        4 => std.log.debug("glProgramUniform4fv(self.program, self.location, value.len, value.ptr", .{}),
+                                        2 => glProgramUniform2fv(self.program, self.location, len, ptr),
+                                        3 => glProgramUniform3fv(self.program, self.location, len, ptr),
+                                        4 => glProgramUniform4fv(self.program, self.location, len, ptr),
                                         else => unreachable,
                                     }
                                 },
@@ -126,9 +135,9 @@ pub fn Uniform(comptime T : type) type {
                         .matrix => |matrix| {
                             const transpose = false;
                             switch (matrix.row_count) { // we dont need to worry about col_count because we know its square
-                                2 => std.log.debug("glProgramUniformMatrix2fv(self.program, self.location, value.len, transpose, @ptrCast(?* const c_float, value.ptr))", .{}),
-                                3 => std.log.debug("glProgramUniformMatrix3fv(self.program, self.location, value.len, transpose, @ptrCast(?* const c_float, value.ptr))", .{}),
-                                4 => std.log.debug("glProgramUniformMatrix4fv(self.program, self.location, value.len, transpose, @ptrCast(?* const c_float, value.ptr))", .{}),
+                                2 => glProgramUniformMatrix2fv(self.program, self.location, len, transpose, ptr),
+                                3 => glProgramUniformMatrix3fv(self.program, self.location, len, transpose, ptr),
+                                4 => glProgramUniformMatrix4fv(self.program, self.location, len, transpose, ptr),
                                 else => unreachable,
                             }
                         },
@@ -141,7 +150,7 @@ pub fn Uniform(comptime T : type) type {
     };
 }
 
-pub fn initUniforms(program_handle : c_uint, comptime Uniforms : type) Uniforms {
+pub fn initUniforms(program_handle : Handle, comptime Uniforms : type) Uniforms {
     var uniforms : Uniforms = undefined;
     switch (@typeInfo(Uniforms)) {
         .Struct => |Struct| {
@@ -150,9 +159,8 @@ pub fn initUniforms(program_handle : c_uint, comptime Uniforms : type) Uniforms 
                 _ = uniformInfo(field.field_type);  // make sure this is in fact a valid Uniform() type
                 @field(uniforms, name) = .{
                     .program = program_handle,
-                    .location = 0,
+                    .location = glGetUniformLocation(program_handle, name ++ ""),
                 };
-                std.log.debug("glGetUniformLocation({d}, \"{s}\")", .{program_handle, name});
             }
             return uniforms;
         },
@@ -167,6 +175,10 @@ pub const UniformInfo = struct {
     pub const ElementInfo = struct {
         Primitive : type,
         kind : Kind,
+
+        pub fn primitiveCPtrCast(comptime self : ElementInfo, ptr : anytype) ?* const self.Primitive {
+            return @ptrCast(?* const self.Primitive, ptr);
+        }
 
         pub const SingleKind = union(enum) {
             primitive : type, 
@@ -289,7 +301,7 @@ pub fn uniformInfo(comptime U : type) UniformInfo {
                     @compileError("matrix uniforms but have 2, 3, or 4 dimensions, unlike " ++ @typeName(Element));
                 }
                 if (matrix.Element != f32) {
-                    @compileError("only f32 matrix uniforms supportedm unlike " ++ @typeName(Element));
+                    @compileError("only f32 matrix uniforms supported, unlike " ++ @typeName(Element));
                 }
             },
         }
@@ -300,67 +312,67 @@ pub fn uniformInfo(comptime U : type) UniformInfo {
     }
 }
 
-fn logKindInfo(comptime kind_type : [] const u8, comptime single : UniformInfo.ElementInfo.SingleKind) void {
-    switch (single) {
-        .primitive => |primitive| {
-            std.log.debug("element_info.kind.{s}.primitive: {}", .{kind_type, @typeName(primitive)});
-        },
-        .vector => |vector| {
-            std.log.debug("element_info.kind.{s}.vector.Element: {}", .{kind_type, @typeName(vector.Element)});
-            std.log.debug("element_info.kind.{s}.vector.dimensions: {d}", .{kind_type, vector.dimensions});
-        },
-        .matrix => |matrix| {
-            std.log.debug("element_info.kind.{s}.matrix.Element: {}", .{kind_type, @typeName(matrix.Element)});
-            std.log.debug("element_info.kind.{s}.matrix.row_count: {d}", .{kind_type, matrix.row_count});
-            std.log.debug("element_info.kind.{s}.matrix.col_count: {d}", .{kind_type, matrix.row_count});
-        },
-    }
-}
+// fn logKindInfo(comptime kind_type : [] const u8, comptime single : UniformInfo.ElementInfo.SingleKind) void {
+//     switch (single) {
+//         .primitive => |primitive| {
+//             std.log.debug("element_info.kind.{s}.primitive: {}", .{kind_type, @typeName(primitive)});
+//         },
+//         .vector => |vector| {
+//             std.log.debug("element_info.kind.{s}.vector.Element: {}", .{kind_type, @typeName(vector.Element)});
+//             std.log.debug("element_info.kind.{s}.vector.dimensions: {d}", .{kind_type, vector.dimensions});
+//         },
+//         .matrix => |matrix| {
+//             std.log.debug("element_info.kind.{s}.matrix.Element: {}", .{kind_type, @typeName(matrix.Element)});
+//             std.log.debug("element_info.kind.{s}.matrix.row_count: {d}", .{kind_type, matrix.row_count});
+//             std.log.debug("element_info.kind.{s}.matrix.col_count: {d}", .{kind_type, matrix.row_count});
+//         },
+//     }
+// }
 
-fn logInfo(comptime U : type) void {
-    const info = uniformInfo(U);
-    const ei = info.element_info;
-    std.log.debug("uniform: {}", .{@typeName(U)});
-    std.log.debug("info.Element: {}", .{@typeName(info.Element)});
-    std.log.debug("element_info.Primitive: {}", .{@typeName(ei.Primitive)});
-    switch (ei.kind) {
-        .single => |single| {
-            logKindInfo("single", single);
-        },
-        .array => |array| {
-            logKindInfo("array.element_kind", array.element_kind);
-            std.log.debug("element_info.kind.array.length: {d}", .{array.length});
-        },
-    }
-}
+// fn logInfo(comptime U : type) void {
+//     const info = uniformInfo(U);
+//     const ei = info.element_info;
+//     std.log.debug("uniform: {}", .{@typeName(U)});
+//     std.log.debug("info.Element: {}", .{@typeName(info.Element)});
+//     std.log.debug("element_info.Primitive: {}", .{@typeName(ei.Primitive)});
+//     switch (ei.kind) {
+//         .single => |single| {
+//             logKindInfo("single", single);
+//         },
+//         .array => |array| {
+//             logKindInfo("array.element_kind", array.element_kind);
+//             std.log.debug("element_info.kind.array.length: {d}", .{array.length});
+//         },
+//     }
+// }
 
-test "uniform infos" {
-    std.testing.log_level = .debug;
-    logInfo(Uniform(f32));
-    logInfo(Uniform([32]f32));
-    logInfo(Uniform(math.glm.Vec3));
-    logInfo(Uniform([128]math.glm.Vec2));
-    logInfo(Uniform(math.glm.Mat2));
-    logInfo(Uniform([16]math.glm.Mat4));
-}
+// test "uniform infos" {
+//     std.testing.log_level = .debug;
+//     logInfo(Uniform(f32));
+//     logInfo(Uniform([32]f32));
+//     logInfo(Uniform(math.glm.Vec3));
+//     logInfo(Uniform([128]math.glm.Vec2));
+//     logInfo(Uniform(math.glm.Mat2));
+//     logInfo(Uniform([16]math.glm.Mat4));
+// }
 
-test "uniform set" {
-    std.testing.log_level = .debug;
-    (Uniform(f32){}).set(4);
-    (Uniform(math.glm.Vec3){}).set(math.glm.Vec3.zero);
-    (Uniform(math.glm.Mat4){}).set(math.glm.Mat4.identity);
-    (Uniform([18]f32){}).set(&[3]f32{1, 2, 3});
-}
+// test "uniform set" {
+//     std.testing.log_level = .debug;
+//     (Uniform(f32){}).set(4);
+//     (Uniform(math.glm.Vec3){}).set(math.glm.Vec3.zero);
+//     (Uniform(math.glm.Mat4){}).set(math.glm.Mat4.identity);
+//     (Uniform([18]f32){}).set(&[3]f32{1, 2, 3});
+// }
 
-test "init uniforms" {
-    std.testing.log_level = .debug;
-    const Uniforms = struct {
-        model_mat : Uniform(math.glm.Mat4),
-        view_mat : Uniform(math.glm.Mat4),
-        proj_mat : Uniform(math.glm.Mat4),
-        color : Uniform(math.color.ColorF32),
-        lookup : Uniform([32]f32),
-    };
-    _ = initUniforms(32, Uniforms);
+// test "init uniforms" {
+//     std.testing.log_level = .debug;
+//     const Uniforms = struct {
+//         model_mat : Uniform(math.glm.Mat4),
+//         view_mat : Uniform(math.glm.Mat4),
+//         proj_mat : Uniform(math.glm.Mat4),
+//         color : Uniform(math.color.ColorF32),
+//         lookup : Uniform([32]f32),
+//     };
+//     _ = initUniforms(32, Uniforms);
 
-}
+// }
