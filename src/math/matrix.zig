@@ -219,7 +219,7 @@ pub fn ops(comptime Self : type) type {
                 }
 
                 /// creates a rotation matrix around a certain axis.
-                pub fn createAngleAxis(axis: anytype, angle: Element) Self {
+                pub fn createAxisAngle(axis: anytype, angle: Element) Self {
                     const info = vectorTypeInfo(@TypeOf(axis)).assert();
                     comptime info.assertDimensions(3);
                     comptime info.assertElementType(Element);

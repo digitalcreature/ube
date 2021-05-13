@@ -11,6 +11,8 @@ usingnamespace math.glm;
 const SCR_WIDTH: u32 = 1920;
 const SCR_HEIGHT: u32 = 1080;
 
+pub const log_level = std.log.Level.info;
+
 const vertexShaderSource: [:0]const u8 =
     \\#version 450 core
     \\layout (location = 0) in vec3 aPos;
@@ -18,9 +20,10 @@ const vertexShaderSource: [:0]const u8 =
     \\out vec3 color;
     \\uniform mat4 proj;
     \\uniform mat4 view;
+    \\uniform mat4 model;
     \\void main()
     \\{
-    \\   gl_Position = proj * view * vec4(aPos.x, aPos.y, aPos.z, 1.0);
+    \\   gl_Position = proj * view * model * vec4(aPos, 1.0);
     \\   color = aNormal;
     \\};
 ;
@@ -65,12 +68,14 @@ pub fn main() !void {
     }
 
     glfwMakeContextCurrent(window);
+    glfwSwapInterval(0);
     const resizeCallback = glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     // glad: load all OpenGL function pointers
     if (gladLoadGLLoader(@ptrCast(GLADloadproc, glfwGetProcAddress)) == 0) {
         panic("Failed to initialise GLAD\n", .{});
     }
+    glEnable(GL_DEPTH_TEST);
 
     // build and compile our shader program
     const vertexShader = gl.Shader(.Vertex).init();
@@ -82,6 +87,7 @@ pub fn main() !void {
     const Uniforms = struct {
         proj : gl.Uniform(Mat4),
         view : gl.Uniform(Mat4),
+        model : gl.Uniform(Mat4),
     };
     var shaderProgram = gl.Program(Uniforms).init();
     defer shaderProgram.deinit();
@@ -93,9 +99,9 @@ pub fn main() !void {
 
     shaderProgram.use();
     shaderProgram.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0/9.0, 0.1, 100));
-    shaderProgram.uniforms.view.set(Mat4.createLookAt(vec3(-5, -5, -5), Vec3.zero, Vec3.unit("-y")));
+    shaderProgram.uniforms.view.set(Mat4.createLookAt(vec3(1, 1, 1), Vec3.zero, Vec3.unit("y")));
 
-    const vertices = comptime
+    const vertices =
         cubeFaceVerts(0) ++
         cubeFaceVerts(1) ++
         cubeFaceVerts(2) ++
@@ -112,10 +118,6 @@ pub fn main() !void {
     var index_buffer = gl.IndexBuffer32.initData(&indices, .StaticDraw);
     defer index_buffer.deinit();
 
-    inline for (vertices) |vert| {
-        std.log.info("{d}", .{vert.normal});
-    }
-
 
     vertex_array.vertices.verts.bindBuffer(vertex_buffer);
     vertex_array.bindIndexBuffer(index_buffer);
@@ -130,14 +132,26 @@ pub fn main() !void {
 
     // render loop
     // -----------
+    var last_frame_time : f64 = 0;
+    var delta_time : f64 = 0;
     while (glfwWindowShouldClose(window) == 0) {
+        var frame_time : f64 = glfwGetTime();
+        // var print_time : bool = std.math.floor(frame_time) != std.math.floor(last_frame_time);
+        delta_time = frame_time - last_frame_time;
+        last_frame_time = frame_time;
+        // if (print_time) {
+        //     std.log.info("time: {d} fps: {d}", .{frame_time, 1/delta_time});
+        // }
         // input
-        processInput(window);
+        if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+            glfwSetWindowShouldClose(window, 1);
         // render
 
+        var model = Mat4.createAxisAngle(Vec3.unit("y"), @floatCast(f32, frame_time));
+        shaderProgram.uniforms.model.set(model);
 
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
-        gl.clear(.Color);
+        gl.clear(.ColorDepth);
 
         shaderProgram.use();
         vertex_array.bind();
@@ -152,8 +166,6 @@ pub fn main() !void {
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
 pub fn processInput(window: ?*GLFWwindow) callconv(.C) void {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-        glfwSetWindowShouldClose(window, 1);
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
@@ -173,8 +185,8 @@ fn cubeFaceVerts(comptime face_id : u32) [4]Vertex {
         inline while (i < 4) : (i += 1) {
             var pos = normal;
             const flip = if (is_neg) 1 else -1;
-            pos.setElement((axis + 1) % 3, flip * if (i % 2 == 0) -1 else 1);
-            pos.setElement((axis + 2) % 3, if (i < 2) 1 else -1);
+            pos.setElement((axis + 1) % 3, if (i % 2 == 0) -1 else 1);
+            pos.setElement((axis + 2) % 3, flip * if (i < 2) 1 else -1);
             verts[i] = vertex(pos.scale(0.5), normal);
         }
         return verts;
