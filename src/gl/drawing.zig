@@ -1,11 +1,11 @@
 usingnamespace @import("c.zig");
 const color = @import("math").color;
 
-pub fn clearColor(col : color.ColorF32) void {
+pub fn clearColor(col: color.ColorF32) void {
     glClearColor(col.r, col.g, col.b, col.a);
 }
 
-pub fn clearDepth(depth : anytype) void {
+pub fn clearDepth(depth: anytype) void {
     switch (@TypeOf(depth)) {
         f32 => glClearDepthf(depth),
         f64 => glClearDepth(depth),
@@ -13,7 +13,7 @@ pub fn clearDepth(depth : anytype) void {
     }
 }
 
-pub fn clearStencil(stencil : i32) void {
+pub fn clearStencil(stencil: i32) void {
     glClearStencil(stencil);
 }
 
@@ -27,7 +27,7 @@ pub const ClearFlags = enum(u32) {
     ColorDepthStencil = GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT,
 };
 
-pub fn clear(flags : ClearFlags) void {
+pub fn clear(flags: ClearFlags) void {
     glClear(@enumToInt(flags));
 }
 
@@ -46,8 +46,7 @@ pub const PrimitiveType = enum(c_uint) {
     // Patches = GL_PATCHES,
 };
 
-
-pub fn drawElementsOffset(primitive_type : PrimitiveType, count : c_int, comptime Index : type, offset : usize) void {
+pub fn drawElementsOffset(primitive_type: PrimitiveType, count: c_int, comptime Index: type, offset: usize) void {
     const index_type = switch (Index) {
         u8 => GL_UNSIGNED_BYTE,
         u16 => GL_UNSIGNED_SHORT,
@@ -57,6 +56,6 @@ pub fn drawElementsOffset(primitive_type : PrimitiveType, count : c_int, comptim
     glDrawElements(@enumToInt(primitive_type), count, index_type, @intToPtr(?*c_void, offset));
 }
 
-pub fn drawElements(primitive_type : PrimitiveType, count : c_int, comptime Index : type) void {
+pub fn drawElements(primitive_type: PrimitiveType, count: c_int, comptime Index: type) void {
     drawElementsOffset(primitive_type, count, Index, 0);
 }

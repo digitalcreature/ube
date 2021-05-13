@@ -8,23 +8,21 @@ usingnamespace @import("types.zig");
 
 pub const UniformLocation = c_int;
 
-pub fn Uniform(comptime T : type) type {
+pub fn Uniform(comptime T: type) type {
     return struct {
-      
         pub const Element = T;
 
-        location : UniformLocation = 0,
-        program : Handle = 0,
+        location: UniformLocation = 0,
+        program: Handle = 0,
 
         const Self = @This();
 
         const self_info = uniformInfo(Self);
         const element_info = UniformInfo.ElementInfo.from(Element);
 
-        pub usingnamespace switch(element_info.kind) {
+        pub usingnamespace switch (element_info.kind) {
             .single => |single| struct {
-
-                pub fn set(self : Self, value : Element) void {
+                pub fn set(self: Self, value: Element) void {
                     switch (single) {
                         .primitive => |primitive| {
                             switch (primitive) {
@@ -82,11 +80,9 @@ pub fn Uniform(comptime T : type) type {
                         },
                     }
                 }
-
             },
             .array => |array| struct {
-
-                pub fn set(self : Self, value : [] const array.Child) void {
+                pub fn set(self: Self, value: []const array.Child) void {
                     const len = @intCast(c_int, value.len);
                     const ptr = element_info.primitiveCPtrCast(value.ptr);
                     switch (array.element_kind) {
@@ -99,7 +95,7 @@ pub fn Uniform(comptime T : type) type {
                                     glProgramUniform1uiv(self.program, self.location, len, ptr);
                                 },
                                 f32 => {
-                                    glProgramUniform1fv(self.program, self.location, len ,ptr);
+                                    glProgramUniform1fv(self.program, self.location, len, ptr);
                                 },
                                 else => unreachable,
                             }
@@ -144,20 +140,18 @@ pub fn Uniform(comptime T : type) type {
                         },
                     }
                 }
-
-            }
+            },
         };
-
     };
 }
 
-pub fn initUniforms(program_handle : Handle, comptime Uniforms : type) Uniforms {
-    var uniforms : Uniforms = undefined;
+pub fn initUniforms(program_handle: Handle, comptime Uniforms: type) Uniforms {
+    var uniforms: Uniforms = undefined;
     switch (@typeInfo(Uniforms)) {
         .Struct => |Struct| {
             inline for (Struct.fields) |field| {
                 const name = field.name;
-                _ = uniformInfo(field.field_type);  // make sure this is in fact a valid Uniform() type
+                _ = uniformInfo(field.field_type); // make sure this is in fact a valid Uniform() type
                 @field(uniforms, name) = .{
                     .program = program_handle,
                     .location = glGetUniformLocation(program_handle, name ++ ""),
@@ -170,58 +164,56 @@ pub fn initUniforms(program_handle : Handle, comptime Uniforms : type) Uniforms 
 }
 
 pub const UniformInfo = struct {
-    Element : type,
-    element_info : ElementInfo,
+    Element: type,
+    element_info: ElementInfo,
 
     pub const ElementInfo = struct {
-        Primitive : type,
-        kind : Kind,
+        Primitive: type,
+        kind: Kind,
 
-        pub fn primitiveCPtrCast(comptime self : ElementInfo, ptr : anytype) ?* const self.Primitive {
-            return @ptrCast(?* const self.Primitive, ptr);
+        pub fn primitiveCPtrCast(comptime self: ElementInfo, ptr: anytype) ?*const self.Primitive {
+            return @ptrCast(?*const self.Primitive, ptr);
         }
 
         pub const SingleKind = union(enum) {
-            primitive : type, 
-            vector : math.meta.VectorTypeInfo,
-            matrix : math.meta.MatrixTypeInfo,
+            primitive: type,
+            vector: math.meta.VectorTypeInfo,
+            matrix: math.meta.MatrixTypeInfo,
 
-            pub fn getPrimitiveType(comptime self : @This()) type {
+            pub fn getPrimitiveType(comptime self: @This()) type {
                 return switch (self) {
                     .primitive => |primitive| primitive,
                     .vector => |vector| vector.Element,
                     .matrix => |matrix| matrix.Element,
                 };
             }
-
         };
 
         pub const Kind = union(enum) {
-            single : SingleKind,
-            array : ArrayKind,
+            single: SingleKind,
+            array: ArrayKind,
 
-            pub fn getPrimitiveType(comptime self : @This()) type {
+            pub fn getPrimitiveType(comptime self: @This()) type {
                 return switch (self) {
                     .single => |single| single.getPrimitiveType(),
                     .array => |array| array.getPrimitiveType(),
                 };
             }
-
         };
 
         pub const ArrayKind = struct {
-            element_kind : SingleKind,
-            length : usize,
-            Child : type,
+            element_kind: SingleKind,
+            length: usize,
+            Child: type,
 
-            pub fn getPrimitiveType(comptime self : @This()) type {
+            pub fn getPrimitiveType(comptime self: @This()) type {
                 return self.element_kind.getPrimitiveType();
             }
         };
 
-        fn getKind(comptime E : type) Kind {
+        fn getKind(comptime E: type) Kind {
             switch (@typeInfo(E)) {
-                .Int, .Float => return .{.single = .{.primitive = E}},
+                .Int, .Float => return .{ .single = .{ .primitive = E } },
                 .Array => |Array| {
                     const element_kind = getKind(Array.child);
                     switch (element_kind) {
@@ -230,7 +222,7 @@ pub const UniformInfo = struct {
                                 .element_kind = single,
                                 .length = Array.len,
                                 .Child = Array.child,
-                            }
+                            },
                         },
                         .array => @compileError("only single-dimensional arrays are supported for uniforms, not " ++ @typeName(E)),
                     }
@@ -245,14 +237,14 @@ pub const UniformInfo = struct {
                         return .{
                             .single = .{
                                 .matrix = info,
-                            }
+                            },
                         };
                     }
                     if (vectorInfo) |info| {
                         return .{
                             .single = .{
                                 .vector = info,
-                            }
+                            },
                         };
                     }
                     @compileError("only vector and matrix structs are supported for uniforms currently. invalid struct type " ++ @typeName(E));
@@ -261,21 +253,20 @@ pub const UniformInfo = struct {
             }
         }
 
-        pub fn from(comptime E : type) ElementInfo {
+        pub fn from(comptime E: type) ElementInfo {
             const kind = getKind(E);
             return .{
                 .Primitive = kind.getPrimitiveType(),
                 .kind = kind,
             };
         }
-
     };
 };
 
-pub fn uniformInfo(comptime U : type) UniformInfo {
+pub fn uniformInfo(comptime U: type) UniformInfo {
     if (@hasDecl(U, "Element") and @hasField(U, "location")) {
         const Element = U.Element;
-        var info : UniformInfo = undefined;
+        var info: UniformInfo = undefined;
         info.Element = Element;
         info.element_info = UniformInfo.ElementInfo.from(Element);
         switch (info.element_info.Primitive) {
@@ -307,8 +298,7 @@ pub fn uniformInfo(comptime U : type) UniformInfo {
             },
         }
         return info;
-    }
-    else {
+    } else {
         @compileError("must provide Uniform(T) type, not " ++ @typeName(U));
     }
 }

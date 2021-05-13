@@ -32,10 +32,10 @@ pub const BufferUsage = enum(c_uint) {
     DynamicCopy = GL_DYNAMIC_COPY,
 };
 
-pub fn VertexBuffer(comptime Element : type) type {
+pub fn VertexBuffer(comptime Element: type) type {
     return Buffer(.Vertex, Element);
 }
-pub fn IndexBuffer(comptime Element : type) type {
+pub fn IndexBuffer(comptime Element: type) type {
     return Buffer(.Index, Element);
 }
 
@@ -43,10 +43,9 @@ pub const IndexBuffer8 = IndexBuffer(u8);
 pub const IndexBuffer16 = IndexBuffer(u16);
 pub const IndexBuffer32 = IndexBuffer(u32);
 
-pub fn Buffer(comptime target : BufferTarget, comptime T : type) type {
-
+pub fn Buffer(comptime target: BufferTarget, comptime T: type) type {
     return struct {
-        handle : Handle,
+        handle: Handle,
 
         pub const Element = T;
 
@@ -55,52 +54,52 @@ pub fn Buffer(comptime target : BufferTarget, comptime T : type) type {
         const Self = @This();
 
         pub fn init() Self {
-            var handle : Handle = undefined;
+            var handle: Handle = undefined;
             glCreateBuffers(1, &handle);
             return Self{ .handle = handle };
-        } 
+        }
 
-        pub fn initData(data_slice : [] const Element, usage : BufferUsage) Self {
+        pub fn initData(data_slice: []const Element, usage: BufferUsage) Self {
             const buffer = init();
             buffer.data(data_slice, usage);
             return buffer;
         }
 
-        pub fn initAlloc(size : usize, usage : BufferUsage) Self {
+        pub fn initAlloc(size: usize, usage: BufferUsage) Self {
             const buffer = init();
             buffer.alloc(size, usage);
             return buffer;
         }
 
-        pub fn deinit(self : Self) void {
+        pub fn deinit(self: Self) void {
             glDeleteBuffers(1, &self.handle);
         }
 
-        pub fn bind(self : Self) void {
+        pub fn bind(self: Self) void {
             glBindBuffer(@enumToInt(Target), self.handle);
         }
 
-        pub fn unbind(self : Self) void {
+        pub fn unbind(self: Self) void {
             glBindBuffer(@enumToInt(Target), 0);
         }
 
-        pub fn alloc(self : Self, size : usize, usage : BufferUsage) void {
+        pub fn alloc(self: Self, size: usize, usage: BufferUsage) void {
             glNamedBufferData(self.handle, @intcast(c_longlong, size * @sizeOf(Element)), NULL, @enumToInt(usage));
         }
 
-        pub fn data(self : Self, data_slice : [] const Element, usage : BufferUsage) void {
-            const ptr = @ptrCast(* const c_void, data_slice.ptr);
+        pub fn data(self: Self, data_slice: []const Element, usage: BufferUsage) void {
+            const ptr = @ptrCast(*const c_void, data_slice.ptr);
             const size = @intCast(c_longlong, @sizeOf(Element) * data_slice.len);
             glNamedBufferData(self.handle, size, ptr, @enumToInt(usage));
         }
 
-        pub fn subdata(self: Self, data_slice : [] const Element, offset : usize) void {
-            const ptr = @ptrCast(* const c_void, data_slice.ptr);
+        pub fn subdata(self: Self, data_slice: []const Element, offset: usize) void {
+            const ptr = @ptrCast(*const c_void, data_slice.ptr);
             const size = @intCast(c_longlong, @sizeOf(Element) * data_slice.len);
             glNamedBufferSubData(self.handle, offset, size, ptr);
         }
 
-        pub fn update(self : Self, data_slice : [] const Element) void {
+        pub fn update(self: Self, data_slice: []const Element) void {
             self.subdata(data_slice, 0);
         }
     };

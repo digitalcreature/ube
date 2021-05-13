@@ -21,27 +21,25 @@ pub const TextureTarget = enum(u32) {
     // CubeMapNegZ = GL_CUBE_MAP_NEGATIVE_Z,
 };
 
-pub const TextureFormat = enum(u32) {
+pub const TextureFormat = enum(u32) {};
 
-};
-
-pub fn Texture(comptime target : TextureTarget) type {
-
+pub fn Texture(comptime target: TextureTarget) type {
     return struct {
-        
-        handle : Handle,
+        handle: Handle,
 
         pub const target = target;
 
         const Self = @This();
 
         pub fn init() Self {
-            var handle : Handle = undefined;
+            var handle: Handle = undefined;
             glCreateTextures(target, 1, &handle);
-            return .{ .handle = handle, };
+            return .{
+                .handle = handle,
+            };
         }
 
-        pub fn deinit(self : Self) void {
+        pub fn deinit(self: Self) void {
             glDeleteTextures(1, &self.handle);
         }
 
@@ -50,7 +48,5 @@ pub fn Texture(comptime target : TextureTarget) type {
                 // pub fn storage(self : Self, width : usize, height : usize, levels : usize, )
             },
         };
-
     };
-
 }

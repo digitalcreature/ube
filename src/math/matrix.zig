@@ -2,8 +2,7 @@ const std = @import("std");
 const vector = @import("vector.zig");
 usingnamespace @import("meta.zig");
 
-
-pub fn ops(comptime Self : type) type {
+pub fn ops(comptime Self: type) type {
     const self_info = matrixTypeInfo(Self).assert();
     self_info.assertSquare(); // for now, we're only supporting square matrices
     const field_name = self_info.field_name;
@@ -13,29 +12,28 @@ pub fn ops(comptime Self : type) type {
     const FieldArray = [dimensions][dimensions]Element;
 
     return struct {
-
         pub const zero = fill(0);
         pub const identity = blk: {
             var result = zero;
-            comptime var rc : comptime_int = 0;
-            inline while(rc < dimensions) : (rc += 1) {
+            comptime var rc: comptime_int = 0;
+            inline while (rc < dimensions) : (rc += 1) {
                 @field(result, field_name)[rc][rc] = 1;
             }
             break :blk result;
         };
 
-        pub fn new(fields : FieldArray) Self {
-            var result : Self = undefined;
+        pub fn new(fields: FieldArray) Self {
+            var result: Self = undefined;
             @field(result, field_name) = fields;
             return result;
         }
 
-        pub fn fill(val : Element) Self {
-            var fields : FieldArray = undefined;
-            comptime var r : comptime_int = 0;
-            inline while(r < dimensions) : (r += 1) {
-                comptime var c : comptime_int = 0;
-                inline while(c < dimensions) : (c += 1) {
+        pub fn fill(val: Element) Self {
+            var fields: FieldArray = undefined;
+            comptime var r: comptime_int = 0;
+            inline while (r < dimensions) : (r += 1) {
+                comptime var c: comptime_int = 0;
+                inline while (c < dimensions) : (c += 1) {
                     fields[r][c] = val;
                 }
             }
@@ -43,7 +41,7 @@ pub fn ops(comptime Self : type) type {
         }
 
         // transform a vector of the same dimensions and element type
-        pub fn transform(self : Self, vec : anytype) @TypeOf(vec) {
+        pub fn transform(self: Self, vec: anytype) @TypeOf(vec) {
             const V = @TypeOf(vec);
             const info = vectorTypeInfo(V).assert();
             info.assertElementType(Element);
@@ -51,29 +49,29 @@ pub fn ops(comptime Self : type) type {
             const vals = @field(self, field_name);
             // grab the vector ops mixin for this type so its easier to work with
             const vops = vector.ops(V).linear;
-            var result : [dimensions]Element = [_]Element{0} ** dimensions;
-            comptime var c : comptime_int = 0;
-            inline while(c < dimensions) : (c += 1) {
-                comptime var r : comptime_int = 0;
-                inline while(r < dimensions) : (r += 1) {
+            var result: [dimensions]Element = [_]Element{0} ** dimensions;
+            comptime var c: comptime_int = 0;
+            inline while (c < dimensions) : (c += 1) {
+                comptime var r: comptime_int = 0;
+                inline while (r < dimensions) : (r += 1) {
                     result[r] += @field(vec, info.field_names[c]) * vals[r][c];
                 }
             }
             return vops.new(result);
         }
 
-        pub fn mul(self : Self, rhs : anytype) Self {
+        pub fn mul(self: Self, rhs: anytype) Self {
             info = matrixTypeInfo(@typeof(rhs)).assert();
             info.assertSimilar(Self);
             const a = @field(self, field_name);
             const b = @field(rhs, info.field_name);
-            var result : FieldArray = undefined;
+            var result: FieldArray = undefined;
 
             comptime var r = 0;
             inline while (r < dimensions) : (r += 1) {
                 comptime var c = 0;
                 inline while (c < dimensions) : (c += 1) {
-                    var sum : Element = 0;
+                    var sum: Element = 0;
                     comptime var i = 0;
                     inline while (i < dimensions) : (i += 1) {
                         sum += a[r][i] * b[i][c];
@@ -84,8 +82,8 @@ pub fn ops(comptime Self : type) type {
             return Self.new(result);
         }
 
-        pub fn transpose(self : Self) Self {
-            var result : FieldArray = undefined;
+        pub fn transpose(self: Self) Self {
+            var result: FieldArray = undefined;
             const vals = @field(self, field_name);
             comptime r = 0;
             inline while (r < dimensions) : (r += 1) {
@@ -96,17 +94,17 @@ pub fn ops(comptime Self : type) type {
             }
             return new(result);
         }
-        
+
         pub fn format(self: Self, comptime fmt: []const u8, options: std.fmt.FormatOptions, stream: anytype) !void {
             try stream.writeAll("\n[");
             const vals = @field(self, field_name);
-            comptime var r : comptime_int = 0;
+            comptime var r: comptime_int = 0;
             inline while (r < dimensions) : (r += 1) {
                 if (r > 0) try stream.writeAll(" ");
                 try stream.writeAll("[");
                 const row = vals[r];
-                comptime var c : comptime_int = 0;
-                inline while(c < dimensions) : (c += 1) {
+                comptime var c: comptime_int = 0;
+                inline while (c < dimensions) : (c += 1) {
                     try stream.print("{" ++ fmt ++ "}", .{row[c]});
                     if (c < dimensions - 1) {
                         try stream.writeAll(", ");
@@ -116,31 +114,24 @@ pub fn ops(comptime Self : type) type {
                 if (r < dimensions - 1) {
                     try stream.writeAll("\n");
                 }
-                
             }
             try stream.writeAll("]");
         }
 
-
         // dimension specific methods
-        pub usingnamespace switch(dimensions) {
-            2 => struct {
-
-            },
-            3 => struct {
-                
-            },
+        pub usingnamespace switch (dimensions) {
+            2 => struct {},
+            3 => struct {},
             4 => struct {
-                
-                pub fn transformPosition(self : Self, vec : anytype) @TypeOf(vec) {
+                pub fn transformPosition(self: Self, vec: anytype) @TypeOf(vec) {
                     const info = vectorTypeInfo(vec).assert();
                     info.assertDimensions(3);
                     info.assertElementType(Element);
                     const vops = vector.ops(@TypeOf(vec)).linear;
                     return vops.fromAffinePosition(transform(self, vops.toAffinePosition(vec)));
                 }
-                
-                pub fn transformDirection(self : Self, vec : anytype) @TypeOf(vec) {
+
+                pub fn transformDirection(self: Self, vec: anytype) @TypeOf(vec) {
                     const info = vectorTypeInfo(vec).assert();
                     info.assertDimensions(3);
                     info.assertElementType(Element);
@@ -161,7 +152,7 @@ pub fn ops(comptime Self : type) type {
                     const s = up_.cross(f).normalize();
                     const u = f.cross(s);
 
-                    var result : FieldArray = @field(identity, field_name);
+                    var result: FieldArray = @field(identity, field_name);
                     result[0][0] = s.x;
                     result[1][0] = s.y;
                     result[2][0] = s.z;
@@ -253,7 +244,7 @@ pub fn ops(comptime Self : type) type {
                 }
 
                 /// Creates a non-uniform scaling matrix
-                pub fn createScale(scale : anytype) Self {
+                pub fn createScale(scale: anytype) Self {
                     const info = vectorTypeInfo(@TypeOf(scale)).assert();
                     comptime info.assertDimensions(3);
                     comptime info.assertElementType(Element);
@@ -282,7 +273,7 @@ pub fn ops(comptime Self : type) type {
                     const y = @field(translation, info.field_names[1]);
                     const z = @field(translation, info.field_names[2]);
                     return createTranslationXYZ(x, y, z);
-                } 
+                }
 
                 /// Batch matrix multiplication. Will multiply all matrices from "first" to "last".
                 pub fn batchMul(items: []const Self) Self {
@@ -360,22 +351,20 @@ pub fn ops(comptime Self : type) type {
                     };
                     return new(@bitCast([4][4]Element, out));
                 }
-
             },
-            else => struct {}
+            else => struct {},
         };
     };
 }
 
-pub fn Matrix(comptime Element : type, comptime dimensions : comptime_int) type {
+pub fn Matrix(comptime Element: type, comptime dimensions: comptime_int) type {
     return extern struct {
-        fields : [dimensions][dimensions]Element,
+        fields: [dimensions][dimensions]Element,
         pub usingnamespace ops(@This());
     };
 }
 
 pub const glm = struct {
-
     pub const Mat2 = Matrix(f32, 2);
     pub const Mat3 = Matrix(f32, 3);
     pub const Mat4 = Matrix(f32, 4);
@@ -383,7 +372,6 @@ pub const glm = struct {
     pub const DMat2 = Matrix(f64, 2);
     pub const DMat3 = Matrix(f64, 3);
     pub const DMat4 = Matrix(f64, 4);
-
 };
 
 test "matrices" {

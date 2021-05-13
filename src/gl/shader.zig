@@ -13,23 +13,23 @@ pub const ShaderType = enum(c_uint) {
     // TessEvaluation = GL_TESS_EVALUATION_SHADER,
 };
 
-pub fn Shader(comptime shader_type : ShaderType) type {
+pub fn Shader(comptime shader_type: ShaderType) type {
     return struct {
-        handle : Handle,
+        handle: Handle,
 
         const Self = @This();
 
         pub fn init() Self {
             const handle = glCreateShader(@enumToInt(shader_type));
-            return .{.handle = handle };
+            return .{ .handle = handle };
         }
 
-        pub fn source(self : Self, string : [:0]const u8) void {
+        pub fn source(self: Self, string: [:0]const u8) void {
             const len = string.len;
-            glShaderSource(self.handle, 1, &string.ptr, @ptrCast(* const c_int, &len));
+            glShaderSource(self.handle, 1, &string.ptr, @ptrCast(*const c_int, &len));
         }
 
-        pub fn compile(self : Self) !void {
+        pub fn compile(self: Self) !void {
             glCompileShader(self.handle);
             // check for shader compile errors
             var success: c_int = undefined;
@@ -37,37 +37,37 @@ pub fn Shader(comptime shader_type : ShaderType) type {
             glGetShaderiv(self.handle, GL_COMPILE_STATUS, &success);
             if (success == 0) {
                 glGetShaderInfoLog(self.handle, 512, null, &infoLog);
-                std.log.err("Failed to compile {s} shader: \n{s}", .{@tagName(shader_type), infoLog});
+                std.log.err("Failed to compile {s} shader: \n{s}", .{ @tagName(shader_type), infoLog });
                 return error.ShaderCompileFailure;
             }
         }
 
-        pub fn deinit(self : Self) void {
+        pub fn deinit(self: Self) void {
             glDeleteShader(self.handle);
         }
     };
 }
 
-pub fn Program(comptime Uniforms : type) type {
+pub fn Program(comptime Uniforms: type) type {
     return struct {
-        handle : Handle,
-        uniforms : Uniforms = undefined,
+        handle: Handle,
+        uniforms: Uniforms = undefined,
 
         const Self = @This();
 
         pub fn init() Self {
-            return .{.handle = glCreateProgram()};
+            return .{ .handle = glCreateProgram() };
         }
 
-        pub fn deinit(self : Self) void {
+        pub fn deinit(self: Self) void {
             glDeleteProgram(self.handle);
         }
 
-        pub fn attach(self : Self, shader : anytype) void {
+        pub fn attach(self: Self, shader: anytype) void {
             glAttachShader(self.handle, shader.handle);
         }
 
-        pub fn link(self : *Self) !void {
+        pub fn link(self: *Self) !void {
             glLinkProgram(self.*.handle);
             // check for linking errors
             var success: c_int = undefined;
@@ -81,7 +81,7 @@ pub fn Program(comptime Uniforms : type) type {
             self.*.uniforms = initUniforms(self.*.handle, Uniforms);
         }
 
-        pub fn use(self : Self) void {
+        pub fn use(self: Self) void {
             glUseProgram(self.handle);
         }
     };

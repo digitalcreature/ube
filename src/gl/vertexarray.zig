@@ -8,7 +8,7 @@ usingnamespace @import("buffer.zig");
 usingnamespace @import("c.zig");
 usingnamespace @import("types.zig");
 
-pub fn VertexBufferBind(comptime Attribs : type, comptime buffer_binding_index : c_uint, comptime first_attrib_index : c_uint) type {
+pub fn VertexBufferBind(comptime Attribs: type, comptime buffer_binding_index: c_uint, comptime first_attrib_index: c_uint) type {
     switch (@typeInfo(Attribs)) {
         .Struct => |Struct| {
             if (Struct.layout == .Extern) {
@@ -16,51 +16,47 @@ pub fn VertexBufferBind(comptime Attribs : type, comptime buffer_binding_index :
                 const attrib_count = fields.len;
 
                 return struct {
-
-                    vao : Handle,
+                    vao: Handle,
 
                     pub const binding_index = buffer_binding_index;
-                    
+
                     const Self = @This();
 
                     pub const AttribsType = Attribs;
 
-                    pub fn init(vao : Handle) Self {
-                        const self : Self = .{
+                    pub fn init(vao: Handle) Self {
+                        const self: Self = .{
                             .vao = vao,
                         };
                         inline for (fields) |field, i| {
                             const attrib_index = i + first_attrib_index;
-                            const name = field.name ++ "";  // quick and dirty conversion to null-terminated string
+                            const name = field.name ++ ""; // quick and dirty conversion to null-terminated string
                             const Element = field.field_type;
                             const attrib_info = attribInfo(Element);
                             const attrib_type = @enumToInt(attrib_info.attrib_type);
-                           glEnableVertexArrayAttrib(vao, attrib_index);
+                            glEnableVertexArrayAttrib(vao, attrib_index);
                             const offset = @byteOffsetOf(Attribs, field.name);
                             switch (attrib_info.attrib_type) {
                                 .Half, .Float => glVertexArrayAttribFormat(vao, attrib_index, attrib_info.element_count, attrib_type, 0, offset),
                                 .Double => glVertexArrayAttribLFormat(vao, attrib_index, attrib_info.element_count, attrib_type, offset),
                                 else => glVertexArrayAttribIFormat(vao, attrib_index, attrib_info.element_count, attrib_type, offset),
                             }
-                           glVertexArrayAttribBinding(vao, attrib_index, binding_index);
+                            glVertexArrayAttribBinding(vao, attrib_index, binding_index);
                         }
                         return self;
                     }
 
-                    pub fn bindBuffer(self : Self, buffer : VertexBuffer(Attribs)) void {
-                        const offset = 0;   // TODO: figure out good api for these offsets
+                    pub fn bindBuffer(self: Self, buffer: VertexBuffer(Attribs)) void {
+                        const offset = 0; // TODO: figure out good api for these offsets
                         glVertexArrayVertexBuffer(self.vao, binding_index, buffer.handle, offset, @sizeOf(Attribs));
                     }
-
                 };
-            }
-            else {
+            } else {
                 @compileError("attribs type must be an extern struct, not " ++ @typeName(Attribs));
             }
         },
         else => @compileError("attribs type must be an extern struct, not " ++ @typeName(Attribs)),
     }
-
 }
 
 pub const AttribType = enum(c_uint) {
@@ -74,7 +70,7 @@ pub const AttribType = enum(c_uint) {
     Float = GL_FLOAT,
     Double = GL_DOUBLE,
 
-    pub fn getType(comptime self : AttribType) type {
+    pub fn getType(comptime self: AttribType) type {
         return switch (self) {
             .Byte => i8,
             .UByte => u8,
@@ -88,7 +84,7 @@ pub const AttribType = enum(c_uint) {
         };
     }
 
-    pub fn fromType(comptime T : type) AttribType {
+    pub fn fromType(comptime T: type) AttribType {
         return switch (T) {
             i8 => .Byte,
             u8 => .UByte,
@@ -105,14 +101,14 @@ pub const AttribType = enum(c_uint) {
 };
 
 pub const AttribInfo = struct {
-    Element : type,
-    attrib_type : AttribType,
-    element_count : usize,
+    Element: type,
+    attrib_type: AttribType,
+    element_count: usize,
 };
 
-fn attribInfo(comptime Element : type) AttribInfo {
+fn attribInfo(comptime Element: type) AttribInfo {
     switch (@typeInfo(Element)) {
-        .Int, .Float =>  return .{
+        .Int, .Float => return .{
             .Element = Element,
             .attrib_type = AttribType.fromType(Element),
             .element_count = 1,
@@ -128,8 +124,7 @@ fn attribInfo(comptime Element : type) AttribInfo {
                     },
                     else => @compileError("only 2, 3, and 4 dimensional vector attribs are supported, not " ++ @typeName(Element)),
                 }
-            }
-            else {
+            } else {
                 @compileError("only vectors and single attrib types currently supported. matrix support is planned (" ++ @typeName(Element) ++ ")");
             }
         },
@@ -137,19 +132,17 @@ fn attribInfo(comptime Element : type) AttribInfo {
     }
 }
 
-pub fn VertexArray(comptime VertexBufferBinds : type, comptime index_element : type) type {
-
+pub fn VertexArray(comptime VertexBufferBinds: type, comptime index_element: type) type {
     return struct {
-
-        handle : Handle,
-        vertices : VertexBufferBinds,
+        handle: Handle,
+        vertices: VertexBufferBinds,
 
         pub const IndexElement = index_element;
 
         const Self = @This();
 
         pub fn init() Self {
-            var self : Self = undefined;
+            var self: Self = undefined;
             glCreateVertexArrays(1, &self.handle);
             const binds_info = @typeInfo(VertexBufferBinds);
             switch (binds_info) {
@@ -163,16 +156,16 @@ pub fn VertexArray(comptime VertexBufferBinds : type, comptime index_element : t
             return self;
         }
 
-        pub fn deinit(self : Self) void {
+        pub fn deinit(self: Self) void {
             glDeleteVertexArrays(1, &self.handle);
         }
 
         /// given a struct with vertex buffer fields, attempt to bind buffers according to matching bind point field names. attrib types are checked
-        pub fn bindVertexBuffers(self : Self, buffers : anytype) void {
+        pub fn bindVertexBuffers(self: Self, buffers: anytype) void {
             const Buffers = @TypeOf(buffers);
             switch (@typeInfo(Buffer)) {
                 .Struct => |Struct| {
-                    inline for(Struct.fields) |field| {
+                    inline for (Struct.fields) |field| {
                         if (@hasField(VertexBufferBinds, field.name)) {
                             const BindType = @TypeOf(@field(VertexBufferBinds, field.name));
                             if (field.field_type == VertexBuffer(BindType.AttribsType)) {
@@ -185,14 +178,12 @@ pub fn VertexArray(comptime VertexBufferBinds : type, comptime index_element : t
             }
         }
 
-        pub fn bindIndexBuffer(self : Self, buffer : IndexBuffer(IndexElement)) void {
+        pub fn bindIndexBuffer(self: Self, buffer: IndexBuffer(IndexElement)) void {
             glVertexArrayElementBuffer(self.handle, buffer.handle);
         }
 
-        pub fn bind(self : Self) void {
+        pub fn bind(self: Self) void {
             glBindVertexArray(self.handle);
         }
-
     };
-
 }

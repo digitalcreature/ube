@@ -38,17 +38,16 @@ const fragmentShaderSource: [:0]const u8 =
 ;
 
 const Vertex = extern struct {
-    position : Vec3,
-    normal : Vec3,
+    position: Vec3,
+    normal: Vec3,
 };
 
-fn vertex(position : Vec3, normal : Vec3) Vertex {
-    return Vertex {
+fn vertex(position: Vec3, normal: Vec3) Vertex {
+    return Vertex{
         .position = position,
         .normal = normal,
     };
 }
-  
 
 pub fn main() !void {
     const ok = glfwInit();
@@ -85,9 +84,9 @@ pub fn main() !void {
     fragShader.source(fragmentShaderSource);
     try fragShader.compile();
     const Uniforms = struct {
-        proj : gl.Uniform(Mat4),
-        view : gl.Uniform(Mat4),
-        model : gl.Uniform(Mat4),
+        proj: gl.Uniform(Mat4),
+        view: gl.Uniform(Mat4),
+        model: gl.Uniform(Mat4),
     };
     var shaderProgram = gl.Program(Uniforms).init();
     defer shaderProgram.deinit();
@@ -98,7 +97,7 @@ pub fn main() !void {
     fragShader.deinit();
 
     shaderProgram.use();
-    shaderProgram.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0/9.0, 0.1, 100));
+    shaderProgram.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0 / 9.0, 0.1, 100));
     shaderProgram.uniforms.view.set(Mat4.createLookAt(vec3(1, 1, 1), Vec3.zero, Vec3.unit("y")));
 
     const vertices =
@@ -110,14 +109,13 @@ pub fn main() !void {
         cubeFaceVerts(5);
     const indices = comptime cubeFaceIndices(6);
     var vertex_array = gl.VertexArray(struct {
-        verts : gl.VertexBufferBind(Vertex, 0, 0)
+        verts: gl.VertexBufferBind(Vertex, 0, 0)
     }, u32).init();
     defer vertex_array.deinit();
     var vertex_buffer = gl.VertexBuffer(Vertex).initData(&vertices, .StaticDraw);
     defer vertex_buffer.deinit();
     var index_buffer = gl.IndexBuffer32.initData(&indices, .StaticDraw);
     defer index_buffer.deinit();
-
 
     vertex_array.vertices.verts.bindBuffer(vertex_buffer);
     vertex_array.bindIndexBuffer(index_buffer);
@@ -132,10 +130,10 @@ pub fn main() !void {
 
     // render loop
     // -----------
-    var last_frame_time : f64 = 0;
-    var delta_time : f64 = 0;
+    var last_frame_time: f64 = 0;
+    var delta_time: f64 = 0;
     while (glfwWindowShouldClose(window) == 0) {
-        var frame_time : f64 = glfwGetTime();
+        var frame_time: f64 = glfwGetTime();
         // var print_time : bool = std.math.floor(frame_time) != std.math.floor(last_frame_time);
         delta_time = frame_time - last_frame_time;
         last_frame_time = frame_time;
@@ -165,8 +163,7 @@ pub fn main() !void {
 }
 
 // process all input: query GLFW whether relevant keys are pressed/released this frame and react accordingly
-pub fn processInput(window: ?*GLFWwindow) callconv(.C) void {
-}
+pub fn processInput(window: ?*GLFWwindow) callconv(.C) void {}
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
 pub fn framebuffer_size_callback(window: ?*GLFWwindow, width: c_int, height: c_int) callconv(.C) void {
@@ -175,9 +172,9 @@ pub fn framebuffer_size_callback(window: ?*GLFWwindow, width: c_int, height: c_i
     glViewport(0, 0, width, height);
 }
 
-fn cubeFaceVerts(comptime face_id : u32) [4]Vertex {
+fn cubeFaceVerts(comptime face_id: u32) [4]Vertex {
     comptime {
-        var verts : [4]Vertex = undefined;
+        var verts: [4]Vertex = undefined;
         const normal = Vec3.uniti(face_id);
         const axis = face_id % 3;
         const is_neg = face_id >= 3;
@@ -193,9 +190,9 @@ fn cubeFaceVerts(comptime face_id : u32) [4]Vertex {
     }
 }
 
-fn cubeFaceIndices(comptime face_count : u32) [face_count * 6]u32 {
+fn cubeFaceIndices(comptime face_count: u32) [face_count * 6]u32 {
     comptime {
-        var indices : [face_count * 6]u32 = undefined;
+        var indices: [face_count * 6]u32 = undefined;
         var face = 0;
         inline while (face < face_count) : (face += 1) {
             indices[face * 6 + 0] = face * 4 + 0;
@@ -221,7 +218,6 @@ test "cubeFaceIndices" {
     std.testing.log_level = .debug;
     const indices = comptime cubeFaceIndices(6);
     inline for (indices) |index| {
-        std.log.info("{d}", .{index}); 
+        std.log.info("{d}", .{index});
     }
-
 }

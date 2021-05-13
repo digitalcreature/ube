@@ -1,16 +1,15 @@
 usingnamespace @import("std").build;
 
-fn addDeps(step : *LibExeObjStep) void {
-
-    const math : Pkg = .{
+fn addDeps(step: *LibExeObjStep) void {
+    const math: Pkg = .{
         .name = "math",
         .path = "src/math/lib.zig",
         .dependencies = null,
     };
-    const gl : Pkg = .{
+    const gl: Pkg = .{
         .name = "gl",
         .path = "src/gl/lib.zig",
-        .dependencies = &[_]Pkg{math}
+        .dependencies = &[_]Pkg{math},
     };
 
     step.addPackage(math);
