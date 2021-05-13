@@ -60,7 +60,7 @@ pub fn Buffer(comptime target : BufferTarget, comptime T : type) type {
             return Self{ .handle = handle };
         } 
 
-        pub fn initData(data_slice : []Element, usage : BufferUsage) Self {
+        pub fn initData(data_slice : [] const Element, usage : BufferUsage) Self {
             const buffer = init();
             buffer.data(data_slice, usage);
             return buffer;
@@ -88,19 +88,19 @@ pub fn Buffer(comptime target : BufferTarget, comptime T : type) type {
             glNamedBufferData(self.handle, @intcast(c_longlong, size * @sizeOf(Element)), NULL, @enumToInt(usage));
         }
 
-        pub fn data(self : Self, data_slice : []Element, usage : BufferUsage) void {
+        pub fn data(self : Self, data_slice : [] const Element, usage : BufferUsage) void {
             const ptr = @ptrCast(* const c_void, data_slice.ptr);
             const size = @intCast(c_longlong, @sizeOf(Element) * data_slice.len);
             glNamedBufferData(self.handle, size, ptr, @enumToInt(usage));
         }
 
-        pub fn subdata(self: Self, data_slice : []Element, offset : usize) void {
+        pub fn subdata(self: Self, data_slice : [] const Element, offset : usize) void {
             const ptr = @ptrCast(* const c_void, data_slice.ptr);
             const size = @intCast(c_longlong, @sizeOf(Element) * data_slice.len);
             glNamedBufferSubData(self.handle, offset, size, ptr);
         }
 
-        pub fn update(self : Self, data_slice : []Element) void {
+        pub fn update(self : Self, data_slice : [] const Element) void {
             self.subdata(data_slice, 0);
         }
     };

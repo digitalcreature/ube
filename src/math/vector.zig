@@ -255,6 +255,18 @@ pub fn ops(comptime Self : type) type {
                 return result;
             }
 
+            pub fn uniti(comptime field_index : u8) Self {
+                if (field_index > dimensions * 2) {
+                    @compileError("field index out of bounds for unit vector of type " ++ @typeName(Self));
+                }
+                if (field_index >= dimensions) {
+                    return unit("-" ++ field_names[field_index - dimensions]);
+                }
+                else {
+                    return unit(field_names[field_index]);
+                }
+            }
+
             pub fn dot(self : Self, rhs : anytype) Element {
                 return sum(mul(self, rhs));
             }

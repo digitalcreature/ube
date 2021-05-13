@@ -14,13 +14,14 @@ const SCR_HEIGHT: u32 = 1080;
 const vertexShaderSource: [:0]const u8 =
     \\#version 450 core
     \\layout (location = 0) in vec3 aPos;
-    \\layout (location = 1) in vec3 aColor;
-    \\uniform vec3 some_uniform;
+    \\layout (location = 1) in vec3 aNormal;
     \\out vec3 color;
+    \\uniform mat4 proj;
+    \\uniform mat4 view;
     \\void main()
     \\{
-    \\   gl_Position = vec4(aPos.x, aPos.y, aPos.z, 1.0);
-    \\   color = aColor + some_uniform;
+    \\   gl_Position = proj * view * vec4(aPos.x, aPos.y, aPos.z, 1.0);
+    \\   color = aNormal;
     \\};
 ;
 const fragmentShaderSource: [:0]const u8 =
@@ -29,19 +30,19 @@ const fragmentShaderSource: [:0]const u8 =
     \\out vec4 FragColor;
     \\void main()
     \\{
-    \\   FragColor = vec4(color.x, color.y, color.z, 1.0f);
+    \\   FragColor = abs(vec4(color.x, color.y, color.z, 1.0f));
     \\};
 ;
 
 const Vertex = extern struct {
     position : Vec3,
-    color : Vec3,
+    normal : Vec3,
 };
 
-fn vertex(pos : Vec3, col : Vec3) Vertex {
+fn vertex(position : Vec3, normal : Vec3) Vertex {
     return Vertex {
-        .position = pos,
-        .color = col,
+        .position = position,
+        .normal = normal,
     };
 }
   
@@ -78,9 +79,11 @@ pub fn main() !void {
     const fragShader = gl.Shader(.Fragment).init();
     fragShader.source(fragmentShaderSource);
     try fragShader.compile();
-    var shaderProgram = gl.Program(struct {
-        some_uniform : gl.Uniform([1]Vec3),
-    }).init();
+    const Uniforms = struct {
+        proj : gl.Uniform(Mat4),
+        view : gl.Uniform(Mat4),
+    };
+    var shaderProgram = gl.Program(Uniforms).init();
     defer shaderProgram.deinit();
     shaderProgram.attach(vertexShader);
     shaderProgram.attach(fragShader);
@@ -88,24 +91,18 @@ pub fn main() !void {
     vertexShader.deinit();
     fragShader.deinit();
 
-
-
     shaderProgram.use();
-    const some_uniform : [1]Vec3 = .{
-        vec3(1, 1, 0),
-    };
-    shaderProgram.uniforms.some_uniform.set(&some_uniform);
+    shaderProgram.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0/9.0, 0.1, 100));
+    shaderProgram.uniforms.view.set(Mat4.createLookAt(vec3(-5, -5, -5), Vec3.zero, Vec3.unit("-y")));
 
-    var vertices = [_]Vertex{
-        vertex(vec3(0.5, 0.5, 0.0), vec3(1, 0, 1)), // top right
-        vertex(vec3(0.5, -0.5, 0.0), vec3(0, 1, 0)), // bottom right
-        vertex(vec3(-0.5, -0.5, 0.0), vec3(1, 1, 0)), // bottom let
-        vertex(vec3(-0.5, 0.5, 0.0), vec3(0, 1, 1)), // top left
-    };
-    var indices = [_]u32{ // note that we start from 0!
-        0, 1, 3, // first Triangle
-        1, 2, 3, // second Triangle
-    };
+    const vertices = comptime
+        cubeFaceVerts(0) ++
+        cubeFaceVerts(1) ++
+        cubeFaceVerts(2) ++
+        cubeFaceVerts(3) ++
+        cubeFaceVerts(4) ++
+        cubeFaceVerts(5);
+    const indices = comptime cubeFaceIndices(6);
     var vertex_array = gl.VertexArray(struct {
         verts : gl.VertexBufferBind(Vertex, 0, 0)
     }, u32).init();
@@ -114,6 +111,10 @@ pub fn main() !void {
     defer vertex_buffer.deinit();
     var index_buffer = gl.IndexBuffer32.initData(&indices, .StaticDraw);
     defer index_buffer.deinit();
+
+    inline for (vertices) |vert| {
+        std.log.info("{d}", .{vert.normal});
+    }
 
 
     vertex_array.vertices.verts.bindBuffer(vertex_buffer);
@@ -140,7 +141,7 @@ pub fn main() !void {
 
         shaderProgram.use();
         vertex_array.bind();
-        gl.drawElements(.Triangles, 6, u32);
+        gl.drawElements(.Triangles, indices.len, u32);
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
 
@@ -160,4 +161,55 @@ pub fn framebuffer_size_callback(window: ?*GLFWwindow, width: c_int, height: c_i
     // make sure the viewport matches the new window dimensions; note that width and
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);
+}
+
+fn cubeFaceVerts(comptime face_id : u32) [4]Vertex {
+    comptime {
+        var verts : [4]Vertex = undefined;
+        const normal = Vec3.uniti(face_id);
+        const axis = face_id % 3;
+        const is_neg = face_id >= 3;
+        var i = 0;
+        inline while (i < 4) : (i += 1) {
+            var pos = normal;
+            const flip = if (is_neg) 1 else -1;
+            pos.setElement((axis + 1) % 3, flip * if (i % 2 == 0) -1 else 1);
+            pos.setElement((axis + 2) % 3, if (i < 2) 1 else -1);
+            verts[i] = vertex(pos.scale(0.5), normal);
+        }
+        return verts;
+    }
+}
+
+fn cubeFaceIndices(comptime face_count : u32) [face_count * 6]u32 {
+    comptime {
+        var indices : [face_count * 6]u32 = undefined;
+        var face = 0;
+        inline while (face < face_count) : (face += 1) {
+            indices[face * 6 + 0] = face * 4 + 0;
+            indices[face * 6 + 1] = face * 4 + 1;
+            indices[face * 6 + 2] = face * 4 + 3;
+            indices[face * 6 + 3] = face * 4 + 0;
+            indices[face * 6 + 4] = face * 4 + 3;
+            indices[face * 6 + 5] = face * 4 + 2;
+        }
+        return indices;
+    }
+}
+
+test "cubeFaceVerts" {
+    std.testing.log_level = .debug;
+    const verts = comptime cubeFaceVerts(0);
+    inline for (verts) |vert| {
+        std.log.info("{d}", .{vert.position});
+    }
+}
+
+test "cubeFaceIndices" {
+    std.testing.log_level = .debug;
+    const indices = comptime cubeFaceIndices(6);
+    inline for (indices) |index| {
+        std.log.info("{d}", .{index}); 
+    }
+
 }

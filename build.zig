@@ -47,7 +47,7 @@ pub fn build(b: *Builder) void {
     exe.install();
 
     const test_step = b.step("test", "Run library tests.");
-    const file = b.addTest("src/gl/vertexarray.zig");
+    const file = b.addTest("src/main.zig");
     file.setTarget(target);
     file.setBuildMode(mode);
     addDeps(file);

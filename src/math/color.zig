@@ -18,7 +18,7 @@ pub fn ops(comptime Self : type) type {
         pub const maxval : Element = switch(@typeInfo(Element)){
             .Float => 1.0,
             .Int => std.math.maxInt(Element),
-            else => @compileError("colors must be numeric types!"),
+            else => @compileError("colors must be numeric types, not " + @typeName(Element)),
         };
 
         pub const white = rgb(maxval, maxval, maxval);

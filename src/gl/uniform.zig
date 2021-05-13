@@ -71,7 +71,8 @@ pub fn Uniform(comptime T : type) type {
                             }
                         },
                         .matrix => |matrix| {
-                            const transpose = false;
+                            const ptr = element_info.primitiveCPtrCast(&value);
+                            const transpose = 0;
                             switch (matrix.row_count) { // we dont need to worry about col_count because we know its square
                                 2 => glProgramUniformMatrix2fv(self.program, self.location, 1, transpose, ptr),
                                 3 => glProgramUniformMatrix3fv(self.program, self.location, 1, transpose, ptr),
