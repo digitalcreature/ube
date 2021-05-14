@@ -1,0 +1,3 @@
+[submodule "deps/zigimg"]
+	path = deps/zigimg
+	url = git@github.com:zigimg/zigimg.git

@@ -1,5 +1,5 @@
 usingnamespace @import("types.zig");
-usingnamespace @import("c.zig");
+usingnamespace @import("c");
 usingnamespace @import("uniform.zig");
 
 const std = @import("std");

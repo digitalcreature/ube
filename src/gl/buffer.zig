@@ -1,4 +1,4 @@
-usingnamespace @import("c.zig");
+usingnamespace @import("c");
 usingnamespace @import("types.zig");
 
 const math = @import("math");

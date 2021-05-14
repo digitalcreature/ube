@@ -3,11 +3,11 @@ const meta = std.meta;
 // const math = @import("math");
 const math = @import("../math/lib.zig");
 
-usingnamespace @import("c.zig");
+usingnamespace @import("c");
 usingnamespace @import("types.zig");
 
 pub const UniformLocation = c_int;
-
+pub const UniformTextureUnit = Uniform(i32);
 pub fn Uniform(comptime T: type) type {
     return struct {
         pub const Element = T;

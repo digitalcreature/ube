@@ -6,17 +6,24 @@ fn addDeps(step: *LibExeObjStep) void {
         .path = "src/math/lib.zig",
         .dependencies = null,
     };
+    const c: Pkg = .{
+        .name = "c",
+        .path = "src/c.zig",
+        .dependencies = null,
+    };
     const gl: Pkg = .{
         .name = "gl",
         .path = "src/gl/lib.zig",
-        .dependencies = &[_]Pkg{math},
+        .dependencies = &[_]Pkg{math, c},
     };
 
     step.addPackage(math);
     step.addPackage(gl);
+    step.addPackage(c);
 
     step.addIncludeDir("deps/inc");
     step.addCSourceFile("deps/src/glad.c", &[_][]const u8{"-std=c99"});
+    step.addCSourceFile("deps/src/stb_image.c", &[_][]const u8{"-std=c99"});
     // step.addIncludeDir("GLFW/include/GLFW");
     step.addLibPath("deps/lib");
     step.linkSystemLibrary("glfw3");

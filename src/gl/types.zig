@@ -1,3 +1,3 @@
-usingnamespace @import("c.zig");
+usingnamespace @import("c");
 
 pub const Handle = c_uint;

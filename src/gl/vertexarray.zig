@@ -5,7 +5,7 @@ const math = @import("math");
 
 usingnamespace @import("buffer.zig");
 
-usingnamespace @import("c.zig");
+usingnamespace @import("c");
 usingnamespace @import("types.zig");
 
 pub fn VertexBufferBind(comptime Attribs: type, comptime buffer_binding_index: c_uint, comptime first_attrib_index: c_uint) type {

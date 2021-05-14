@@ -1,4 +1,4 @@
-usingnamespace @import("c.zig");
+usingnamespace @import("c");
 const color = @import("math").color;
 
 pub fn clearColor(col: color.ColorF32) void {
