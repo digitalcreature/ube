@@ -3,7 +3,7 @@ const math = std.math;
 
 pub fn noise1(pos_x: f32) f32 {
     var x = pos_x;
-    var X = @floatToInt(i32, math.floor(x)) & 0xff;
+    var X = lsbFloor(x);
     x -= math.floor(x);
     var u = fade(x);
     return lerp(u, grad1(perm[X], x), grad1(perm[X + 1], x - 1)) * 2;
@@ -12,8 +12,8 @@ pub fn noise1(pos_x: f32) f32 {
 pub fn noise2(pos_x: f32, pos_y: f32) f32 {
     var x = pos_x;
     var y = pos_y;
-    var X = @floatToInt(usize, math.floor(x)) & 0xff;
-    var Y = @floatToInt(usize, math.floor(y)) & 0xff;
+    var X = lsbFloor(x);
+    var Y = lsbFloor(y);
     x -= math.floor(x);
     y -= math.floor(y);
     var u = fade(x);
@@ -32,9 +32,9 @@ pub fn noise3(pos_x: f32, pos_y: f32, pos_z: f32) f32 {
     var x = pos_x;
     var y = pos_y;
     var z = pos_z;
-    var X = @floatToInt(i32, math.floor(x)) & 0xff;
-    var Y = @floatToInt(i32, math.floor(y)) & 0xff;
-    var Z = @floatToInt(i32, math.floor(z)) & 0xff;
+    var X = lsbFloor(x);
+    var Y = lsbFloor(y);
+    var Z = lsbFloor(z);
     x -= math.floor(x);
     y -= math.floor(y);
     z -= math.floor(z);
@@ -100,6 +100,10 @@ pub fn noise3(pos_x: f32, pos_y: f32, pos_z: f32) f32 {
 // {
 //     return Fbm(new Vector3(x, y, z), octave);
 // }
+
+fn lsbFloor(x : f32) usize {
+    return @bitCast(usize, @floatToInt(isize, math.floor(x)) & 0xFF);
+}
 
 fn fade(t: f32) f32 {
     return t * t * t * (t * (t * 6 - 15) + 10);

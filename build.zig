@@ -24,9 +24,12 @@ fn addDeps(step: *LibExeObjStep) void {
     step.addIncludeDir("deps/inc");
     step.addCSourceFile("deps/src/glad.c", &[_][]const u8{"-std=c99"});
     step.addCSourceFile("deps/src/stb_image.c", &[_][]const u8{"-std=c99"});
+    step.addCSourceFile("deps/src/imgui_impl_glfw.c", &[_][]const u8{"-std=c99"});
+    step.addCSourceFile("deps/src/imgui_impl_opengl3.c", &[_][]const u8{"-std=c99"});
     // step.addIncludeDir("GLFW/include/GLFW");
     step.addLibPath("deps/lib");
     step.linkSystemLibrary("glfw3");
+    step.linkSystemLibrary("cimgui");
     step.linkSystemLibrary("user32");
     step.linkSystemLibrary("gdi32");
     step.linkSystemLibrary("shell32");

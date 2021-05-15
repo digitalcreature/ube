@@ -76,16 +76,16 @@ fn loadTexturePng(comptime name: []const u8) gl.Texture2D {
 }
 
 fn genTexturePerlin(comptime width: u32, comptime height: u32) gl.Texture2D {
-    var pixels : [width][height]math.color.ColorU8 = undefined;
-    var x : u32 = 0;
+    var pixels : [height][width]math.color.ColorU8 = undefined;
+    var x : usize = 0;
     while (x < width) : (x += 1) {
-        var y : u32 = 0;
+        var y : usize = 0;
         while (y < height) : (y += 1) {
             var u = @intToFloat(f32, x) * 0.1;
             var v = @intToFloat(f32, y) * 0.1;
-            var n = math.perlin.noise2(u, v);
+            var n = math.perlin.noise2(-u, -v);
             var n8 = @floatToInt(u8, std.math.clamp((n + 1) / 2, 0, 1) * 255);
-            pixels[x][y] = math.color.ColorU8.rgb(n8, n8, n8);
+            pixels[y][x] = math.color.ColorU8.rgb(n8, n8, n8);
         }
     }
     var tex = gl.Texture2D.init();
@@ -178,7 +178,7 @@ pub fn main() !void {
 
     // load and bind the texture
     // var texture = loadTexturePng("hello_world.png");
-    var texture = genTexturePerlin(64, 64);
+    var texture = genTexturePerlin(32, 256);
     glTextureParameteri(texture.handle, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTextureParameteri(texture.handle, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTextureParameteri(texture.handle, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -188,14 +188,35 @@ pub fn main() !void {
     shaderProgram.uniforms.albedo.set(0);
 
     // we dont need to do these before the draw call because these are the only program and array we are using so far!
-    shaderProgram.use();
-    vertex_array.bind();
+    // shaderProgram.use();
+    // vertex_array.bind();
+
+
+
+    // imgui time
+    _ = igCreateContext(null);
+    defer igDestroyContext(null);
+    // var imgui_style : ImGuiStyle = undefined;
+    // igStyleColorsDark(&imgui_style);
+    // igSetStyle(&imgui_style);
+    _ = ImGui_ImplGlfw_InitForOpenGL(window, true);
+    defer ImGui_ImplGlfw_Shutdown();
+    _ = ImGui_ImplOpenGL3_Init("#version 430 core");
+    defer ImGui_ImplOpenGL3_Shutdown();
+
+
 
     // render loop
     // -----------
     var last_frame_time: f64 = 0;
     var delta_time: f64 = 0;
+    var open_demo_window = true;
     while (glfwWindowShouldClose(window) == 0) {
+        glfwPollEvents();
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        igNewFrame();
+        igShowDemoWindow(&open_demo_window);
         var frame_time: f64 = glfwGetTime();
         var print_time: bool = std.math.floor(frame_time) != std.math.floor(last_frame_time);
         delta_time = frame_time - last_frame_time;
@@ -211,15 +232,15 @@ pub fn main() !void {
         var model = Mat4.createAxisAngle(Vec3.unit("y"), @floatCast(f32, frame_time));
         shaderProgram.uniforms.model.set(model);
 
-        gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
-        gl.clear(.ColorDepth);
+        // gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
+        // gl.clear(.ColorDepth);
 
-        gl.drawElements(.Triangles, indices.len, u32);
+        // gl.drawElements(.Triangles, indices.len, u32);
 
+        igRender();
+        
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
-
         glfwSwapBuffers(window);
-        glfwPollEvents();
     }
 }
 
