@@ -62,12 +62,12 @@ fn vertex(position: Vec3, normal: Vec3, uv: Vec2) Vertex {
     };
 }
 
-fn loadTexturePng(comptime name: []const u8) !gl.Texture2D {
-    const bytes : []const u8 = @embedFile(name);
+fn loadTexturePng(comptime name: []const u8) gl.Texture2D {
+    const bytes: []const u8 = @embedFile(name);
     var width: i32 = undefined;
     var height: i32 = undefined;
     var channels: i32 = undefined;
-    var pixels : *u8 = stbi_load_from_memory(bytes.ptr, bytes.len, &width, &height, &channels, 0);
+    var pixels: *u8 = stbi_load_from_memory(bytes.ptr, bytes.len, &width, &height, &channels, 0);
     defer stbi_image_free(pixels);
     var tex = gl.Texture2D.init();
     tex.storage(null, .RGB8, width, height);
@@ -75,8 +75,26 @@ fn loadTexturePng(comptime name: []const u8) !gl.Texture2D {
     return tex;
 }
 
-pub fn main() !void {
+fn genTexturePerlin(comptime width: u32, comptime height: u32) gl.Texture2D {
+    var pixels : [width][height]math.color.ColorU8 = undefined;
+    var x : u32 = 0;
+    while (x < width) : (x += 1) {
+        var y : u32 = 0;
+        while (y < height) : (y += 1) {
+            var u = @intToFloat(f32, x) * 0.1;
+            var v = @intToFloat(f32, y) * 0.1;
+            var n = math.perlin.noise2(u, v);
+            var n8 = @floatToInt(u8, std.math.clamp((n + 1) / 2, 0, 1) * 255);
+            pixels[x][y] = math.color.ColorU8.rgb(n8, n8, n8);
+        }
+    }
+    var tex = gl.Texture2D.init();
+    tex.storage(null, .RGBA8, width, height);
+    tex.subImage(null, 0, 0, width, height, .rgba, u8, &pixels);
+    return tex;
+}
 
+pub fn main() !void {
     const ok = glfwInit();
     if (ok == 0) {
         panic("Failed to initialise GLFW\n", .{});
@@ -128,7 +146,6 @@ pub fn main() !void {
     shaderProgram.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0 / 9.0, 0.1, 100));
     shaderProgram.uniforms.view.set(Mat4.createLookAt(vec3(1, 1, 1), Vec3.zero, Vec3.unit("y")));
 
-
     // create array
     // the arguments to the array type are the bind points for vertex buffers, and the integer type for the index buffer
     var vertex_array = gl.VertexArray(struct {
@@ -158,9 +175,10 @@ pub fn main() !void {
 
     // uncomment this call to draw in wireframe polygons.
     // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-    
+
     // load and bind the texture
-    var texture = try loadTexturePng("hello_world.png");
+    // var texture = loadTexturePng("hello_world.png");
+    var texture = genTexturePerlin(64, 64);
     glTextureParameteri(texture.handle, GL_TEXTURE_WRAP_S, GL_REPEAT);
     glTextureParameteri(texture.handle, GL_TEXTURE_WRAP_T, GL_REPEAT);
     glTextureParameteri(texture.handle, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
@@ -179,16 +197,16 @@ pub fn main() !void {
     var delta_time: f64 = 0;
     while (glfwWindowShouldClose(window) == 0) {
         var frame_time: f64 = glfwGetTime();
-        var print_time : bool = std.math.floor(frame_time) != std.math.floor(last_frame_time);
+        var print_time: bool = std.math.floor(frame_time) != std.math.floor(last_frame_time);
         delta_time = frame_time - last_frame_time;
         last_frame_time = frame_time;
         if (print_time) {
-            std.log.info("time: {d} fps: {d}", .{frame_time, 1/delta_time});
+            std.log.info("time: {d} fps: {d}", .{ frame_time, 1 / delta_time });
         }
         // input
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
             glfwSetWindowShouldClose(window, 1);
-        
+
         // render
         var model = Mat4.createAxisAngle(Vec3.unit("y"), @floatCast(f32, frame_time));
         shaderProgram.uniforms.model.set(model);
@@ -225,7 +243,7 @@ fn cubeFaceVerts(comptime face_id: u32) [4]Vertex {
         inline while (i < 4) : (i += 1) {
             var pos = normal;
             var uv = Vec2.zero;
-            uv.x = if (i % 2 == 0) 0 else 1;
+            uv.x = if (i % 2 != @boolToInt(is_neg)) 0 else 1;
             uv.y = if ((i < 2) != is_neg) 1 else 0;
             const flip = if (is_neg) 1 else -1;
             pos.setElement((axis + 1) % 3, if (i % 2 == 0) -1 else 1);

@@ -36,13 +36,12 @@ pub const TextureFormat = enum(u32) {
 pub const TexturePixelType = enum(u32) {
     unsigned_byte = GL_UNSIGNED_BYTE,
 
-    pub fn fromType(comptime T : type) @This() {
+    pub fn fromType(comptime T: type) @This() {
         return switch (T) {
             u8 => .unsigned_byte,
             else => @compileError("invalid texture pixel format type " ++ @typeName(T)),
         };
     }
-
 };
 
 pub const Texture2D = Texture(.Tex2D);
@@ -73,7 +72,6 @@ pub fn Texture(comptime texture_target: TextureTarget) type {
 
         pub usingnamespace switch (target) {
             .Tex2D, .Tex1DArray => struct {
-
                 pub fn storage(self: Self, levels: ?c_int, format: SizedTextureFormat, width: c_int, height: c_int) void {
                     glTextureStorage2D(self.handle, levels orelse 1, @enumToInt(format), width, height);
                 }
@@ -82,7 +80,6 @@ pub fn Texture(comptime texture_target: TextureTarget) type {
                     const pixel_type_enum = TexturePixelType.fromType(pixel_type);
                     glTextureSubImage2D(self.handle, level orelse 0, x, y, width, height, @enumToInt(format), @enumToInt(pixel_type_enum), data);
                 }
-
             },
             else => struct {},
         };
