@@ -2,8 +2,6 @@ const std = @import("std");
 const builtin = @import("builtin");
 const panic = std.debug.panic;
 
-const io = std.io;
-
 const gl = @import("gl");
 usingnamespace @import("c");
 const math = @import("math");
@@ -204,12 +202,12 @@ pub fn main() !void {
 
     // Setup Dear ImGui style
     imgui.StyleColorsDark();
-    //imgui.StyleColorsClassic();
+    // imgui.StyleColorsClassic();
 
     // Setup Platform/Renderer bindings
     _ = imgui.glfw.InitForOpenGL(window.?, true);
     defer imgui.glfw.Shutdown();
-    _ = imgui.opengl3.Init("#version 150");
+    _ = imgui.opengl3.Init("#version 450");
     defer imgui.opengl3.Shutdown();
 
 
@@ -220,12 +218,8 @@ pub fn main() !void {
     var show_demo_window = true;
     while (glfwWindowShouldClose(window) == 0) {
         var frame_time: f64 = glfwGetTime();
-        var print_time: bool = std.math.floor(frame_time) != std.math.floor(last_frame_time);
         delta_time = frame_time - last_frame_time;
         last_frame_time = frame_time;
-        if (print_time) {
-            std.log.info("time: {d} fps: {d}", .{ frame_time, 1 / delta_time });
-        }
         // input
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
             glfwSetWindowShouldClose(window, 1);
@@ -236,7 +230,8 @@ pub fn main() !void {
         imgui.glfw.NewFrame();
         imgui.NewFrame();
 
-        imgui.ShowDemoWindowExt(&show_demo_window);
+        imguiFpsOverlay(delta_time);
+        // imgui.ShowDemoWindowExt(&show_demo_window);
 
         imgui.Render();
 
@@ -300,6 +295,23 @@ fn cubeFaceIndices(comptime face_count: u32) [face_count * 6]u32 {
             indices[face * 6 + 5] = face * 4 + 2;
         }
         return indices;
+    }
+}
+
+fn imguiFpsOverlay(frame_time : f64) void {
+    const padding : f32 = 16;
+    const window_pos = vec2(padding, padding);
+    imgui.SetNextWindowPosExt(window_pos, .{ .Always = true }, Vec2.zero);
+    const window_flags : imgui.WindowFlags = (imgui.WindowFlags {
+        .NoMove = true,
+        .NoBackground = true,
+        .AlwaysAutoResize = true,
+        .NoFocusOnAppearing = true,
+    }).with(imgui.WindowFlags.NoDecoration).with(imgui.WindowFlags.NoNav);
+    if (imgui.BeginExt("fps overlay", null, window_flags)) {
+        defer imgui.End();
+        imgui.Text("frame time:\t%fms", frame_time * 1000);
+        imgui.Text("fps:\t\t%f", 1 / frame_time);
     }
 }
 
