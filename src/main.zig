@@ -111,7 +111,7 @@ pub fn main() !void {
     }
 
     glfwMakeContextCurrent(window);
-    glfwSwapInterval(0);
+    glfwSwapInterval(1);
     const resizeCallback = glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     // glad: load all OpenGL function pointers
@@ -216,9 +216,14 @@ pub fn main() !void {
     var last_frame_time: f64 = 0;
     var delta_time: f64 = 0;
     var show_demo_window = true;
+    var delta_time_display: f64 = 0;
+    const fps_poll_rate: f64 = 0.5;
     while (glfwWindowShouldClose(window) == 0) {
         var frame_time: f64 = glfwGetTime();
         delta_time = frame_time - last_frame_time;
+        if (std.math.floor(frame_time / fps_poll_rate) != std.math.floor(last_frame_time / fps_poll_rate)) {
+            delta_time_display = delta_time;
+        }
         last_frame_time = frame_time;
         // input
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
@@ -230,7 +235,7 @@ pub fn main() !void {
         imgui.glfw.NewFrame();
         imgui.NewFrame();
 
-        imguiFpsOverlay(delta_time);
+        imguiFpsOverlay(delta_time_display);
         // imgui.ShowDemoWindowExt(&show_demo_window);
 
         imgui.Render();
@@ -311,7 +316,7 @@ fn imguiFpsOverlay(frame_time : f64) void {
     if (imgui.BeginExt("fps overlay", null, window_flags)) {
         defer imgui.End();
         imgui.Text("frame time:\t%fms", frame_time * 1000);
-        imgui.Text("fps:\t\t%f", 1 / frame_time);
+        imgui.Text("fps:\t\t  %f", 1 / frame_time);
     }
 }
 
