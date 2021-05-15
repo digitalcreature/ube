@@ -9,6 +9,7 @@ usingnamespace @import("c");
 const math = @import("math");
 usingnamespace math.glm;
 const img = @import("zigimg");
+const imgui = @import("imgui");
 
 // settings
 const SCR_WIDTH: u32 = 1920;
@@ -191,10 +192,32 @@ pub fn main() !void {
     shaderProgram.use();
     vertex_array.bind();
 
+    
+    // Setup Dear ImGui context
+    imgui.CHECKVERSION();
+    _ = imgui.CreateContext();
+    defer imgui.DestroyContext();
+    var imgui_io = imgui.GetIO();
+    imgui_io.IniFilename = null;
+    //io.ConfigFlags |= imgui.ConfigFlags.NavEnableKeyboard;     // Enable Keyboard Controls
+    //io.ConfigFlags |= imgui.ConfigFlags.NavEnableGamepad;      // Enable Gamepad Controls
+
+    // Setup Dear ImGui style
+    imgui.StyleColorsDark();
+    //imgui.StyleColorsClassic();
+
+    // Setup Platform/Renderer bindings
+    _ = imgui.glfw.InitForOpenGL(window.?, true);
+    defer imgui.glfw.Shutdown();
+    _ = imgui.opengl3.Init("#version 150");
+    defer imgui.opengl3.Shutdown();
+
+
     // render loop
     // -----------
     var last_frame_time: f64 = 0;
     var delta_time: f64 = 0;
+    var show_demo_window = true;
     while (glfwWindowShouldClose(window) == 0) {
         var frame_time: f64 = glfwGetTime();
         var print_time: bool = std.math.floor(frame_time) != std.math.floor(last_frame_time);
@@ -206,6 +229,16 @@ pub fn main() !void {
         // input
         if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
             glfwSetWindowShouldClose(window, 1);
+        
+        glfwPollEvents();
+
+        imgui.opengl3.NewFrame();
+        imgui.glfw.NewFrame();
+        imgui.NewFrame();
+
+        imgui.ShowDemoWindowExt(&show_demo_window);
+
+        imgui.Render();
 
         // render
         var model = Mat4.createAxisAngle(Vec3.unit("y"), @floatCast(f32, frame_time));
@@ -216,10 +249,10 @@ pub fn main() !void {
 
         gl.drawElements(.Triangles, indices.len, u32);
 
-        // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
+        imgui.opengl3.RenderDrawData(imgui.GetDrawData());
 
+        // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         glfwSwapBuffers(window);
-        glfwPollEvents();
     }
 }
 

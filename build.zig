@@ -16,10 +16,16 @@ fn addDeps(step: *LibExeObjStep) void {
         .path = "src/gl/lib.zig",
         .dependencies = &[_]Pkg{math, c},
     };
+    const imgui: Pkg = .{
+        .name = "imgui",
+        .path = "src/imgui/lib.zig",
+        .dependencies = &[_]Pkg{math, c},
+    };
 
     step.addPackage(math);
     step.addPackage(gl);
     step.addPackage(c);
+    step.addPackage(imgui);
 
     step.addIncludeDir("deps/inc");
     step.addCSourceFile("deps/src/glad.c", &[_][]const u8{"-std=c99"});
@@ -31,6 +37,7 @@ fn addDeps(step: *LibExeObjStep) void {
     step.linkSystemLibrary("gdi32");
     step.linkSystemLibrary("shell32");
     step.linkSystemLibrary("opengl32");
+    step.linkSystemLibrary("deps/Zig-ImGui/lib/win/cimguid");
     step.linkLibC();
 }
 
