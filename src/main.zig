@@ -8,44 +8,13 @@ const math = @import("math");
 usingnamespace math.glm;
 const img = @import("zigimg");
 const imgui = @import("imgui");
+const shaders = @import("shaders");
 
 // settings
 const SCR_WIDTH: u32 = 1920;
 const SCR_HEIGHT: u32 = 1080;
 
 pub const log_level = std.log.Level.info;
-
-const vertexShaderSource: [:0]const u8 =
-    \\#version 450 core
-    \\layout (location = 0) in vec3 aPos;
-    \\layout (location = 1) in vec3 aNormal;
-    \\layout (location = 2) in vec2 aUv;
-    \\out vec3 color;
-    \\out vec2 uv;
-    \\uniform mat4 proj;
-    \\uniform mat4 view;
-    \\uniform mat4 model;
-    \\
-    \\void main()
-    \\{
-    \\   gl_Position = proj * view * model * vec4(aPos, 1.0);
-    \\   color = aNormal;
-    \\   uv = aUv;
-    \\};
-;
-const fragmentShaderSource: [:0]const u8 =
-    \\#version 450 core
-    \\in vec3 color;
-    \\in vec2 uv;
-    \\out vec4 FragColor;
-    \\
-    \\uniform sampler2D albedo;
-    \\
-    \\void main()
-    \\{
-    \\   FragColor = abs(vec4(color.x, color.y, color.z, 1.0f)) * texture(albedo, uv);
-    \\};
-;
 
 const Vertex = extern struct {
     position: Vec3,
@@ -111,7 +80,7 @@ pub fn main() !void {
     }
 
     glfwMakeContextCurrent(window);
-    glfwSwapInterval(1);
+    glfwSwapInterval(0);
     const resizeCallback = glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
     // glad: load all OpenGL function pointers
@@ -120,30 +89,13 @@ pub fn main() !void {
     }
     glEnable(GL_DEPTH_TEST);
 
-    // build and compile our shader program
-    const vertexShader = gl.Shader(.Vertex).init();
-    vertexShader.source(vertexShaderSource);
-    try vertexShader.compile();
-    const fragShader = gl.Shader(.Fragment).init();
-    fragShader.source(fragmentShaderSource);
-    try fragShader.compile();
-    const Uniforms = struct {
-        proj: gl.Uniform(Mat4),
-        view: gl.Uniform(Mat4),
-        model: gl.Uniform(Mat4),
-        albedo: gl.UniformTextureUnit,
-    };
-    var shaderProgram = gl.Program(Uniforms).init();
-    defer shaderProgram.deinit();
-    shaderProgram.attach(vertexShader);
-    shaderProgram.attach(fragShader);
-    try shaderProgram.link();
-    vertexShader.deinit();
-    fragShader.deinit();
+    const shaders_ = try shaders.loadShaders();
 
-    // shaderProgram.use();
-    shaderProgram.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0 / 9.0, 0.1, 100));
-    shaderProgram.uniforms.view.set(Mat4.createLookAt(vec3(1, 1, 1), Vec3.zero, Vec3.unit("y")));
+    const test_shader = shaders_.@"test";
+
+    // test_shader.use();
+    test_shader.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0 / 9.0, 0.1, 100));
+    test_shader.uniforms.view.set(Mat4.createLookAt(vec3(1, 1, 1), Vec3.zero, Vec3.unit("y")));
 
     // create array
     // the arguments to the array type are the bind points for vertex buffers, and the integer type for the index buffer
@@ -184,10 +136,10 @@ pub fn main() !void {
     glTextureParameteri(texture.handle, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     defer texture.deinit();
     texture.bindUnit(0);
-    shaderProgram.uniforms.albedo.set(0);
+    test_shader.uniforms.albedo.set(0);
 
     // we dont need to do these before the draw call because these are the only program and array we are using so far!
-    shaderProgram.use();
+    test_shader.use();
     vertex_array.bind();
 
     
@@ -242,7 +194,7 @@ pub fn main() !void {
 
         // render
         var model = Mat4.createAxisAngle(Vec3.unit("y"), @floatCast(f32, frame_time));
-        shaderProgram.uniforms.model.set(model);
+        test_shader.uniforms.model.set(model);
 
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
         gl.clear(.ColorDepth);
