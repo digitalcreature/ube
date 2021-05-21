@@ -1,6 +1,6 @@
 pub const Config = struct {
     voxel_size : f32,
-    chunk_width : u8,
+    chunk_width : usize,
 };
 
 const root = @import("root");

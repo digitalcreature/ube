@@ -126,11 +126,20 @@ fn calculateEncodedLight(chunk: Chunk, comptime face: Face, coords: Coords) u32{
 }
 
 fn calculateEncodedLightVertex(chunk: Chunk, comptime face: Face, coords: Coords, comptime vertex_id: usize) u32 {
-    const uv = ChunkMesh.quad_verts[vertex_id].uv;
-    const u_sign: i32 = if (uv.x > 0) 1 else -1;
-    const v_sign: i32 = if (uv.y > 0) 1 else -1;
+    const sign = comptime face.sign();
     const axis = comptime face.axis();
     const normal = comptime face.normal();
+    const uv = ChunkMesh.quad_verts[vertex_id].uv;
+    const u = switch(sign) {
+        .pos => uv.x,
+        .neg => uv.y,
+    };
+    const v = switch(sign) {
+        .pos => uv.y,
+        .neg => uv.x,
+    };
+    const u_sign: i32 = if (u > 0) 1 else -1;
+    const v_sign: i32 = if (v > 0) 1 else -1;
     const tangent = switch (axis) {
         .x => Coords.init(0, u_sign, 0),
         .y => Coords.init(0, 0, u_sign),

@@ -18,8 +18,8 @@ const SCR_HEIGHT: u32 = 1080;
 pub const log_level = std.log.Level.info;
 
 pub const voxel_config: voxel.Config = .{
-    .voxel_size = 0.5,
-    .chunk_width = 64,
+    .voxel_size = 0.25,
+    .chunk_width = 128,
 };
 
 fn loadTexturePng(comptime name: []const u8) gl.Texture2D {
