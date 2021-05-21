@@ -14,10 +14,6 @@ const shaders = @import("shaders");
 const voxel = @import("voxel");
 const DebugHud = @import("debughud").DebugHud;
 
-// settings
-const SCR_WIDTH: u32 = 1920;
-const SCR_HEIGHT: u32 = 1080;
-
 pub const log_level = std.log.Level.info;
 
 pub const voxel_config: voxel.Config = .{
@@ -53,8 +49,7 @@ pub fn main() !void {
     
     const keyboard = &window.keyboard;
     
-    // vsync
-    glfwSwapInterval(1);
+    window.setVsyncMode(.enabled);
 
     window.setFrameBufferSizeCallback(framebuffer_size_callback);
 
@@ -129,28 +124,8 @@ pub fn main() !void {
     defer imgui.opengl3.Shutdown();
 
     var debughud = DebugHud.init(&window);
-
-    // render loop
-    // -----------
-    // const max_fps = 1000.0;
-    const Time = i128;
-    var last_frame_time: Time = 0;
-    var delta_time_display: Time = 0;
-    const fps_poll_rate: Time = std.time.ns_per_s / 2;
-    // var model = Mat4.identity;
     var look_angles = DVec2.zero;
-    // Mat4.createAxisAngle(Vec3.unit("y"), @floatCast(f32, frame_time / 100));
     while (!window.shouldClose()) {
-        var frame_time = std.time.nanoTimestamp();
-        const delta_frame_time = frame_time - last_frame_time;
-        if (@divFloor(frame_time, fps_poll_rate) != @divFloor(last_frame_time, fps_poll_rate)) {
-            delta_time_display = delta_frame_time;
-        }
-        last_frame_time = frame_time;
-        // std.log.info("delta_time_display = {d}", .{delta_time_display});
-        debughud.frame_time = @intToFloat(f64, delta_time_display) / @intToFloat(f64, std.time.ns_per_s);
-        const delta_time = @intToFloat(f64, delta_frame_time) / @intToFloat(f64, std.time.ns_per_s);
-
         window.update();
 
         if (keyboard.wasKeyPressed(.escape).?) {
@@ -161,10 +136,7 @@ pub fn main() !void {
             debughud.is_visible = !debughud.is_visible;
         }
         
-        gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
-        gl.clear(.ColorDepth);
-        
-        var mouse_delta = mouse.cursor_position_delta.scale(delta_time * 5);
+        var mouse_delta = mouse.cursor_position_delta.scale(window.time.frame_time * 5);
         look_angles = look_angles.add(mouse_delta);
         if (look_angles.y > 90) {
             look_angles.y = 90;
@@ -175,6 +147,8 @@ pub fn main() !void {
         const look_angles_radians = look_angles.scale(std.math.pi / 180.0).floatCast(Vec2);
         voxel_shader.uniforms.model.set(Mat4.createEulerYXZ(-look_angles_radians.y, look_angles_radians.x, 0).invert().?);
 
+        gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
+        gl.clear(.ColorDepth);
 
         gl.drawElementsInstanced(.Triangles, 6, u32, mesh.quad_instances.items.len);
 

@@ -3,12 +3,15 @@ const panic = @import("std").debug.panic;
 usingnamespace @import("c");
 usingnamespace @import("mouse.zig");
 usingnamespace @import("keyboard.zig");
+usingnamespace @import("time.zig");
+
 
 pub const Window = struct {
 
     handle: Handle,
     mouse: Mouse,
     keyboard: Keyboard,
+    time: FrameTimer,
 
     pub const Handle = *GLFWwindow;
 
@@ -35,6 +38,7 @@ pub const Window = struct {
             .handle = window,
             .mouse = Mouse.init(window),
             .keyboard = Keyboard.init(window),
+            .time = FrameTimer.init(),
         };
 
     }
@@ -45,6 +49,7 @@ pub const Window = struct {
         glfwPollEvents();
         self.mouse.update();
         self.keyboard.update();
+        self.time.update();
     }
 
     pub fn shouldClose(self: Self) bool {
@@ -58,6 +63,15 @@ pub const Window = struct {
     pub fn swapBuffers(self: Self) void {
         glfwSwapBuffers(self.handle);
     }
+
+    pub fn setVsyncMode(self: Self, mode: VsyncMode) void {
+        glfwSwapInterval(@enumToInt(mode));
+    }
+
+    pub const VsyncMode = enum(c_int) {
+        disabled = 0,
+        enabled = 1,
+    };
 
     pub fn setFrameBufferSizeCallback(self: Self, callback: FrameBufferSizeCallback) void {
         _ = glfwSetFramebufferSizeCallback(self.handle, callback);
