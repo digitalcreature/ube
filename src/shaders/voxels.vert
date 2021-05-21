@@ -1,6 +1,12 @@
 #version 450 core
-layout (location = 0) in uint vertID;
-layout (location = 1) in uint encodedPos;
+
+layout (location = 0) in vec2 quadUV;
+
+layout (location = 1) in uint encoded_pos;
+layout (location = 2) in uint encoded_lighting;
+
+in int gl_VertexID;
+in int gl_InstanceID;
 
 out vec3 color;
 out vec2 uv;
@@ -13,24 +19,12 @@ uniform mat4 view;
 uniform mat4 model;
 
 void main() {
-    uint vx = encodedPos & 255;
-    uint vy = encodedPos >> 8 & 255;
-    uint vz = encodedPos >> 16 & 255;
-    uint face = encodedPos >> 24 & 255;
-    float u;
-    float v;
-    if (vertID == 0 || vertID == 2) {
-        u = 0;
-    }
-    else {
-        u = 1;
-    }
-    if (vertID < 2) {
-        v = 1;
-    }
-    else {
-        v = 0;
-    }
+    uint vx = encoded_pos & 255;
+    uint vy = encoded_pos >> 8 & 255;
+    uint vz = encoded_pos >> 16 & 255;
+    uint face = encoded_pos >> 24 & 255;
+    float u = quadUV.x;
+    float v = quadUV.y;
     vec3 pos = vec3(0.0);
     vec3 norm = vec3(0.0);
     switch (face) {
@@ -90,10 +84,7 @@ void main() {
     float light = abs(dot(light_dir, norm));
     color = vec3(light);
     uv /= 4;
-    // if (face < 3) {
-    //     color = vec3(0.5, 0.8, 0.5) * light;
-    // }
-    // else {
-    //     color = vec3(0.8, 0.5, 0.5) * light;
-    // }
+    uint lighting = (encoded_lighting >> (8 * gl_VertexID)) & 255;
+    float ao = (float(lighting) / 3) * 0.5; // ao_strength;
+    color *= 1 - ao;
 };

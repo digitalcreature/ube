@@ -79,12 +79,12 @@ pub fn ops(comptime Self: type) type {
 
             // element access
 
-            pub fn get(self: Self, comptime i: comptime_int) Element {
+            pub fn get(self: Self, comptime i: usize) Element {
                 comptime if (i < 0 or i >= dimensions) comptimeError("index must be positive and less than {d} (was {d})", .{ dimensions, i });
                 return @field(self, field_names[i]);
             }
 
-            pub fn set(self: *Self, comptime i: comptime_int, val: Element) void {
+            pub fn set(self: *Self, comptime i: usize, val: Element) void {
                 comptime if (i < 0 or i >= dimensions) comptimeError("index must be positive and less than {d} (was {d})", .{ dimensions, i });
                 @field(self.*, field_names[i]) = val;
             }
