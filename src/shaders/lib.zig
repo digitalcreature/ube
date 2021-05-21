@@ -18,6 +18,7 @@ pub const Shaders = struct {
         model: Uniform(Mat4),
         voxel_size: Uniform(f32),
         light_dir: Uniform(Vec3),
+        albedo: UniformTextureUnit,
     }),
 };
 

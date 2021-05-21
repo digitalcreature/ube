@@ -21,24 +21,6 @@ pub const voxel_config: voxel.Config = .{
     .voxel_size = 0.5,
     .chunk_width = 64,
 };
-// pub const voxel_config: voxel.Config = .{
-//     .voxel_size = 1,
-//     .chunk_width = 32,
-// };
-
-const Vertex = extern struct {
-    position: Vec3,
-    normal: Vec3,
-    uv: Vec2,
-};
-
-fn vertex(position: Vec3, normal: Vec3, uv: Vec2) Vertex {
-    return Vertex{
-        .position = position,
-        .normal = normal,
-        .uv = uv,
-    };
-}
 
 fn loadTexturePng(comptime name: []const u8) gl.Texture2D {
     const bytes: []const u8 = @embedFile(name);
@@ -50,25 +32,8 @@ fn loadTexturePng(comptime name: []const u8) gl.Texture2D {
     var tex = gl.Texture2D.init();
     tex.storage(null, .RGB8, width, height);
     tex.subImage(null, 0, 0, width, height, .rgb, u8, pixels);
-    return tex;
-}
-
-fn genTexturePerlin(comptime width: u32, comptime height: u32) gl.Texture2D {
-    var pixels : [width][height]math.color.ColorU8 = undefined;
-    var x : u32 = 0;
-    while (x < width) : (x += 1) {
-        var y : u32 = 0;
-        while (y < height) : (y += 1) {
-            var u = @intToFloat(f32, x) * 0.1;
-            var v = @intToFloat(f32, y) * 0.1;
-            var n = math.perlin.noise2(u, v);
-            var n8 = @floatToInt(u8, std.math.clamp((n + 1) / 2, 0, 1) * 255);
-            pixels[x][y] = math.color.ColorU8.rgb(n8, n8, n8);
-        }
-    }
-    var tex = gl.Texture2D.init();
-    tex.storage(null, .RGBA8, width, height);
-    tex.subImage(null, 0, 0, width, height, .rgba, u8, &pixels);
+    glTextureParameteri(tex.handle, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTextureParameteri(tex.handle, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
     return tex;
 }
 
@@ -102,18 +67,19 @@ pub fn main() !void {
     glEnable(GL_MULTISAMPLE);
     glEnable(GL_CULL_FACE);
 
+    const grass = loadTexturePng("grass.png");
+    defer grass.deinit();
+    grass.bindUnit(0);
+
     const shaders_ = try shaders.loadShaders();
 
     const voxel_shader = shaders_.voxels;
 
     voxel_shader.uniforms.voxel_size.set(voxel_config.voxel_size);
     voxel_shader.uniforms.light_dir.set(vec3(1, 2, 3).normalize());
-
-    // const test_shader = shaders_.@"test";
-
-    // // test_shader.use();
     voxel_shader.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0 / 9.0, 0.1, 1000));
-    voxel_shader.uniforms.view.set(Mat4.createLookAt(vec3(24, 24, 24), Vec3.zero, Vec3.unit("y")));
+    voxel_shader.uniforms.view.set(Mat4.createLookAt(vec3(16, 16, 16), Vec3.zero, Vec3.unit("y")));
+    voxel_shader.uniforms.albedo.set(0);
 
     // voxel stuffs
     var voxel_vao = voxel.ChunkMesh.initVAO();
@@ -138,52 +104,6 @@ pub fn main() !void {
     mesh.updateBuffer();
 
     voxel_vao.vertices.quad_instances.bindBuffer(mesh.vbo);
-
-    // // create array
-    // // the arguments to the array type are the bind points for vertex buffers, and the integer type for the index buffer
-    // var vertex_array = gl.VertexArray(struct {
-    //     verts: gl.VertexBufferBind(Vertex, .{})
-    // }, u32).init();
-    // defer vertex_array.deinit();
-
-    // // vertex and index data
-    // const vertices =
-    //     cubeFaceVerts(0) ++
-    //     cubeFaceVerts(1) ++
-    //     cubeFaceVerts(2) ++
-    //     cubeFaceVerts(3) ++
-    //     cubeFaceVerts(4) ++
-    //     cubeFaceVerts(5);
-    // const indices = comptime cubeFaceIndices(6);
-
-    // // vertex and index buffers
-    // var vertex_buffer = gl.VertexBuffer(Vertex).initData(&vertices, .StaticDraw);
-    // defer vertex_buffer.deinit();
-    // var index_buffer = gl.IndexBuffer32.initData(&indices, .StaticDraw);
-    // defer index_buffer.deinit();
-
-    // // bind buffers to the array
-    // vertex_array.vertices.verts.bindBuffer(vertex_buffer);
-    // vertex_array.bindIndexBuffer(index_buffer);
-
-    // // uncomment this call to draw in wireframe polygons.
-    // // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
-
-    // // load and bind the texture
-    // // var texture = loadTexturePng("hello_world.png");
-    // var texture = genTexturePerlin(64, 64);
-    // glTextureParameteri(texture.handle, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    // glTextureParameteri(texture.handle, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    // glTextureParameteri(texture.handle, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    // glTextureParameteri(texture.handle, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    // defer texture.deinit();
-    // texture.bindUnit(0);
-    // test_shader.uniforms.albedo.set(0);
-
-    // // we dont need to do these before the draw call because these are the only program and array we are using so far!
-    // test_shader.use();
-    // vertex_array.bind();
-
     voxel_shader.use();
     voxel_vao.bind();
 
@@ -237,7 +157,7 @@ pub fn main() !void {
         imgui.Render();
 
         // render
-        var model = Mat4.createAxisAngle(Vec3.unit("y"), @floatCast(f32, frame_time));
+        var model = Mat4.createAxisAngle(Vec3.unit("y"), @floatCast(f32, frame_time / 100));
         voxel_shader.uniforms.model.set(model);
 
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
