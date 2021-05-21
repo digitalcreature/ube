@@ -61,7 +61,7 @@ pub fn ops(comptime Self: type) type {
         }
 
         pub fn mul(self: Self, rhs: anytype) Self {
-            info = matrixTypeInfo(@typeof(rhs)).assert();
+            const info = matrixTypeInfo(@TypeOf(rhs)).assert();
             info.assertSimilar(Self);
             const a = @field(self, field_name);
             const b = @field(rhs, info.field_name);
@@ -85,9 +85,9 @@ pub fn ops(comptime Self: type) type {
         pub fn transpose(self: Self) Self {
             var result: FieldArray = undefined;
             const vals = @field(self, field_name);
-            comptime r = 0;
+            comptime var r = 0;
             inline while (r < dimensions) : (r += 1) {
-                comptime c = 0;
+                comptime var c = 0;
                 inline while (c < dimensions) : (c += 1) {
                     result[r][c] = vals[c][r];
                 }
@@ -228,6 +228,74 @@ pub fn ops(comptime Self: type) type {
                     });
                 }
 
+                pub fn createEulerZXY(x: Element, y: Element, z: Element) Self {
+                    const sin = std.math.sin;
+                    const cos = std.math.cos;
+                    const c1 = cos(z);
+                    const s1 = sin(z);
+                    const c2 = cos(x);
+                    const s2 = sin(x);
+                    const c3 = cos(y);
+                    const s3 = sin(y);
+                    return new(.{
+                        .{c1*c3 - s1*s2*s3, -c2*s1, c1*s3 + c3*s1*s2, 0},
+                        .{c3*s1 + c1*s2*s3, c1*c2, s1*s3 - c1*c3*s2, 0},
+                        .{-c2*s3, s2, c2*c3, 0},
+                        .{ 0, 0, 0, 1 }
+                    }).transpose();
+                }
+
+                pub fn createEulerZYX(x: Element, y: Element, z: Element) Self {
+                    const sin = std.math.sin;
+                    const cos = std.math.cos;
+                    const c1 = cos(z);
+                    const s1 = sin(z);
+                    const c2 = cos(y);
+                    const s2 = sin(y);
+                    const c3 = cos(x);
+                    const s3 = sin(x);
+                    return new(.{
+                        .{c1*c2, c1*s2*s3 - c3*s1, s1*s3 + c1*c3*s2, 0},
+                        .{c2*s1, c1*c3 + s1*s2*s3, c3*s1*s2 - c1*s3, 0},
+                        .{-s2, c2*s3, c2*c3, 0},
+                        .{ 0, 0, 0, 1 }
+                    }).transpose();
+                }
+
+                pub fn createEulerXYZ(x: Element, y: Element, z: Element) Self {
+                    const sin = std.math.sin;
+                    const cos = std.math.cos;
+                    const c1 = cos(x);
+                    const s1 = sin(x);
+                    const c2 = cos(y);
+                    const s2 = sin(y);
+                    const c3 = cos(z);
+                    const s3 = sin(z);
+                    return new(.{
+                        .{c2*c3, -c2*s3, s2, 0},
+                        .{c1*s3 + c3*s1*s2, c1*c3 - s1*s2*s3, -c2*s1, 0},
+                        .{s1*s3 - c1*c3*s2, c3*s1 + c1*s2*s3, c1*c2, 0},
+                        .{ 0, 0, 0, 1 }
+                    }).transpose();
+                }
+
+                pub fn createEulerYXZ(x: Element, y: Element, z: Element) Self {
+                    const sin = std.math.sin;
+                    const cos = std.math.cos;
+                    const c1 = cos(y);
+                    const s1 = sin(y);
+                    const c2 = cos(x);
+                    const s2 = sin(x);
+                    const c3 = cos(z);
+                    const s3 = sin(z);
+                    return new(.{
+                        .{ c1*c3 + s1*s2*s3, c3*s1*s2 - c1*s3, c2*s1, 0 },
+                        .{ c2*s3, c2*c3, -s2, 0 },
+                        .{ c1*s2*s3 - c3*s1, c1*c3*s2 + s1*s3, c1*c2, 0},
+                        .{ 0, 0, 0, 1 }
+                    }).transpose();
+                }
+
                 /// creates matrix that will scale a homogeneous matrix.
                 pub fn createUniformScale(scale: Element) Self {
                     return createScaleXYZ(scale, scale, scale);
@@ -349,7 +417,7 @@ pub fn ops(comptime Self: type) type {
                         (a31 * b01 - a30 * b03 - a32 * b00) * det, // 14
                         (a20 * b03 - a21 * b01 + a22 * b00) * det, // 15
                     };
-                    return new(@bitCast([4][4]Element, out));
+                    return new(@bitCast([4][4]Element, result));
                 }
             },
             else => struct {},
