@@ -13,7 +13,6 @@ const imgui = @import("imgui");
 const shaders = @import("shaders");
 const voxel = @import("voxel");
 const DebugHud = @import("debughud").DebugHud;
-const Input = @import("input").Input;
 
 // settings
 const SCR_WIDTH: u32 = 1920;
@@ -42,7 +41,7 @@ fn loadTexturePng(comptime name: []const u8) gl.Texture2D {
 }
 
 pub fn main() !void {
-    
+
     glfw.init();
     defer glfw.deinit();
 
@@ -52,11 +51,12 @@ pub fn main() !void {
     const mouse = &window.mouse;
     mouse.setRawInputMode(.enabled);
     
+    const keyboard = &window.keyboard;
+    
     // vsync
     glfwSwapInterval(1);
 
     window.setFrameBufferSizeCallback(framebuffer_size_callback);
-
 
     // glfwSetInputMode(window.handle, GLFW_STICKY_KEYS, GLFW_TRUE);
 
@@ -136,7 +136,6 @@ pub fn main() !void {
     const Time = i128;
     var last_frame_time: Time = 0;
     var delta_time_display: Time = 0;
-    var last_grave_state: c_int = GLFW_RELEASE;
     const fps_poll_rate: Time = std.time.ns_per_s / 2;
     // var model = Mat4.identity;
     var look_angles = DVec2.zero;
@@ -154,14 +153,13 @@ pub fn main() !void {
 
         window.update();
 
-        if (glfwGetKey(window.handle, GLFW_KEY_ESCAPE) == GLFW_PRESS) {
+        if (keyboard.wasKeyPressed(.escape).?) {
             window.setShouldClose(true);
         }
-        var grave_state = glfwGetKey(window.handle, GLFW_KEY_GRAVE_ACCENT);
-        if (grave_state != last_grave_state and grave_state == GLFW_PRESS) {
+
+        if (keyboard.wasKeyPressed(.grave).?) {
             debughud.is_visible = !debughud.is_visible;
         }
-        last_grave_state = grave_state;
         
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
         gl.clear(.ColorDepth);
@@ -206,7 +204,7 @@ pub fn main() !void {
 }
 
 // glfw: whenever the window size changed (by OS or user resize) this callback function executes
-pub fn framebuffer_size_callback(window: ?*GLFWwindow, width: c_int, height: c_int) callconv(.C) void {
+pub fn framebuffer_size_callback(window: ?glfw.Window.Handle, width: c_int, height: c_int) callconv(.C) void {
     // make sure the viewport matches the new window dimensions; note that width and
     // height will be significantly larger than specified on retina displays.
     glViewport(0, 0, width, height);

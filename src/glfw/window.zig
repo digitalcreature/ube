@@ -1,12 +1,14 @@
 const panic = @import("std").debug.panic;
 
 usingnamespace @import("c");
-const Mouse = @import("mouse.zig").Mouse;
+usingnamespace @import("mouse.zig");
+usingnamespace @import("keyboard.zig");
 
 pub const Window = struct {
 
     handle: Handle,
     mouse: Mouse,
+    keyboard: Keyboard,
 
     pub const Handle = *GLFWwindow;
 
@@ -25,9 +27,15 @@ pub const Window = struct {
             panic("Failed to create GLFW window\n", .{});
         }
         const window = window_opt.?;
+        
         glfwMakeContextCurrent(window);
+        glfwPollEvents();
 
-        return .{ .handle = window, .mouse = Mouse.init(window), };
+        return .{
+            .handle = window,
+            .mouse = Mouse.init(window),
+            .keyboard = Keyboard.init(window),
+        };
 
     }
 
@@ -36,6 +44,7 @@ pub const Window = struct {
     pub fn update(self: *Self) void {
         glfwPollEvents();
         self.mouse.update();
+        self.keyboard.update();
     }
 
     pub fn shouldClose(self: Self) bool {
