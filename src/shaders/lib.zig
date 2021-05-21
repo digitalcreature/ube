@@ -12,8 +12,13 @@ pub const Shaders = struct {
         model: Uniform(Mat4),
         albedo: UniformTextureUnit,
     }),
-
-    
+    voxels: Program(struct {
+        proj: Uniform(Mat4),
+        view: Uniform(Mat4),
+        model: Uniform(Mat4),
+        voxel_size: Uniform(f32),
+        light_dir: Uniform(Vec3),
+    }),
 };
 
 fn loadShader(comptime Uniforms : type, comptime name : []const u8) !Program(Uniforms) {

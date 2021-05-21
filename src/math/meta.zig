@@ -70,6 +70,9 @@ pub fn vectorTypeInfo(comptime T: type) CompileErrorUnion(VectorTypeInfo) {
                     return .{ .err = "vector struct must have homogenous field types (expected " ++ @typeName(Element) ++ ", found " ++ @typeName(ftype) ++ " for field " ++ fields[i].name ++ ")" };
                 }
             }
+            if (!std.meta.trait.isNumber(Element)) {
+                return .{ .err = "vector type must be have a numeric element type, not " ++ @typeName(Element) ++ " (for type" ++ @typeName(T) ++ ")" };
+            }
             var field_names: [dimensions][]const u8 = undefined;
             inline for (fields) |field, f| {
                 field_names[f] = field.name;

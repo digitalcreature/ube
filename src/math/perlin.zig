@@ -1,9 +1,16 @@
 const std = @import("std");
 const math = std.math;
 
+const vector = @import("vector.zig");
+const meta = @import("meta.zig");
+
+fn castLsb(x : f32) usize {
+    return @floatToInt(usize, math.floor(x)) & 0xff;
+}
+
 pub fn noise1(pos_x: f32) f32 {
     var x = pos_x;
-    var X = @floatToInt(i32, math.floor(x)) & 0xff;
+    var X = castLsb(pos_x);
     x -= math.floor(x);
     var u = fade(x);
     return lerp(u, grad1(perm[X], x), grad1(perm[X + 1], x - 1)) * 2;
@@ -12,8 +19,8 @@ pub fn noise1(pos_x: f32) f32 {
 pub fn noise2(pos_x: f32, pos_y: f32) f32 {
     var x = pos_x;
     var y = pos_y;
-    var X = @floatToInt(usize, math.floor(x)) & 0xff;
-    var Y = @floatToInt(usize, math.floor(y)) & 0xff;
+    var X = castLsb(pos_x);
+    var Y = castLsb(pos_y);
     x -= math.floor(x);
     y -= math.floor(y);
     var u = fade(x);
@@ -32,9 +39,9 @@ pub fn noise3(pos_x: f32, pos_y: f32, pos_z: f32) f32 {
     var x = pos_x;
     var y = pos_y;
     var z = pos_z;
-    var X = @floatToInt(i32, math.floor(x)) & 0xff;
-    var Y = @floatToInt(i32, math.floor(y)) & 0xff;
-    var Z = @floatToInt(i32, math.floor(z)) & 0xff;
+    var X = castLsb(pos_x);
+    var Y = castLsb(pos_y);
+    var Z = castLsb(pos_z);
     x -= math.floor(x);
     y -= math.floor(y);
     z -= math.floor(z);
@@ -48,6 +55,31 @@ pub fn noise3(pos_x: f32, pos_y: f32, pos_z: f32) f32 {
     var AB = (perm[A + 1] + Z) & 0xff;
     var BB = (perm[B + 1] + Z) & 0xff;
     return lerp(w, lerp(v, lerp(u, grad3(perm[AA], x, y, z), grad3(perm[BA], x - 1, y, z)), lerp(u, grad3(perm[AB], x, y - 1, z), grad3(perm[BB], x - 1, y - 1, z))), lerp(v, lerp(u, grad3(perm[AA + 1], x, y, z - 1), grad3(perm[BA + 1], x - 1, y, z - 1)), lerp(u, grad3(perm[AB + 1], x, y - 1, z - 1), grad3(perm[BB + 1], x - 1, y - 1, z - 1))));
+}
+
+pub fn noise(v : anytype) f32 {
+    const V = @TypeOf(v);
+    return switch (@typeInfo(V)) {
+        .Int, .ComptimeInt => noise1(@intToFloat(f32, v)),
+        .Float, .ComptimeFloat => noise1(@floatCast(f32, v)),
+        .Struct => blk: {
+            const info = meta.vectorTypeInfo(V).assert();
+            const ops = vector.ops(V).basic;
+            const V_f32 = vector.Vector(f32, info.dimensions);
+            const v_f32 = switch (@typeInfo(info.Element)) {
+                .Int, .ComptimeInt => ops.intToFloat(v, V_f32),
+                .Float, .ComptimeFloat => ops.floatCast(v, V_f32),
+                else => unreachable,
+            };
+            break :blk switch (info.dimensions) {
+                1 => noise1(ops.get(v, 0)),
+                2 => noise2(ops.get(v, 0), ops.get(v, 1)),
+                3 => noise3(ops.get(v, 0), ops.get(v, 1), ops.get(v, 2)),
+                else => @compileError("only 1, 2, and 3 dimensional noise supported, cannot sample noise in " ++ std.fmt.comptimePrint("{d}", .{info.dimensions}) ++ " dimensions with " ++ @typeName(V)),
+            };
+        },
+        else => @compileError("cannot sample noise with non vector/scalar type " ++ @typeName(V)),
+    };
 }
 
 // pub fn noise(Vector3 coord)
@@ -120,8 +152,8 @@ fn grad2(hash: i32, x: f32, y: f32) f32 {
 
 fn grad3(hash: i32, x: f32, y: f32, z: f32) f32 {
     var h = hash & 15;
-    var u = if (h < 8) x else y;
-    var v = if (h < 4) y else (h == 12 || if (h == 14) x else z);
+    var u = if (h < 8)  x else y;
+    var v = if (h < 4)  y else (if (h == 12 or h == 14)  x else z);
     return grad2(h, u, v);
 }
 

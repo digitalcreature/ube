@@ -9,12 +9,18 @@ usingnamespace math.glm;
 const img = @import("zigimg");
 const imgui = @import("imgui");
 const shaders = @import("shaders");
+const voxel = @import("voxel");
 
 // settings
 const SCR_WIDTH: u32 = 1920;
 const SCR_HEIGHT: u32 = 1080;
 
 pub const log_level = std.log.Level.info;
+
+pub const voxel_config: voxel.Config = .{
+    .voxel_size = 0.5,
+    .chunk_width = 64,
+};
 
 const Vertex = extern struct {
     position: Vec3,
@@ -97,10 +103,34 @@ pub fn main() !void {
     test_shader.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0 / 9.0, 0.1, 100));
     test_shader.uniforms.view.set(Mat4.createLookAt(vec3(1, 1, 1), Vec3.zero, Vec3.unit("y")));
 
+    // voxel stuffs
+    var voxel_vao = voxel.ChunkMesh.initVAO();
+    defer voxel_vao.deinit();
+
+    // voxel chunk
+    var chunk = voxel.Chunk.init();
+    for (chunk.voxels.data) |*yz_slice, x| {
+        for (yz_slice.*) |*z_slice, y| {
+            for (z_slice.*) |*v, z| {
+                const pos = autoVec(.{x, y, z}).intToFloat(Vec3);
+                const noise = math.perlin.noise(pos.scale(0.9));
+                v.* = if (noise < 0.5) 0 else 1;
+            }
+        }
+    }
+
+    // voxel mesh
+    var mesh = voxel.ChunkMesh.init(std.heap.c_allocator);
+    defer mesh.deinit();
+    try mesh.generate(chunk);
+    mesh.updateBuffer();
+
+    voxel_vao.vertices.quad_instances.bindBuffer(mesh.vbo);
+
     // create array
     // the arguments to the array type are the bind points for vertex buffers, and the integer type for the index buffer
     var vertex_array = gl.VertexArray(struct {
-        verts: gl.VertexBufferBind(Vertex, 0, 0)
+        verts: gl.VertexBufferBind(Vertex, .{})
     }, u32).init();
     defer vertex_array.deinit();
 
@@ -161,7 +191,6 @@ pub fn main() !void {
     defer imgui.glfw.Shutdown();
     _ = imgui.opengl3.Init("#version 450");
     defer imgui.opengl3.Shutdown();
-
 
     // render loop
     // -----------
@@ -231,8 +260,8 @@ fn cubeFaceVerts(comptime face_id: u32) [4]Vertex {
             uv.x = if (i % 2 != @boolToInt(is_neg)) 0 else 1;
             uv.y = if ((i < 2) != is_neg) 1 else 0;
             const flip = if (is_neg) 1 else -1;
-            pos.setElement((axis + 1) % 3, if (i % 2 == 0) -1 else 1);
-            pos.setElement((axis + 2) % 3, flip * if (i < 2) 1 else -1);
+            pos.set((axis + 1) % 3, if (i % 2 == 0) -1 else 1);
+            pos.set((axis + 2) % 3, flip * if (i < 2) 1 else -1);
             verts[i] = vertex(pos.scale(0.5), normal, uv);
         }
         return verts;

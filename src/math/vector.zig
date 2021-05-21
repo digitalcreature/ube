@@ -59,14 +59,32 @@ pub fn ops(comptime Self: type) type {
                 return result;
             }
 
+            pub usingnamespace switch(dimensions) {
+                1 => struct {
+                    pub fn init(x: Element) Self { return new(.{x}); }
+                },
+                2 => struct {
+                    pub fn init(x: Element, y: Element) Self { return new(.{x, y}); }
+                },
+                3 => struct {
+                    pub fn init(x: Element, y: Element, z: Element) Self { return new(.{x, y, z}); }
+                },
+                4 => struct {
+                    pub fn init(x: Element, y: Element, z: Element, w: Element) Self { return new(.{x, y, z, w}); }
+                },
+                else => struct {
+                    pub const init = new;
+                }
+            };
+
             // element access
 
-            pub fn getElement(self: Self, comptime i: comptime_int) Element {
+            pub fn get(self: Self, comptime i: comptime_int) Element {
                 comptime if (i < 0 or i >= dimensions) comptimeError("index must be positive and less than {d} (was {d})", .{ dimensions, i });
                 return @field(self, field_names[i]);
             }
 
-            pub fn setElement(self: *Self, comptime i: comptime_int, val: Element) void {
+            pub fn set(self: *Self, comptime i: comptime_int, val: Element) void {
                 comptime if (i < 0 or i >= dimensions) comptimeError("index must be positive and less than {d} (was {d})", .{ dimensions, i });
                 @field(self.*, field_names[i]) = val;
             }
@@ -485,6 +503,16 @@ pub const glm = struct {
     pub fn dvec4(x: f64, y: f64, z: f64, w: f64) DVec4 {
         return DVec4.new(.{ x, y, z, w });
     }
+
+    pub fn AutoVec(comptime T : type) type {
+        const info = vectorTypeInfo(T).assert();
+        return Vector(info.Element, info.dimensions);
+    }
+
+    pub fn autoVec(tuple : anytype) AutoVec(@TypeOf(tuple)) {
+        const T = AutoVec(@TypeOf(tuple));
+        return T.from(tuple);
+    }
 };
 
 test "vector type info" {
@@ -503,4 +531,14 @@ test "vector ops" {
     const a = glm.vec3(0, 1, 2);
     const dir = a.toAffineDirection();
     std.testing.expectEqual(dir.w, 0);
+}
+
+test "autovec" {
+    const x : u32 = 3;
+    const y : u32 = 4;
+    const z : u32 = 5;
+    const v = glm.autoVec(.{x, y, z});
+    const info = vectorTypeInfo(@TypeOf(v)).assert();
+    std.testing.expectEqual(info.Element, u32);
+    std.testing.expectEqual(info.dimensions, 3);
 }

@@ -4,12 +4,14 @@ fn addDeps(step: *LibExeObjStep) void {
     const math: Pkg = .{
         .name = "math",
         .path = "src/math/lib.zig",
-        .dependencies = null,
+    };
+    const utils: Pkg = .{
+        .name = "utils",
+        .path = "src/utils/lib.zig",
     };
     const c: Pkg = .{
         .name = "c",
         .path = "src/c.zig",
-        .dependencies = null,
     };
     const gl: Pkg = .{
         .name = "gl",
@@ -26,12 +28,19 @@ fn addDeps(step: *LibExeObjStep) void {
         .path = "src/shaders/lib.zig",
         .dependencies = &[_]Pkg{ gl, math },
     };
+    const voxel: Pkg = .{
+        .name = "voxel",
+        .path = "src/voxel/lib.zig",
+        .dependencies = &[_]Pkg{ gl, math },
+    };
 
     step.addPackage(math);
+    step.addPackage(utils);
     step.addPackage(gl);
     step.addPackage(c);
     step.addPackage(imgui);
     step.addPackage(shaders);
+    step.addPackage(voxel);
 
     step.addIncludeDir("deps/inc");
     step.addCSourceFile("deps/src/glad.c", &[_][]const u8{"-std=c99"});
