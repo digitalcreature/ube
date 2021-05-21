@@ -62,6 +62,7 @@ pub fn Texture(comptime texture_target: TextureTarget) type {
             };
         }
 
+
         pub fn deinit(self: Self) void {
             glDeleteTextures(1, &self.handle);
         }
@@ -84,4 +85,26 @@ pub fn Texture(comptime texture_target: TextureTarget) type {
             else => struct {},
         };
     };
+}
+
+
+pub const AlphaChannelFlag = enum {
+    has_alpha,
+    no_alpha,
+};
+
+pub fn loadTextureFromPngBytes(comptime bytes: []const u8, comptime alpha_flag: AlphaChannelFlag) Texture2D {
+    var width: i32 = undefined;
+    var height: i32 = undefined;
+    var channels: i32 = undefined;
+    var pixels: *u8 = stbi_load_from_memory(bytes.ptr, bytes.len, &width, &height, &channels, 0);
+    defer stbi_image_free(pixels);
+    var tex = Texture2D.init();
+    const sized_format: SizedTextureFormat = if (alpha_flag == .has_alpha) .RGBA8 else .RGB8;
+    const format: TextureFormat = if (alpha_flag == .has_alpha) .rgba else .rgb;
+    tex.storage(null, sized_format, width, height);
+    tex.subImage(null, 0, 0, width, height, format, u8, pixels);
+    glTextureParameteri(tex.handle, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    glTextureParameteri(tex.handle, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    return tex;
 }

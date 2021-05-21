@@ -2,7 +2,7 @@ const std = @import("std");
 const builtin = @import("builtin");
 const panic = std.debug.panic;
 
-usingnamespace @import("c");
+// usingnamespace @import("c");
 
 const gl = @import("gl");
 const glfw = @import("glfw");
@@ -21,21 +21,6 @@ pub const voxel_config: voxel.Config = .{
     .chunk_width = 64,
 };
 
-fn loadTexturePng(comptime name: []const u8) gl.Texture2D {
-    const bytes: []const u8 = @embedFile(name);
-    var width: i32 = undefined;
-    var height: i32 = undefined;
-    var channels: i32 = undefined;
-    var pixels: *u8 = stbi_load_from_memory(bytes.ptr, bytes.len, &width, &height, &channels, 0);
-    defer stbi_image_free(pixels);
-    var tex = gl.Texture2D.init();
-    tex.storage(null, .RGB8, width, height);
-    tex.subImage(null, 0, 0, width, height, .rgb, u8, pixels);
-    glTextureParameteri(tex.handle, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTextureParameteri(tex.handle, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    return tex;
-}
-
 pub fn main() !void {
 
     glfw.init();
@@ -53,21 +38,12 @@ pub fn main() !void {
 
     window.setFrameBufferSizeCallback(framebuffer_size_callback);
 
+    gl.init();
 
-    // glfwSetInputMode(window.handle, GLFW_STICKY_KEYS, GLFW_TRUE);
-
-    // glad: load all OpenGL function pointers
-    if (gladLoadGLLoader(@ptrCast(GLADloadproc, glfwGetProcAddress)) == 0) {
-        panic("Failed to initialise GLAD\n", .{});
-    }
-    glEnable(GL_DEPTH_TEST);
-    glEnable(GL_MULTISAMPLE);
-    glEnable(GL_CULL_FACE);
-    
     imgui.init(&window);
     defer imgui.deinit();
 
-    const grass = loadTexturePng("grass.png");
+    const grass = gl.loadTextureFromPngBytes(@embedFile("grass.png"), .no_alpha);
     defer grass.deinit();
     grass.bindUnit(0);
 
@@ -143,18 +119,7 @@ pub fn main() !void {
 
         imgui.endFrame();
 
-        // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         window.swapBuffers();
-        // const total_delta_this_frame: f64 = glfwGetTime() - frame_time;
-        // // if (total_delta_this_frame == 0) std.log.warn("total_delta_this_frame is zero!", .{});
-        // // std.log.info("total_delta_this_frame: {d}", .{total_delta_this_frame});
-        // const fps = 1 / total_delta_this_frame;
-        // std.log.info("fps: {d}", .{fps});
-        // if (fps > max_fps) {
-        //     const sleep_time: f64 = (1 / max_fps);// - total_delta_this_frame;
-        //     // std.log.info("sleep_time: {d}", .{sleep_time});
-        //     std.time.sleep(@floatToInt(u64, sleep_time * std.time.ns_per_s));
-        // }
     }
 }
 
@@ -162,5 +127,5 @@ pub fn main() !void {
 pub fn framebuffer_size_callback(window: ?glfw.Window.Handle, width: c_int, height: c_int) callconv(.C) void {
     // make sure the viewport matches the new window dimensions; note that width and
     // height will be significantly larger than specified on retina displays.
-    glViewport(0, 0, width, height);
+    gl.viewport(0, 0, width, height);
 }
