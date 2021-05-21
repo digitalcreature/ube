@@ -26,7 +26,7 @@ fn addDeps(step: *LibExeObjStep) void {
     const imgui: Pkg = .{
         .name = "imgui",
         .path = "src/imgui/lib.zig",
-        .dependencies = &[_]Pkg{ math, c },
+        .dependencies = &[_]Pkg{ math, c, glfw },
     };
     const input: Pkg = .{
         .name = "input",

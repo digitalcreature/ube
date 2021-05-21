@@ -53,6 +53,7 @@ pub fn main() !void {
 
     window.setFrameBufferSizeCallback(framebuffer_size_callback);
 
+
     // glfwSetInputMode(window.handle, GLFW_STICKY_KEYS, GLFW_TRUE);
 
     // glad: load all OpenGL function pointers
@@ -62,6 +63,9 @@ pub fn main() !void {
     glEnable(GL_DEPTH_TEST);
     glEnable(GL_MULTISAMPLE);
     glEnable(GL_CULL_FACE);
+    
+    imgui.init(&window);
+    defer imgui.deinit();
 
     const grass = loadTexturePng("grass.png");
     defer grass.deinit();
@@ -103,26 +107,6 @@ pub fn main() !void {
     voxel_shader.use();
     voxel_vao.bind();
 
-    
-    // Setup Dear ImGui context
-    imgui.CHECKVERSION();
-    _ = imgui.CreateContext();
-    defer imgui.DestroyContext();
-    var imgui_io = imgui.GetIO();
-    imgui_io.IniFilename = null;
-    //io.ConfigFlags |= imgui.ConfigFlags.NavEnableKeyboard;     // Enable Keyboard Controls
-    //io.ConfigFlags |= imgui.ConfigFlags.NavEnableGamepad;      // Enable Gamepad Controls
-
-    // Setup Dear ImGui style
-    imgui.StyleColorsDark();
-    // imgui.StyleColorsClassic();
-
-    // Setup Platform/Renderer bindings
-    _ = imgui.glfw.InitForOpenGL(window.handle, true);
-    defer imgui.glfw.Shutdown();
-    _ = imgui.opengl3.Init("#version 450");
-    defer imgui.opengl3.Shutdown();
-
     var debughud = DebugHud.init(&window);
     var look_angles = DVec2.zero;
     while (!window.shouldClose()) {
@@ -152,15 +136,12 @@ pub fn main() !void {
 
         gl.drawElementsInstanced(.Triangles, 6, u32, mesh.quad_instances.items.len);
 
-        imgui.opengl3.NewFrame();
-        imgui.glfw.NewFrame();
-        imgui.NewFrame();
+        imgui.beginFrame();
 
         // imgui.ShowDemoWindowExt(&show_demo_window);
         debughud.draw();
 
-        imgui.Render();
-        imgui.opengl3.RenderDrawData(imgui.GetDrawData());
+        imgui.endFrame();
 
         // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
         window.swapBuffers();
