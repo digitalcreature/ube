@@ -13,7 +13,7 @@ const voxel = @import("voxel");
 pub const VertexBufferBindConfig = struct {
     bind_index : c_uint = 0,
     attrib_start : c_uint = 0,
-    divisor : c_uint = 0,
+    divisor : ?c_uint = null,
 };
 
 pub fn VertexBufferBind(comptime Attribs: type, comptime config : VertexBufferBindConfig) type {
@@ -51,6 +51,9 @@ pub fn VertexBufferBind(comptime Attribs: type, comptime config : VertexBufferBi
                                 else => glVertexArrayAttribIFormat(vao, attrib_index, attrib_info.element_count, attrib_type, offset),
                             }
                             glVertexArrayAttribBinding(vao, attrib_index, binding_index);
+                        }
+                        if (config.divisor) |divisor| {
+                            glVertexArrayBindingDivisor(vao, binding_index, divisor);
                         }
                         return self;
                     }

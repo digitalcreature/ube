@@ -21,6 +21,10 @@ pub const voxel_config: voxel.Config = .{
     .voxel_size = 0.5,
     .chunk_width = 64,
 };
+// pub const voxel_config: voxel.Config = .{
+//     .voxel_size = 1,
+//     .chunk_width = 32,
+// };
 
 const Vertex = extern struct {
     position: Vec3,
@@ -79,6 +83,7 @@ pub fn main() !void {
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    glfwWindowHint(GLFW_SAMPLES, 4);
     // glfw: initialize and configure
     var window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "ube", null, null);
     if (window == null) {
@@ -94,14 +99,21 @@ pub fn main() !void {
         panic("Failed to initialise GLAD\n", .{});
     }
     glEnable(GL_DEPTH_TEST);
+    glEnable(GL_MULTISAMPLE);
+    glEnable(GL_CULL_FACE);
 
     const shaders_ = try shaders.loadShaders();
 
-    const test_shader = shaders_.@"test";
+    const voxel_shader = shaders_.voxels;
 
-    // test_shader.use();
-    test_shader.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0 / 9.0, 0.1, 100));
-    test_shader.uniforms.view.set(Mat4.createLookAt(vec3(1, 1, 1), Vec3.zero, Vec3.unit("y")));
+    voxel_shader.uniforms.voxel_size.set(voxel_config.voxel_size);
+    voxel_shader.uniforms.light_dir.set(vec3(1, 2, 3).normalize());
+
+    // const test_shader = shaders_.@"test";
+
+    // // test_shader.use();
+    voxel_shader.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0 / 9.0, 0.1, 1000));
+    voxel_shader.uniforms.view.set(Mat4.createLookAt(vec3(24, 24, 24), Vec3.zero, Vec3.unit("y")));
 
     // voxel stuffs
     var voxel_vao = voxel.ChunkMesh.initVAO();
@@ -113,8 +125,8 @@ pub fn main() !void {
         for (yz_slice.*) |*z_slice, y| {
             for (z_slice.*) |*v, z| {
                 const pos = autoVec(.{x, y, z}).intToFloat(Vec3);
-                const noise = math.perlin.noise(pos.scale(0.9));
-                v.* = if (noise < 0.5) 0 else 1;
+                const noise = math.perlin.noise(pos.scale(0.05));
+                v.* = if (noise < 0.25) 0 else 1;
             }
         }
     }
@@ -127,50 +139,53 @@ pub fn main() !void {
 
     voxel_vao.vertices.quad_instances.bindBuffer(mesh.vbo);
 
-    // create array
-    // the arguments to the array type are the bind points for vertex buffers, and the integer type for the index buffer
-    var vertex_array = gl.VertexArray(struct {
-        verts: gl.VertexBufferBind(Vertex, .{})
-    }, u32).init();
-    defer vertex_array.deinit();
+    // // create array
+    // // the arguments to the array type are the bind points for vertex buffers, and the integer type for the index buffer
+    // var vertex_array = gl.VertexArray(struct {
+    //     verts: gl.VertexBufferBind(Vertex, .{})
+    // }, u32).init();
+    // defer vertex_array.deinit();
 
-    // vertex and index data
-    const vertices =
-        cubeFaceVerts(0) ++
-        cubeFaceVerts(1) ++
-        cubeFaceVerts(2) ++
-        cubeFaceVerts(3) ++
-        cubeFaceVerts(4) ++
-        cubeFaceVerts(5);
-    const indices = comptime cubeFaceIndices(6);
+    // // vertex and index data
+    // const vertices =
+    //     cubeFaceVerts(0) ++
+    //     cubeFaceVerts(1) ++
+    //     cubeFaceVerts(2) ++
+    //     cubeFaceVerts(3) ++
+    //     cubeFaceVerts(4) ++
+    //     cubeFaceVerts(5);
+    // const indices = comptime cubeFaceIndices(6);
 
-    // vertex and index buffers
-    var vertex_buffer = gl.VertexBuffer(Vertex).initData(&vertices, .StaticDraw);
-    defer vertex_buffer.deinit();
-    var index_buffer = gl.IndexBuffer32.initData(&indices, .StaticDraw);
-    defer index_buffer.deinit();
+    // // vertex and index buffers
+    // var vertex_buffer = gl.VertexBuffer(Vertex).initData(&vertices, .StaticDraw);
+    // defer vertex_buffer.deinit();
+    // var index_buffer = gl.IndexBuffer32.initData(&indices, .StaticDraw);
+    // defer index_buffer.deinit();
 
-    // bind buffers to the array
-    vertex_array.vertices.verts.bindBuffer(vertex_buffer);
-    vertex_array.bindIndexBuffer(index_buffer);
+    // // bind buffers to the array
+    // vertex_array.vertices.verts.bindBuffer(vertex_buffer);
+    // vertex_array.bindIndexBuffer(index_buffer);
 
-    // uncomment this call to draw in wireframe polygons.
-    // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    // // uncomment this call to draw in wireframe polygons.
+    // // glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
 
-    // load and bind the texture
-    // var texture = loadTexturePng("hello_world.png");
-    var texture = genTexturePerlin(64, 64);
-    glTextureParameteri(texture.handle, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTextureParameteri(texture.handle, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTextureParameteri(texture.handle, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTextureParameteri(texture.handle, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    defer texture.deinit();
-    texture.bindUnit(0);
-    test_shader.uniforms.albedo.set(0);
+    // // load and bind the texture
+    // // var texture = loadTexturePng("hello_world.png");
+    // var texture = genTexturePerlin(64, 64);
+    // glTextureParameteri(texture.handle, GL_TEXTURE_WRAP_S, GL_REPEAT);
+    // glTextureParameteri(texture.handle, GL_TEXTURE_WRAP_T, GL_REPEAT);
+    // glTextureParameteri(texture.handle, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+    // glTextureParameteri(texture.handle, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+    // defer texture.deinit();
+    // texture.bindUnit(0);
+    // test_shader.uniforms.albedo.set(0);
 
-    // we dont need to do these before the draw call because these are the only program and array we are using so far!
-    test_shader.use();
-    vertex_array.bind();
+    // // we dont need to do these before the draw call because these are the only program and array we are using so far!
+    // test_shader.use();
+    // vertex_array.bind();
+
+    voxel_shader.use();
+    voxel_vao.bind();
 
     
     // Setup Dear ImGui context
@@ -223,12 +238,12 @@ pub fn main() !void {
 
         // render
         var model = Mat4.createAxisAngle(Vec3.unit("y"), @floatCast(f32, frame_time));
-        test_shader.uniforms.model.set(model);
+        voxel_shader.uniforms.model.set(model);
 
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
         gl.clear(.ColorDepth);
 
-        gl.drawElements(.Triangles, indices.len, u32);
+        gl.drawElementsInstanced(.Triangles, 6, u32, mesh.quad_instances.items.len);
 
         imgui.opengl3.RenderDrawData(imgui.GetDrawData());
 

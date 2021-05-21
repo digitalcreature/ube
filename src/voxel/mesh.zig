@@ -45,8 +45,8 @@ pub const ChunkMesh = struct {
     pub const QuadInstanceBuffer = gl.VertexBuffer(QuadInstance);
 
     const VertBufferBindings = struct {
-        quad: gl.VertexBufferBind(QuadVert, .{}),
-        quad_instances: gl.VertexBufferBind(QuadInstance, .{.divisor = 1}),
+        quad: gl.VertexBufferBind(QuadVert, .{.bind_index = 0, .attrib_start = 0}),
+        quad_instances: gl.VertexBufferBind(QuadInstance, .{.bind_index = 1, .attrib_start = 1, .divisor = 1}),
     };
 
     pub const VAO = gl.VertexArrayExt(VertBufferBindings, u32, VAOMixin);
@@ -97,7 +97,7 @@ fn generateChunkMesh(self: *ChunkMesh, chunk: Chunk) !void {
                     if (voxels.get(loc) > 0) {
                         const is_edge = if (is_neg) coord == 0 else coord == width - 1;
                         const neighbor_loc = loc.add(Coords.uniti(face));
-                        const needs_face = is_edge or voxels.get(neighbor_loc) == 0;
+                        const needs_face = !is_edge and voxels.get(neighbor_loc) == 0;
                         if (needs_face) {
                             const instance: ChunkMesh.QuadInstance = .{
                                 .encoded_position = x | y << 8 | z << 16 | face << 24,
@@ -109,4 +109,5 @@ fn generateChunkMesh(self: *ChunkMesh, chunk: Chunk) !void {
             }
         }
     }
+    std.log.info("generated chunk mesh with {d} quads", .{self.*.quad_instances.items.len});
 }

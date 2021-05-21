@@ -16,8 +16,20 @@ void main() {
     uint vy = encodedPos >> 8 & 255;
     uint vz = encodedPos >> 16 & 255;
     uint face = encodedPos >> 24 & 255;
-    float u = ((vertID % 2) == 0) ? 0.0 : 1.0;
-    float v = ((vertID & 1) == 0) ? 0.0 : 1.0;
+    float u;
+    float v;
+    if (vertID == 0 || vertID == 2) {
+        u = 0;
+    }
+    else {
+        u = 1;
+    }
+    if (vertID < 2) {
+        v = 1;
+    }
+    else {
+        v = 0;
+    }
     vec3 pos = vec3(0.0);
     vec3 norm = vec3(0.0);
     switch (face) {
@@ -28,9 +40,9 @@ void main() {
             norm.x = 1;
             break;
         case 1: // y+
-            pos.x = u;
+            pos.x = v;
             pos.y = 1;
-            pos.z = v;
+            pos.z = u;
             norm.y = 1;
             break;
         case 2: // z+
@@ -46,9 +58,9 @@ void main() {
             norm.x = -1;
             break;
         case 4: // y-
-            pos.x = v;
+            pos.x = u;
             pos.y = 0;
-            pos.z = u;
+            pos.z = v;
             norm.y = -1;
             break;
         case 5: // z-
@@ -60,7 +72,14 @@ void main() {
     }
     pos += vec3(vx, vy, vz);
     pos *= voxel_size;
+    pos -= vec3(16.0); // temporary centering
     gl_Position = proj * view * model * vec4(pos, 1.0);
     float light = abs(dot(light_dir, norm));
     color = vec3(light);
+    // if (face < 3) {
+    //     color = vec3(0.5, 0.8, 0.5) * light;
+    // }
+    // else {
+    //     color = vec3(0.8, 0.5, 0.5) * light;
+    // }
 };

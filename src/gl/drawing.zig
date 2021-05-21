@@ -1,5 +1,7 @@
 usingnamespace @import("c");
 const color = @import("math").color;
+const std = @import("std");
+const cast = std.meta.cast;
 
 pub fn clearColor(col: color.ColorF32) void {
     glClearColor(col.r, col.g, col.b, col.a);
@@ -46,16 +48,26 @@ pub const PrimitiveType = enum(c_uint) {
     // Patches = GL_PATCHES,
 };
 
-pub fn drawElementsOffset(primitive_type: PrimitiveType, count: c_int, comptime Index: type, offset: usize) void {
+pub fn drawElementsOffset(primitive_type: PrimitiveType, index_count: usize, comptime Index: type, offset: usize) void {
     const index_type = switch (Index) {
         u8 => GL_UNSIGNED_BYTE,
         u16 => GL_UNSIGNED_SHORT,
         u32 => GL_UNSIGNED_INT,
         else => @compileError("unsupported index buffer element type " ++ @typeName(Index)),
     };
-    glDrawElements(@enumToInt(primitive_type), count, index_type, @intToPtr(?*c_void, offset));
+    glDrawElements(@enumToInt(primitive_type), cast(c_int, index_count), index_type, @intToPtr(?*c_void, offset));
 }
 
-pub fn drawElements(primitive_type: PrimitiveType, count: c_int, comptime Index: type) void {
-    drawElementsOffset(primitive_type, count, Index, 0);
+pub fn drawElements(primitive_type: PrimitiveType, index_count: usize, comptime Index: type) void {
+    drawElementsOffset(primitive_type, index_count, Index, 0);
+}
+
+pub fn drawElementsInstanced(primitive_type: PrimitiveType, index_count: usize, comptime Index: type, instance_count: usize) void {
+    const index_type = switch (Index) {
+        u8 => GL_UNSIGNED_BYTE,
+        u16 => GL_UNSIGNED_SHORT,
+        u32 => GL_UNSIGNED_INT,
+        else => @compileError("unsupported index buffer element type " ++ @typeName(Index)),
+    };
+    glDrawElementsInstanced(@enumToInt(primitive_type), cast(c_int, index_count), index_type, null, cast(c_int, instance_count));
 }
