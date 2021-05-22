@@ -36,8 +36,6 @@ pub fn main() !void {
     
     window.setVsyncMode(.enabled);
 
-    window.setFrameBufferSizeCallback(framebuffer_size_callback);
-
     gl.init();
 
     imgui.init(&window);
@@ -94,18 +92,25 @@ pub fn main() !void {
 
         if (keyboard.wasKeyPressed(.grave).?) {
             debughud.is_visible = !debughud.is_visible;
+            mouse.setRawInputMode(if (debughud.is_visible) .disabled else .enabled);
         }
         
-        var mouse_delta = mouse.cursor_position_delta.scale(window.time.frame_time * 5);
-        look_angles = look_angles.add(mouse_delta);
-        if (look_angles.y > 90) {
-            look_angles.y = 90;
+        if (!debughud.is_visible) {
+            var mouse_delta = mouse.cursor_position_delta.scale(window.time.frame_time * 5);
+            look_angles = look_angles.add(mouse_delta);
+            if (look_angles.y > 90) {
+                look_angles.y = 90;
+            }
+            if (look_angles.y < -90) {
+                look_angles.y = -90;
+            }
+            const look_angles_radians = look_angles.scale(std.math.pi / 180.0).floatCast(Vec2);
+            voxel_shader.uniforms.model.set(Mat4.createEulerYXZ(-look_angles_radians.y, look_angles_radians.x, 0).invert().?);
         }
-        if (look_angles.y < -90) {
-            look_angles.y = -90;
-        }
-        const look_angles_radians = look_angles.scale(std.math.pi / 180.0).floatCast(Vec2);
-        voxel_shader.uniforms.model.set(Mat4.createEulerYXZ(-look_angles_radians.y, look_angles_radians.x, 0).invert().?);
+
+        const frame_buffer_size = window.getFrameBufferSize();
+        const aspect: f32 = @intToFloat(f32, frame_buffer_size.x) / @intToFloat(f32, frame_buffer_size.y);
+        voxel_shader.uniforms.proj.set(Mat4.createPerspective(1.5708, aspect, 0.1, 1000));
 
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
         gl.clear(.ColorDepth);
@@ -121,11 +126,4 @@ pub fn main() !void {
 
         window.swapBuffers();
     }
-}
-
-// glfw: whenever the window size changed (by OS or user resize) this callback function executes
-pub fn framebuffer_size_callback(window: ?glfw.Window.Handle, width: c_int, height: c_int) callconv(.C) void {
-    // make sure the viewport matches the new window dimensions; note that width and
-    // height will be significantly larger than specified on retina displays.
-    gl.viewport(0, 0, width, height);
 }

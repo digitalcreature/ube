@@ -5,7 +5,9 @@ usingnamespace @import("mouse.zig");
 usingnamespace @import("keyboard.zig");
 usingnamespace @import("time.zig");
 
+const math = @import("math");
 
+pub const FrameBufferSize = math.glm.IVec2;
 pub const Window = struct {
 
     handle: Handle,
@@ -30,8 +32,9 @@ pub const Window = struct {
             panic("Failed to create GLFW window\n", .{});
         }
         const window = window_opt.?;
-        
         glfwMakeContextCurrent(window);
+
+        _ = glfwSetFramebufferSizeCallback(window, frameBufferSizeCallback);
         glfwPollEvents();
 
         return .{
@@ -68,15 +71,23 @@ pub const Window = struct {
         glfwSwapInterval(@enumToInt(mode));
     }
 
+
     pub const VsyncMode = enum(c_int) {
         disabled = 0,
         enabled = 1,
     };
 
-    pub fn setFrameBufferSizeCallback(self: Self, callback: FrameBufferSizeCallback) void {
-        _ = glfwSetFramebufferSizeCallback(self.handle, callback);
+    pub fn getFrameBufferSize(self: Self) FrameBufferSize {
+        var frame_buffer_size: FrameBufferSize = undefined;
+        glfwGetFramebufferSize(self.handle, &frame_buffer_size.x, &frame_buffer_size.y);
+        return frame_buffer_size;
     }
 
-    pub const FrameBufferSizeCallback = fn(?Handle, c_int, c_int) callconv(.C) void;
+    fn frameBufferSizeCallback(window: ?Handle, width: c_int, height: c_int) callconv(.C) void {
+        // make sure the viewport matches the new window dimensions; note that width and
+        // height will be significantly larger than specified on retina displays.
+        glViewport(0, 0, width, height);
+    }
+
 
 };
