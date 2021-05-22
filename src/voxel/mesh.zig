@@ -5,8 +5,22 @@ const gl = @import("gl");
 usingnamespace @import("types.zig");
 usingnamespace math.glm;
 usingnamespace @import("chunk.zig");
+const shaders = @import("shaders");
 
 const Allocator = std.mem.Allocator;
+
+pub const VoxelsUniforms = struct {
+    proj: gl.Uniform(Mat4),
+    view: gl.Uniform(Mat4),
+    model: gl.Uniform(Mat4),
+    voxel_size: gl.Uniform(f32),
+    light_dir: gl.Uniform(Vec3),
+    albedo: gl.UniformTextureUnit,
+};
+
+pub fn loadVoxelsShader() !gl.Program(VoxelsUniforms) {
+    return try shaders.loadShader(VoxelsUniforms, "voxels");
+}
 
 pub const ChunkMesh = struct {
 

@@ -41,7 +41,7 @@ fn addDeps(step: *LibExeObjStep) void {
     const voxel: Pkg = .{
         .name = "voxel",
         .path = "src/voxel/lib.zig",
-        .dependencies = &[_]Pkg{ gl, math },
+        .dependencies = &[_]Pkg{ gl, math, shaders },
     };
     const debughud: Pkg = .{
         .name = "debughud",

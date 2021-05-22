@@ -10,7 +10,7 @@ const math = @import("math");
 usingnamespace math.glm;
 const img = @import("zigimg");
 const imgui = @import("imgui");
-const shaders = @import("shaders");
+// const shaders = @import("shaders");
 const voxel = @import("voxel");
 const DebugHud = @import("debughud").DebugHud;
 
@@ -45,9 +45,12 @@ pub fn main() !void {
     defer grass.deinit();
     grass.bindUnit(0);
 
-    const shaders_ = try shaders.loadShaders();
+    const voxel_shader = try voxel.loadVoxelsShader();
+    defer voxel_shader.deinit();
 
-    const voxel_shader = shaders_.voxels;
+    // const shaders_ = try shaders.loadShaders();
+
+    // const voxel_shader = shaders_.voxels;
 
     voxel_shader.uniforms.voxel_size.set(voxel_config.voxel_size);
     voxel_shader.uniforms.light_dir.set(vec3(1, 2, 3).normalize());

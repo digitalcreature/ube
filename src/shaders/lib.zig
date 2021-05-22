@@ -5,24 +5,24 @@ usingnamespace math.glm;
 
 const std = @import("std");
 
-pub const Shaders = struct {
-    @"test": Program(struct {
-        proj: Uniform(Mat4),
-        view: Uniform(Mat4),
-        model: Uniform(Mat4),
-        albedo: UniformTextureUnit,
-    }),
-    voxels: Program(struct {
-        proj: Uniform(Mat4),
-        view: Uniform(Mat4),
-        model: Uniform(Mat4),
-        voxel_size: Uniform(f32),
-        light_dir: Uniform(Vec3),
-        albedo: UniformTextureUnit,
-    }),
-};
+// pub const Shaders = struct {
+//     @"test": Program(struct {
+//         proj: Uniform(Mat4),
+//         view: Uniform(Mat4),
+//         model: Uniform(Mat4),
+//         albedo: UniformTextureUnit,
+//     }),
+//     voxels: Program(struct {
+//         proj: Uniform(Mat4),
+//         view: Uniform(Mat4),
+//         model: Uniform(Mat4),
+//         voxel_size: Uniform(f32),
+//         light_dir: Uniform(Vec3),
+//         albedo: UniformTextureUnit,
+//     }),
+// };
 
-fn loadShader(comptime Uniforms : type, comptime name : []const u8) !Program(Uniforms) {
+pub fn loadShader(comptime Uniforms : type, comptime name : []const u8) !Program(Uniforms) {
     const vert_source = @embedFile(name ++ ".vert");
     const frag_source = @embedFile(name ++ ".frag");
 
@@ -44,30 +44,30 @@ fn loadShader(comptime Uniforms : type, comptime name : []const u8) !Program(Uni
     return program;
 }
 
-pub fn loadShaders() !Shaders {
-    const fields = @typeInfo(Shaders).Struct.fields;
-    var shaders : Shaders = undefined;
-    inline for (fields) |field| {
-        const Uniforms = getUniformsType(field.field_type);
-        @field(shaders, field.name) = try loadShader(Uniforms, field.name);
-    }
-    return shaders;
-}
+// pub fn loadShaders() !Shaders {
+//     const fields = @typeInfo(Shaders).Struct.fields;
+//     var shaders : Shaders = undefined;
+//     inline for (fields) |field| {
+//         const Uniforms = getUniformsType(field.field_type);
+//         @field(shaders, field.name) = try loadShader(Uniforms, field.name);
+//     }
+//     return shaders;
+// }
 
-fn getUniformsType(comptime program_type : type) type {
-    comptime {
-        const fields = @typeInfo(program_type).Struct.fields;
-        var Uniforms_opt : ?type = null;
-        inline for (fields) |field| {
-            if (std.mem.eql(u8, field.name, "uniforms")) {
-                Uniforms_opt = field.field_type;
-            }
-        }
-        if (Uniforms_opt) |Uniforms| {
-            return Uniforms;
-        }
-        else {
-            @compileError("expected shader program type, found " ++ @typeName(program_type));
-        }
-    }
-}
+// fn getUniformsType(comptime program_type : type) type {
+//     comptime {
+//         const fields = @typeInfo(program_type).Struct.fields;
+//         var Uniforms_opt : ?type = null;
+//         inline for (fields) |field| {
+//             if (std.mem.eql(u8, field.name, "uniforms")) {
+//                 Uniforms_opt = field.field_type;
+//             }
+//         }
+//         if (Uniforms_opt) |Uniforms| {
+//             return Uniforms;
+//         }
+//         else {
+//             @compileError("expected shader program type, found " ++ @typeName(program_type));
+//         }
+//     }
+// }
