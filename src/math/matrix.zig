@@ -181,8 +181,8 @@ pub fn ops(comptime Self: type) type {
                 /// `fov` is the field of view in radians,
                 /// `aspect` is the screen aspect ratio (width / height)
                 /// `near` is the distance of the near clip plane, whereas `far` is the distance to the far clip plane.
-                pub fn createPerspective(fov: Element, aspect: Element, near: Element, far: Element) Self {
-                    std.debug.assert(std.math.fabs(aspect - 0.001) > 0);
+                pub fn createPerspective(fov: Element, aspect: Element, near: Element, far: Element) ?Self {
+                    if (std.math.fabs(aspect) - 0.001 < 0) return null;
 
                     const tanHalfFovy = std.math.tan(fov / 2);
 

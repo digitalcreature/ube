@@ -51,7 +51,6 @@ pub fn main() !void {
 
     voxel_shader.uniforms.voxel_size.set(voxel_config.voxel_size);
     voxel_shader.uniforms.light_dir.set(vec3(1, 2, 3).normalize());
-    voxel_shader.uniforms.proj.set(Mat4.createPerspective(1.5708, 16.0 / 9.0, 0.1, 1000));
     voxel_shader.uniforms.view.set(Mat4.createLookAt(vec3(0, 0, -24), Vec3.zero, Vec3.unit("y")));
     voxel_shader.uniforms.albedo.set(0);
 
@@ -94,6 +93,15 @@ pub fn main() !void {
             debughud.is_visible = !debughud.is_visible;
             mouse.setRawInputMode(if (debughud.is_visible) .disabled else .enabled);
         }
+
+        if (keyboard.wasKeyPressed(.f_4).?) {
+            const display_mode = window.display_mode;
+            const new_mode: glfw.Window.DisplayMode = switch(display_mode) {
+                .windowed => .borderless,
+                .borderless => .windowed,
+            };
+            window.setDisplayMode(new_mode, .enabled);
+        }
         
         if (!debughud.is_visible) {
             var mouse_delta = mouse.cursor_position_delta.scale(window.time.frame_time * 5);
@@ -110,7 +118,9 @@ pub fn main() !void {
 
         const frame_buffer_size = window.getFrameBufferSize();
         const aspect: f32 = @intToFloat(f32, frame_buffer_size.x) / @intToFloat(f32, frame_buffer_size.y);
-        voxel_shader.uniforms.proj.set(Mat4.createPerspective(1.5708, aspect, 0.1, 1000));
+        if (Mat4.createPerspective(1.5708, aspect, 0.1, 1000)) |proj| {
+            voxel_shader.uniforms.proj.set(proj);
+        }
 
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
         gl.clear(.ColorDepth);

@@ -10,7 +10,7 @@ out vec4 FragColor;
 
 uniform sampler2D albedo;
 
-#define TILE_RES 4
+#define TILE_RES 8
 
 void main() {
    vec2 quantized_uv = floor(uv * TILE_RES) / TILE_RES;

@@ -7,13 +7,17 @@ usingnamespace @import("time.zig");
 
 const math = @import("math");
 
-pub const FrameBufferSize = math.glm.IVec2;
+pub const IVec2 = math.glm.IVec2;
+
 pub const Window = struct {
 
     handle: Handle,
     mouse: Mouse,
     keyboard: Keyboard,
     time: FrameTimer,
+    display_mode: DisplayMode,
+    windowed_pos: IVec2,
+    windowed_size: IVec2,
 
     pub const Handle = *GLFWwindow;
 
@@ -37,16 +41,29 @@ pub const Window = struct {
         _ = glfwSetFramebufferSizeCallback(window, frameBufferSizeCallback);
         glfwPollEvents();
 
-        return .{
+        var self = Self{
             .handle = window,
             .mouse = Mouse.init(window),
             .keyboard = Keyboard.init(window),
             .time = FrameTimer.init(),
+            .display_mode = .windowed,
+            .windowed_pos = IVec2.zero,
+            .windowed_size = IVec2.zero,
         };
+        self.saveWindowedShape();
+        return self;
 
     }
 
     pub fn deinit(self: *Self) void {}
+    
+    fn saveWindowedShape(self: *Self) void {
+        var pos: IVec2 = undefined;
+        glfwGetWindowPos(self.handle, &pos.x, &pos.y);
+        const size: IVec2 = self.getFrameBufferSize();
+        self.windowed_pos = pos;
+        self.windowed_size = size;
+    }
 
     pub fn update(self: *Self) void {
         glfwPollEvents();
@@ -71,14 +88,46 @@ pub const Window = struct {
         glfwSwapInterval(@enumToInt(mode));
     }
 
-
     pub const VsyncMode = enum(c_int) {
         disabled = 0,
         enabled = 1,
     };
 
-    pub fn getFrameBufferSize(self: Self) FrameBufferSize {
-        var frame_buffer_size: FrameBufferSize = undefined;
+    pub fn setDisplayMode(self: *Self, mode: DisplayMode, vsync_mode: VsyncMode) void {
+        var monitor: *GLFWmonitor = glfwGetPrimaryMonitor().?;
+        var vidmode: * const GLFWvidmode = glfwGetVideoMode(monitor);
+        switch(mode) {
+            // .windowed => {
+            //     glfwRestoreWindow(self.handle);
+            //     glfwSetWindowAttrib(self.handle, GLFW_FLOATING, GLFW_FALSE);
+            //     glfwSetWindowAttrib(self.handle, GLFW_DECORATED, GLFW_TRUE);
+            // },
+            // .borderless => {
+            //     glfwSetWindowAttrib(self.handle, GLFW_DECORATED, GLFW_FALSE);
+            //     glfwMaximizeWindow(self.handle);
+            //     glfwSetWindowAttrib(self.handle, GLFW_FLOATING, GLFW_TRUE);
+            // },
+            .windowed => {
+                const pos = self.windowed_pos;
+                const size = self.windowed_size;
+                glfwSetWindowMonitor(self.handle, null, pos.x, pos.y, size.x, size.y, 0);
+            },
+            .borderless => {
+                self.saveWindowedShape();
+                glfwSetWindowMonitor(self.handle, monitor, 0, 0, vidmode.width, vidmode.height, vidmode.refreshRate);
+            },
+        }
+        self.display_mode = mode;
+        self.setVsyncMode(vsync_mode);
+    }
+
+    pub const DisplayMode = enum {
+        windowed,
+        borderless,
+    };
+
+    pub fn getFrameBufferSize(self: Self) IVec2 {
+        var frame_buffer_size: IVec2 = undefined;
         glfwGetFramebufferSize(self.handle, &frame_buffer_size.x, &frame_buffer_size.y);
         return frame_buffer_size;
     }
