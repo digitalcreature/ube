@@ -5,6 +5,7 @@ pub usingnamespace @import("types.zig");
 pub usingnamespace @import("vertexarray.zig");
 pub usingnamespace @import("uniform.zig");
 pub usingnamespace @import("texture.zig");
+pub usingnamespace @import("texture_data.zig");
 
 usingnamespace @import("c");
 
@@ -13,7 +14,7 @@ pub fn init() void {
         @panic("Failed to initialise GLAD");
     }
     glEnable(GL_DEPTH_TEST);
-    glEnable(GL_MULTISAMPLE);
+    glDisable(GL_MULTISAMPLE);
     glEnable(GL_CULL_FACE);
 }
 

@@ -1,52 +1,35 @@
 usingnamespace @import("c");
 usingnamespace @import("types.zig");
 
+usingnamespace @import("texture_data.zig");
+
 pub const TextureTarget = enum(u32) {
-    Tex1D = GL_TEXTURE_1D,
-    Tex2D = GL_TEXTURE_2D,
-    Tex3D = GL_TEXTURE_3D,
-    Tex1DArray = GL_TEXTURE_1D_ARRAY,
-    Tex2DArray = GL_TEXTURE_2D_ARRAY,
-    Rectangle = GL_TEXTURE_RECTANGLE,
-    CubeMap = GL_TEXTURE_CUBE_MAP,
-    CubeMapArray = GL_TEXTURE_CUBE_MAP_ARRAY,
-    Buffer = GL_TEXTURE_BUFFER,
-    D2Multisample = GL_TEXTURE_2D_MULTISAMPLE,
-    D2MultisampleArray = GL_TEXTURE_2D_MULTISAMPLE_ARRAY,
-    // CubeMapPosX = GL_CUBE_MAP_POSITIVE_X,
-    // CubeMapPosY = GL_CUBE_MAP_POSITIVE_Y,
-    // CubeMapPosZ = GL_CUBE_MAP_POSITIVE_Z,
-    // CubeMapNegX = GL_CUBE_MAP_NEGATIVE_X,
-    // CubeMapNegY = GL_CUBE_MAP_NEGATIVE_Y,
-    // CubeMapNegZ = GL_CUBE_MAP_NEGATIVE_Z,
+    tex_1d = GL_TEXTURE_1D,
+    tex_2d = GL_TEXTURE_2D,
+    tex_3d = GL_TEXTURE_3D,
+    tex_1d_array = GL_TEXTURE_1D_ARRAY,
+    tex_2d_array = GL_TEXTURE_2D_ARRAY,
+    cube_map = GL_TEXTURE_CUBE_MAP,
+    cube_map_array = GL_TEXTURE_CUBE_MAP_ARRAY,
+    // rectangle = GL_TEXTURE_RECTANGLE,
+    // buffer = GL_TEXTURE_BUFFER,
+    // multisample_2d = GL_TEXTURE_2D_MULTISAMPLE,
+    // multisample_2d_array = GL_TEXTURE_2D_MULTISAMPLE_ARRAY,
 };
 
-pub const SizedTextureFormat = enum(u32) {
-    RGBA8 = GL_RGBA8,
-    RGB8 = GL_RGB8,
+pub const TextureFilter = enum(i32) {
+    nearest = GL_NEAREST,
+    linear = GL_LINEAR,
 };
 
-pub const TextureFormat = enum(u32) {
-    r = GL_RED,
-    rg = GL_RG,
-    rgb = GL_RGB,
-    rgba = GL_RGBA,
-};
+pub const Texture2dRgb8 = Texture2d(PixelFormat.RGB_8);
+pub const Texture2dRgba8 = Texture2d(PixelFormat.RGBA_8);
 
-pub const TexturePixelType = enum(u32) {
-    unsigned_byte = GL_UNSIGNED_BYTE,
+pub fn Texture2d(comptime pixel_format: PixelFormat) type {
+    return Texture(.tex_2d, pixel_format);
+}
 
-    pub fn fromType(comptime T: type) @This() {
-        return switch (T) {
-            u8 => .unsigned_byte,
-            else => @compileError("invalid texture pixel format type " ++ @typeName(T)),
-        };
-    }
-};
-
-pub const Texture2D = Texture(.Tex2D);
-
-pub fn Texture(comptime texture_target: TextureTarget) type {
+pub fn Texture(comptime texture_target: TextureTarget, comptime pixel_format: PixelFormat) type {
     return struct {
         handle: Handle,
 
@@ -62,7 +45,6 @@ pub fn Texture(comptime texture_target: TextureTarget) type {
             };
         }
 
-
         pub fn deinit(self: Self) void {
             glDeleteTextures(1, &self.handle);
         }
@@ -71,40 +53,53 @@ pub fn Texture(comptime texture_target: TextureTarget) type {
             glBindTextureUnit(unit, self.handle);
         }
 
+        pub fn filter(self: Self, min_filter: TextureFilter, mag_filter: TextureFilter) void {
+            glTextureParameteri(self.handle, GL_TEXTURE_MIN_FILTER, @enumToInt(min_filter));
+            glTextureParameteri(self.handle, GL_TEXTURE_MAG_FILTER, @enumToInt(mag_filter));
+        }
+
         pub usingnamespace switch (target) {
-            .Tex2D, .Tex1DArray => struct {
-                pub fn storage(self: Self, levels: ?c_int, format: SizedTextureFormat, width: c_int, height: c_int) void {
-                    glTextureStorage2D(self.handle, levels orelse 1, @enumToInt(format), width, height);
+            .tex_2d, => struct {
+
+                pub usingnamespace switch (pixel_format) {
+                    .rgb, .rgba => |component| if (component == .byte) struct {
+
+                        pub fn initPngBytes(comptime data: [] const u8) !Self {
+                            var tex_data = try Texture2dData(pixel_format).initPngBytes(data);
+                            return tex_data.createTextureAndDeinit();
+                        }
+
+                    }
+                    else struct {},
+                    else => struct {},
+                };
+
+                pub fn alloc(self: Self, data: Texture2dData(pixel_format)) void {
+                    const width = @intCast(i32, data.width);
+                    const height = @intCast(i32, data.height);
+                    glTextureStorage2D(self.handle, 1, comptime pixel_format.sizedFormat(), width, height);
                 }
 
-                pub fn subImage(self: Self, level: ?c_int, x: c_int, y: c_int, width: c_int, height: c_int, format: TextureFormat, comptime pixel_type: type, data: anytype) void {
-                    const pixel_type_enum = TexturePixelType.fromType(pixel_type);
-                    glTextureSubImage2D(self.handle, level orelse 0, x, y, width, height, @enumToInt(format), @enumToInt(pixel_type_enum), data);
+                pub fn upload(self: Self, data: Texture2dData(pixel_format)) void {
+                    const width = @intCast(i32, data.width);
+                    const height = @intCast(i32, data.height);
+                    const format_int = comptime pixel_format.toInt();
+                    const pixel_type = @enumToInt(comptime pixel_format.getComponent());
+                    const pixels = @ptrCast(*const c_void, data.pixels.ptr);
+                    glTextureSubImage2D(self.handle, 0, 0, 0, width, height, format_int, pixel_type, pixels);
                 }
+
+                // pub fn storage(self: Self, levels: ?c_int, format: SizedTextureFormat, width: c_int, height: c_int) void {
+                //     glTextureStorage2D(self.handle, levels orelse 1, @enumToInt(format), width, height);
+                // }
+
+                // pub fn subImage(self: Self, level: ?c_int, x: c_int, y: c_int, width: c_int, height: c_int, format: TextureFormat, comptime pixel_type: type, pixels: *const c_void) void {
+                //     const pixel_type_enum = TexturePixelType.fromType(pixel_type);
+                //     glTextureSubImage2D(self.handle, level orelse 0, x, y, width, height, @enumToInt(format), @enumToInt(pixel_type_enum), pixels);
+                // }
+
             },
             else => struct {},
         };
     };
-}
-
-
-pub const AlphaChannelFlag = enum {
-    has_alpha,
-    no_alpha,
-};
-
-pub fn loadTextureFromPngBytes(comptime bytes: []const u8, comptime alpha_flag: AlphaChannelFlag) Texture2D {
-    var width: i32 = undefined;
-    var height: i32 = undefined;
-    var channels: i32 = undefined;
-    var pixels: *u8 = stbi_load_from_memory(bytes.ptr, bytes.len, &width, &height, &channels, 0);
-    defer stbi_image_free(pixels);
-    var tex = Texture2D.init();
-    const sized_format: SizedTextureFormat = if (alpha_flag == .has_alpha) .RGBA8 else .RGB8;
-    const format: TextureFormat = if (alpha_flag == .has_alpha) .rgba else .rgb;
-    tex.storage(null, sized_format, width, height);
-    tex.subImage(null, 0, 0, width, height, format, u8, pixels);
-    glTextureParameteri(tex.handle, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTextureParameteri(tex.handle, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
-    return tex;
 }

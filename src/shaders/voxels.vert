@@ -1,9 +1,10 @@
 #version 450 core
 
-layout (location = 0) in vec2 quadUV;
+layout (location = 0) in vec2 quad_uv;
 
 layout (location = 1) in uint encoded_pos;
 layout (location = 2) in uint encoded_lighting;
+layout (location = 3) in uint material_id;
 
 in int gl_VertexID;
 in int gl_InstanceID;
@@ -22,7 +23,15 @@ uniform mat4 model;
 
 float get_ao(uint vert_id) {
     uint lighting = (encoded_lighting >> (8 * vert_id)) & 255;
-    return (float(lighting) / 3) * 0.75; // ao_strength;
+    return (float(lighting) / 3) * 0.5; // ao_strength;
+}
+
+#define TILE_WIDTH 0.5;
+
+vec2 map_tex_coord(vec2 tc) {
+    vec2 offset = vec2(material_id, 0) * TILE_WIDTH;
+    return offset + quad_uv * TILE_WIDTH
+    return tc;
 }
 
 void main() {
@@ -30,8 +39,8 @@ void main() {
     uint vy = encoded_pos >> 8 & 255;
     uint vz = encoded_pos >> 16 & 255;
     uint face = encoded_pos >> 24 & 255;
-    float u = quadUV.x;
-    float v = quadUV.y;
+    float u = quad_uv.x;
+    float v = quad_uv.y;
     uv = vec2(u, v);
     vec3 pos = vec3(0.0);
     vec3 norm = vec3(0.0);
@@ -90,7 +99,8 @@ void main() {
     pos -= vec3(16.0); // temporary centering
     gl_Position = proj * view * model * vec4(pos, 1.0);
     float light = abs(dot(light_dir, norm));
-    color = vec3(light * 0.25 + 0.5);
+    // color = vec3(light * 0.25 + 0.5);
+    color = vec3(light);
     tex_coord /= 4;
     ao[0][0] = get_ao(2);
     ao[0][1] = get_ao(0);

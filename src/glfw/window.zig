@@ -29,7 +29,7 @@ pub const Window = struct {
         glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 5);
         glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
         glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
-        glfwWindowHint(GLFW_SAMPLES, 4);
+        // glfwWindowHint(GLFW_SAMPLES, 4);
 
         const window_opt: ?Handle = glfwCreateWindow(width, height, title, null, null);
         if (window_opt == null) {

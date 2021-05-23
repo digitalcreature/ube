@@ -41,9 +41,14 @@ pub fn main() !void {
     imgui.init(&window);
     defer imgui.deinit();
 
-    const grass = gl.loadTextureFromPngBytes(@embedFile("grass.png"), .no_alpha);
+    const grass = try gl.Texture2dRgb8.initPngBytes(@embedFile("grass.png"));
     defer grass.deinit();
+    
+    grass.filter(.nearest, .nearest);
     grass.bindUnit(0);
+
+    // const grass = gl.loadTextureFromPngBytes(@embedFile("grass.png"), .no_alpha);
+    // defer grass.deinit();
 
     const voxel_shader = try voxel.loadVoxelsShader();
     defer voxel_shader.deinit();

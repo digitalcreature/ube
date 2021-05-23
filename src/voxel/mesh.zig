@@ -55,6 +55,7 @@ pub const ChunkMesh = struct {
     pub const QuadInstance = extern struct {
         encoded_position: u32,
         encoded_light: u32,
+        material_id: u32,
     };
 
     pub const QuadInstanceBuffer = gl.VertexBuffer(QuadInstance);
@@ -108,6 +109,7 @@ fn generateChunkMesh(self: *ChunkMesh, chunk: Chunk) !void {
         if (voxel == 0) {
             continue;
         }
+        const material_id: u32 = voxel - 1;
         
         comptime var f: u32 = 0;
         inline while (f < 6) : (f += 1) {
@@ -120,6 +122,7 @@ fn generateChunkMesh(self: *ChunkMesh, chunk: Chunk) !void {
                     const instance: ChunkMesh.QuadInstance = .{
                         .encoded_position = x | y << 8 | z << 16 | f << 24,
                         .encoded_light = calculateEncodedLight(chunk, face, loc),
+                        .material_id = material_id,
                     };
                     try self.*.quad_instances.append(instance);
                 }
@@ -169,9 +172,9 @@ fn calculateEncodedLightVertex(chunk: Chunk, comptime face: Face, coords: Coords
     const corner_coords = neighbor_coords.add(tangent).add(bitangent);
     const side_a_coords = neighbor_coords.add(tangent);
     const side_b_coords = neighbor_coords.add(bitangent);
-    const corner = if (Chunk.coordsAreInBounds(corner_coords)) (chunk.voxels.get(corner_coords) == 1) else false;
-    const side_a = if (Chunk.coordsAreInBounds(side_a_coords)) (chunk.voxels.get(side_a_coords) == 1) else false;
-    const side_b = if (Chunk.coordsAreInBounds(side_b_coords)) (chunk.voxels.get(side_b_coords) == 1) else false;
+    const corner = if (Chunk.coordsAreInBounds(corner_coords)) (chunk.voxels.get(corner_coords) != 0) else false;
+    const side_a = if (Chunk.coordsAreInBounds(side_a_coords)) (chunk.voxels.get(side_a_coords) != 0) else false;
+    const side_b = if (Chunk.coordsAreInBounds(side_b_coords)) (chunk.voxels.get(side_b_coords) != 0) else false;
     var ao: u8 = 0;
     if (side_a and side_b) {
         ao = 1;
