@@ -210,7 +210,7 @@ const UniformDataInfo = struct {
                         else => @compileError("only 2, 3, and 4 dimensional vectors supported for uniforms"),
                     }
                     info.base_type = BaseType.fromZigType(vector_info.Element);
-                    info.kind = .matrix;
+                    info.kind = .vector;
                     info.dimensions = vector_info.dimensions;
                     info.elements = vector_info.dimensions;
                     info.len = null;

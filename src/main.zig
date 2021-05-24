@@ -55,7 +55,7 @@ pub fn main() !void {
     atlas.filter(.nearest, .nearest);
     // atlas.filterMip(.nearest, .nearest, .nearest);
     // atlas.generateMipMaps();
-    atlas.bindUnit(0);
+    atlas.bindUnit(1);
 
     const voxel_shader = try voxel.loadVoxelsShader();
     defer voxel_shader.deinit();
@@ -63,7 +63,7 @@ pub fn main() !void {
     voxel_shader.uniforms.voxel_size.set(voxel_config.voxel_size);
     voxel_shader.uniforms.light_dir.set(vec3(1, 2, 3).normalize());
     voxel_shader.uniforms.view.set(Mat4.createLookAt(vec3(0, 0, -24), Vec3.zero, Vec3.unit("y")));
-    voxel_shader.uniforms.albedo.set(0);
+    voxel_shader.uniforms.albedo.set(1);
 
     // voxel stuffs
     var voxel_vao = voxel.ChunkMesh.initVAO();
