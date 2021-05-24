@@ -12,7 +12,8 @@ in int gl_InstanceID;
 out vec3 color;
 out vec2 tex_coord;
 out vec2 uv;
-out float ao[2][2];
+flat out float ao[2][2];
+flat out uint material;
 
 uniform float voxel_size;
 uniform vec3 light_dir;
@@ -106,4 +107,5 @@ void main() {
     ao[0][1] = get_ao(0);
     ao[1][0] = get_ao(3);
     ao[1][1] = get_ao(1);
+    material = material_id;
 };

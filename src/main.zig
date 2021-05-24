@@ -10,7 +10,6 @@ const math = @import("math");
 usingnamespace math.glm;
 const img = @import("zigimg");
 const imgui = @import("imgui");
-// const shaders = @import("shaders");
 const voxel = @import("voxel");
 const DebugHud = @import("debughud").DebugHud;
 
@@ -41,21 +40,25 @@ pub fn main() !void {
     imgui.init(&window);
     defer imgui.deinit();
 
-    const grass = try gl.Texture2dRgb8.initPngBytes(@embedFile("grass.png"));
-    defer grass.deinit();
-    
-    grass.filter(.nearest, .nearest);
-    grass.bindUnit(0);
+    const atlas = gl.Texture2dArrayRgb8.init(); {
+        var grass_data = try gl.TextureData2dRgb8.initPngBytes(@embedFile("grass.png"));
+        defer grass_data.deinit();
+        var stone_data = try gl.TextureData2dRgb8.initPngBytes(@embedFile("stone.png"));
+        defer stone_data.deinit();
 
-    // const grass = gl.loadTextureFromPngBytes(@embedFile("grass.png"), .no_alpha);
-    // defer grass.deinit();
+        atlas.alloc(32, 32, 2, null);
+        atlas.uploadData2d(grass_data, 0, null);
+        atlas.uploadData2d(stone_data, 1, null);
+    }
+    defer atlas.deinit();
+
+    atlas.filter(.nearest, .nearest);
+    // atlas.filterMip(.nearest, .nearest, .nearest);
+    // atlas.generateMipMaps();
+    atlas.bindUnit(0);
 
     const voxel_shader = try voxel.loadVoxelsShader();
     defer voxel_shader.deinit();
-
-    // const shaders_ = try shaders.loadShaders();
-
-    // const voxel_shader = shaders_.voxels;
 
     voxel_shader.uniforms.voxel_size.set(voxel_config.voxel_size);
     voxel_shader.uniforms.light_dir.set(vec3(1, 2, 3).normalize());
@@ -71,9 +74,12 @@ pub fn main() !void {
     for (chunk.voxels.data) |*yz_slice, x| {
         for (yz_slice.*) |*z_slice, y| {
             for (z_slice.*) |*v, z| {
-                const pos = autoVec(.{x, y, z}).intToFloat(Vec3);
-                const noise = math.perlin.noise(pos.scale(0.05));
-                v.* = if (noise < 0.25) 0 else 1;
+                const pos1 = autoVec(.{x, y, z}).intToFloat(Vec3);
+                const pos2 = autoVec(.{x + 32, y, z}).intToFloat(Vec3);
+                const noise1 = math.perlin.noise(pos1.scale(0.05));
+                const noise2 = math.perlin.noise(pos2.scale(0.05));
+                const fill: u8 = if (noise2 < 0) 1 else 2;
+                v.* = if (noise1 < 0.25) 0 else fill;
             }
         }
     }

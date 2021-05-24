@@ -48,11 +48,6 @@ fn addDeps(step: *LibExeObjStep) void {
         .path = "src/debughud/lib.zig",
         .dependencies = &[_]Pkg{ imgui, math, glfw },
     };
-    const resource: Pkg = .{
-        .name = "resource",
-        .path = "src/resource/lib.zig",
-        .dependencies = &[_]Pkg{ c, gl },
-    };
 
     step.addPackage(math);
     step.addPackage(utils);
@@ -64,7 +59,6 @@ fn addDeps(step: *LibExeObjStep) void {
     step.addPackage(shaders);
     step.addPackage(voxel);
     step.addPackage(debughud);
-    step.addPackage(resource);
 
     step.addIncludeDir("deps/inc");
     step.addCSourceFile("deps/src/glad.c", &[_][]const u8{"-std=c99"});

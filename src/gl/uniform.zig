@@ -17,131 +17,103 @@ pub fn Uniform(comptime T: type) type {
 
         const Self = @This();
 
-        const self_info = uniformInfo(Self);
         const element_info = UniformInfo.ElementInfo.from(Element);
+        const data_info = UniformDataInfo.init(Element);
 
-        pub usingnamespace switch (element_info.kind) {
-            .single => |single| struct {
-                pub fn set(self: Self, value: Element) void {
-                    switch (single) {
-                        .primitive => |primitive| {
-                            switch (primitive) {
-                                i32 => {
-                                    glProgramUniform1i(self.program, self.location, value);
-                                },
-                                u32 => {
-                                    glProgramUniform1ui(self.program, self.location, value);
-                                },
-                                f32 => {
-                                    glProgramUniform1f(self.program, self.location, value);
-                                },
+        pub usingnamespace if (data_info.len) |data_len| struct {
+            pub fn set(self: Self, value: []const array.Child) void {
+                const len = @intCast(c_int, value.len);
+                const ptr = data_info.primitiveCPtrCast(value.ptr);
+                switch (data_info.kind) {
+                    .single => {
+                        switch (data_info.base_type) {
+                            .int => glProgramUniform1iv(self.program, self.location, len, ptr),
+                            .unsigned_int => glProgramUniform1uiv(self.program, self.location, len, ptr),
+                            .float => glProgramUniform1fv(self.program, self.location, len, ptr)
+                        }
+                    },
+                    .vector => {
+                        switch (data_info.base_type) {
+                            .int => switch(data_info.dimensions) {
+                                2 => glProgramUniform2iv(self.program, self.location, len, ptr),
+                                3 => glProgramUniform3iv(self.program, self.location, len, ptr),
+                                4 => glProgramUniform4iv(self.program, self.location, len, ptr),
                                 else => unreachable,
-                            }
-                        },
-                        .vector => |vector| {
-                            const ptr = element_info.primitiveCPtrCast(&value);
-                            switch (vector.Element) {
-                                i32 => {
-                                    switch (vector.dimensions) {
-                                        2 => glProgramUniform2iv(self.program, self.location, 1, ptr),
-                                        3 => glProgramUniform3iv(self.program, self.location, 1, ptr),
-                                        4 => glProgramUniform4iv(self.program, self.location, 1, ptr),
-                                        else => unreachable,
-                                    }
-                                },
-                                u32 => {
-                                    switch (vector.dimensions) {
-                                        2 => glProgramUniform2uiv(self.program, self.location, 1, ptr),
-                                        3 => glProgramUniform3uiv(self.program, self.location, 1, ptr),
-                                        4 => glProgramUniform4uiv(self.program, self.location, 1, ptr),
-                                        else => unreachable,
-                                    }
-                                },
-                                f32 => {
-                                    switch (vector.dimensions) {
-                                        2 => glProgramUniform2fv(self.program, self.location, 1, ptr),
-                                        3 => glProgramUniform3fv(self.program, self.location, 1, ptr),
-                                        4 => glProgramUniform4fv(self.program, self.location, 1, ptr),
-                                        else => unreachable,
-                                    }
-                                },
+                            },
+                            .unsigned_int => switch(data_info.dimensions) {
+                                2 => glProgramUniform2uiv(self.program, self.location, len, ptr),
+                                3 => glProgramUniform3uiv(self.program, self.location, len, ptr),
+                                4 => glProgramUniform4uiv(self.program, self.location, len, ptr),
                                 else => unreachable,
-                            }
-                        },
-                        .matrix => |matrix| {
-                            const ptr = element_info.primitiveCPtrCast(&value);
-                            const transpose = 0;
-                            switch (matrix.row_count) { // we dont need to worry about col_count because we know its square
-                                2 => glProgramUniformMatrix2fv(self.program, self.location, 1, transpose, ptr),
-                                3 => glProgramUniformMatrix3fv(self.program, self.location, 1, transpose, ptr),
-                                4 => glProgramUniformMatrix4fv(self.program, self.location, 1, transpose, ptr),
+                            },
+                            .float => switch(data_info.dimensions) {
+                                2 => glProgramUniform2fv(self.program, self.location, len, ptr),
+                                3 => glProgramUniform3fv(self.program, self.location, len, ptr),
+                                4 => glProgramUniform4fv(self.program, self.location, len, ptr),
                                 else => unreachable,
-                            }
-                        },
-                    }
+                            },
+                        }
+                    },
+                    .matrix => {
+                        const ptr = element_info.primitiveCPtrCast(&value);
+                        const transpose = 0;
+                        switch (data_info.dimensions) {
+                            2 => glProgramUniformMatrix2fv(self.program, self.location, len, transpose, ptr),
+                            3 => glProgramUniformMatrix3fv(self.program, self.location, len, transpose, ptr),
+                            4 => glProgramUniformMatrix4fv(self.program, self.location, len, transpose, ptr),
+                            else => unreachable,
+                        }
+                    },
                 }
-            },
-            .array => |array| struct {
-                pub fn set(self: Self, value: []const array.Child) void {
-                    const len = @intCast(c_int, value.len);
-                    const ptr = element_info.primitiveCPtrCast(value.ptr);
-                    switch (array.element_kind) {
-                        .primitive => |primitive| {
-                            switch (primitive) {
-                                i32 => {
-                                    glProgramUniform1iv(self.program, self.location, len, ptr);
-                                },
-                                u32 => {
-                                    glProgramUniform1uiv(self.program, self.location, len, ptr);
-                                },
-                                f32 => {
-                                    glProgramUniform1fv(self.program, self.location, len, ptr);
-                                },
+            }
+        }
+        else struct {
+            pub fn set(self: Self, value: Element) void {
+                switch (data_info.kind) {
+                    .single => {
+                        switch (data_info.base_type) {
+                            .int => glProgramUniform1i(self.program, self.location, value),
+                            .unsigned_int => glProgramUniform1ui(self.program, self.location, value),
+                            .float => glProgramUniform1f(self.program, self.location, value)
+                        }
+                    },
+                    .vector => {
+                        const ptr = data_info.primitiveCPtrCast(&value);
+                        switch (data_info.base_type) {
+                            .int => switch(data_info.dimensions) {
+                                2 => glProgramUniform2iv(self.program, self.location, 1, ptr),
+                                3 => glProgramUniform3iv(self.program, self.location, 1, ptr),
+                                4 => glProgramUniform4iv(self.program, self.location, 1, ptr),
                                 else => unreachable,
-                            }
-                        },
-                        .vector => |vector| {
-                            switch (vector.Element) {
-                                i32 => {
-                                    switch (vector.dimensions) {
-                                        2 => glProgramUniform2iv(self.program, self.location, len, ptr),
-                                        3 => glProgramUniform3iv(self.program, self.location, len, ptr),
-                                        4 => glProgramUniform4iv(self.program, self.location, len, ptr),
-                                        else => unreachable,
-                                    }
-                                },
-                                u32 => {
-                                    switch (vector.dimensions) {
-                                        2 => glProgramUniform2uiv(self.program, self.location, len, ptr),
-                                        3 => glProgramUniform3uiv(self.program, self.location, len, ptr),
-                                        4 => glProgramUniform4uiv(self.program, self.location, len, ptr),
-                                        else => unreachable,
-                                    }
-                                },
-                                f32 => {
-                                    switch (vector.dimensions) {
-                                        2 => glProgramUniform2fv(self.program, self.location, len, ptr),
-                                        3 => glProgramUniform3fv(self.program, self.location, len, ptr),
-                                        4 => glProgramUniform4fv(self.program, self.location, len, ptr),
-                                        else => unreachable,
-                                    }
-                                },
+                            },
+                            .unsigned_int => switch(data_info.dimensions) {
+                                2 => glProgramUniform2uiv(self.program, self.location, 1, ptr),
+                                3 => glProgramUniform3uiv(self.program, self.location, 1, ptr),
+                                4 => glProgramUniform4uiv(self.program, self.location, 1, ptr),
                                 else => unreachable,
-                            }
-                        },
-                        .matrix => |matrix| {
-                            const transpose = false;
-                            switch (matrix.row_count) { // we dont need to worry about col_count because we know its square
-                                2 => glProgramUniformMatrix2fv(self.program, self.location, len, transpose, ptr),
-                                3 => glProgramUniformMatrix3fv(self.program, self.location, len, transpose, ptr),
-                                4 => glProgramUniformMatrix4fv(self.program, self.location, len, transpose, ptr),
+                            },
+                            .float => switch(data_info.dimensions) {
+                                2 => glProgramUniform2fv(self.program, self.location, 1, ptr),
+                                3 => glProgramUniform3fv(self.program, self.location, 1, ptr),
+                                4 => glProgramUniform4fv(self.program, self.location, 1, ptr),
                                 else => unreachable,
-                            }
-                        },
-                    }
+                            },
+                        }
+                    },
+                    .matrix => {
+                        const ptr = data_info.primitiveCPtrCast(&value);
+                        const transpose = 0;
+                        switch (data_info.dimensions) {
+                            2 => glProgramUniformMatrix2fv(self.program, self.location, 1, transpose, ptr),
+                            3 => glProgramUniformMatrix3fv(self.program, self.location, 1, transpose, ptr),
+                            4 => glProgramUniformMatrix4fv(self.program, self.location, 1, transpose, ptr),
+                            else => unreachable,
+                        }
+                    },
                 }
-            },
+            }
         };
+
     };
 }
 
@@ -162,6 +134,106 @@ pub fn initUniforms(program_handle: Handle, comptime Uniforms: type) Uniforms {
         else => @compileError("uniforms type must be a struct, not " ++ @typeName(Uniforms)),
     }
 }
+
+const UniformDataInfo = struct {
+    zig_type: type,
+    base_type: BaseType,
+    kind: Kind,
+    dimensions: usize,
+    elements: usize,
+    len: ?usize,
+
+    pub const BaseType = enum {
+        int,
+        unsigned_int,
+        float,
+
+        pub fn fromZigType(comptime T: type) BaseType {
+            return switch (T) {
+                i32 => .int,
+                u32 => .unsigned_int,
+                f32 => .float,
+                else => @compileError("invalid uniform base type " ++ @typeName(T)),
+            };
+        }
+
+        pub fn toZigType(comptime self: BaseType) type {
+            return switch (self) {
+                .int => i32,
+                .unsigned_int => u32,
+                .float => f32,
+            };
+        }
+    };
+
+    pub const Kind = enum {
+        single,
+        vector,
+        matrix,
+    };
+
+    pub fn init(comptime T: type) UniformDataInfo {
+        comptime var info: UniformDataInfo = undefined;
+        info.zig_type = T;
+        switch (@typeInfo(T)) {
+            .Int, .Float => {
+                info.base_type = BaseType.fromZigType(T);
+                info.kind = .single;
+                info.dimensions = 1;
+                info.elements = 1;
+                info.len = null;
+            },
+            .Struct => |Struct| {
+                if (Struct.layout != .Extern) {
+                    @compileError("only extern structs allowed for uniforms. cannot use " ++ @typeName(E));
+                }
+                const vector_info_opt = math.meta.vectorTypeInfo(T).option();
+                const matrix_info_opt = math.meta.matrixTypeInfo(T).option();
+                if (matrix_info_opt) |matrix_info| {
+                    matrix_info.assertSquare();
+                    switch (matrix_info.row_count) {
+                        2, 3, 4 => {},
+                        else => @compileError("only 2, 3, and 4 dimensional square matrices supported for uniforms, not " ++ @typeName(T)),
+                    }
+                    if (matrix_info.Element != f32) {
+                        @compileError("only f32 matrices are supported for uniforms, not " ++ @typeName(T));
+                    }
+                    info.base_type = .float;
+                    info.kind = .matrix;
+                    info.dimensions = matrix_info.row_count;
+                    info.elements = matrix_info.row_count * matrix_info.row_count;
+                    info.len = null;
+                }
+                else if (vector_info_opt) |vector_info| {
+                    switch (vector_info.dimensions) {
+                        2, 3, 4 => {},
+                        else => @compileError("only 2, 3, and 4 dimensional vectors supported for uniforms"),
+                    }
+                    info.base_type = BaseType.fromZigType(vector_info.Element);
+                    info.kind = .matrix;
+                    info.dimensions = vector_info.dimensions;
+                    info.elements = vector_info.dimensions;
+                    info.len = null;
+                }
+                else {
+                    @compileError("only vector and matrix structs are supported for uniforms, not " ++ @typeName(T));
+                }
+            },
+            .Array => |Array| {
+                comptime var element_info = init(Array.child);
+                element_info.zig_type = info.zig_type;
+                element_info.len = Array.len;
+            },
+            else => @compileError("only single, vector, matrix, and arrays of such are valid uniform types, not " ++ @typeName(T)),
+        }
+        return info;
+    }
+
+    pub fn primitiveCPtrCast(comptime self: UniformDataInfo, ptr: anytype) ?*const self.base_type.toZigType() {
+        return @ptrCast(?*const self.base_type.toZigType(), ptr);
+    }
+
+};
 
 pub const UniformInfo = struct {
     Element: type,

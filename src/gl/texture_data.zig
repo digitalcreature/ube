@@ -8,7 +8,10 @@ usingnamespace math.glm;
 
 const Allocator = std.mem.Allocator;
 
-pub fn Texture2dData(comptime format: PixelFormat) type {    
+pub const TextureData2dRgb8 = TextureData2d(PixelFormat.RGB_8);
+pub const TextureData2dRgba8 = TextureData2d(PixelFormat.RGBA_8);
+
+pub fn TextureData2d(comptime format: PixelFormat) type {    
     
     return struct {
 
@@ -70,15 +73,15 @@ pub fn Texture2dData(comptime format: PixelFormat) type {
             else => struct {},
         };
 
-        pub fn createTexture(self: Self) Texture(.tex_2d, format) {
-            const texture = Texture(.tex_2d, format).init();
-            texture.alloc(self);
-            texture.upload(self);
+        pub fn createTexture(self: Self, mip_map_levels: ?usize) Texture2d(format) {
+            const texture = Texture2d(format).init();
+            texture.allocForData(self, mip_map_levels);
+            texture.uploadData(self, null);
             return texture;
         }
 
-        pub fn createTextureAndDeinit(self: *Self) Texture(.tex_2d, format) {
-            const tex = self.createTexture();
+        pub fn createTextureAndDeinit(self: *Self, mip_map_levels: ?usize) Texture2d(format) {
+            const tex = self.createTexture(mip_map_levels);
             self.deinit();
             return tex;
         }
