@@ -20,119 +20,113 @@ pub fn Uniform(comptime T: type) type {
         const element_info = UniformInfo.ElementInfo.from(Element);
         const data_info = UniformDataInfo.init(Element);
 
-        pub usingnamespace if (data_info.len) |data_len| struct {
-            pub fn set(self: Self, value: []const array.Child) void {
-                const len = @intCast(c_int, value.len);
-                const ptr = data_info.primitiveCPtrCast(value.ptr);
-                switch (data_info.kind) {
-                    .single => {
-                        switch (data_info.base_type) {
-                            .int => glProgramUniform1iv(self.program, self.location, len, ptr),
-                            .unsigned_int => glProgramUniform1uiv(self.program, self.location, len, ptr),
-                            .float => glProgramUniform1fv(self.program, self.location, len, ptr)
-                        }
-                    },
-                    .vector => {
-                        switch (data_info.base_type) {
-                            .int => switch(data_info.dimensions) {
-                                2 => glProgramUniform2iv(self.program, self.location, len, ptr),
-                                3 => glProgramUniform3iv(self.program, self.location, len, ptr),
-                                4 => glProgramUniform4iv(self.program, self.location, len, ptr),
-                                else => unreachable,
-                            },
-                            .unsigned_int => switch(data_info.dimensions) {
-                                2 => glProgramUniform2uiv(self.program, self.location, len, ptr),
-                                3 => glProgramUniform3uiv(self.program, self.location, len, ptr),
-                                4 => glProgramUniform4uiv(self.program, self.location, len, ptr),
-                                else => unreachable,
-                            },
-                            .float => switch(data_info.dimensions) {
-                                2 => glProgramUniform2fv(self.program, self.location, len, ptr),
-                                3 => glProgramUniform3fv(self.program, self.location, len, ptr),
-                                4 => glProgramUniform4fv(self.program, self.location, len, ptr),
-                                else => unreachable,
-                            },
-                        }
-                    },
-                    .matrix => {
-                        const ptr = element_info.primitiveCPtrCast(&value);
-                        const transpose = 0;
-                        switch (data_info.dimensions) {
-                            2 => glProgramUniformMatrix2fv(self.program, self.location, len, transpose, ptr),
-                            3 => glProgramUniformMatrix3fv(self.program, self.location, len, transpose, ptr),
-                            4 => glProgramUniformMatrix4fv(self.program, self.location, len, transpose, ptr),
+        const Data = if (data_info.len != null)
+            []const data_info.zig_type
+        else
+            data_info.zig_type;
+
+        pub fn set(self: Self, value: Data) void {
+            const Ptr = *const data_info.base_type.toZigType();
+            var ptr: Ptr = undefined;
+            var len: i32 = undefined;
+            if (data_info.len != null) {
+                ptr = @ptrCast(Ptr, value.ptr);
+                len = @intCast(i32, value.len);
+            }
+            else {
+                ptr = @ptrCast(Ptr, &value);
+                len = 1;
+            }
+            switch (data_info.kind) {
+                .single => {
+                    switch (data_info.base_type) {
+                        .int => glProgramUniform1iv(self.program, self.location, len, ptr),
+                        .unsigned_int => glProgramUniform1uiv(self.program, self.location, len, ptr),
+                        .float => glProgramUniform1fv(self.program, self.location, len, ptr),
+                    }
+                },
+                .vector => {
+                    switch (data_info.base_type) {
+                        .int => switch(data_info.dimensions) {
+                            2 => glProgramUniform2iv(self.program, self.location, len, ptr),
+                            3 => glProgramUniform3iv(self.program, self.location, len, ptr),
+                            4 => glProgramUniform4iv(self.program, self.location, len, ptr),
                             else => unreachable,
-                        }
-                    },
-                }
+                        },
+                        .unsigned_int => switch(data_info.dimensions) {
+                            2 => glProgramUniform2uiv(self.program, self.location, len, ptr),
+                            3 => glProgramUniform3uiv(self.program, self.location, len, ptr),
+                            4 => glProgramUniform4uiv(self.program, self.location, len, ptr),
+                            else => unreachable,
+                        },
+                        .float => switch(data_info.dimensions) {
+                            2 => glProgramUniform2fv(self.program, self.location, len, ptr),
+                            3 => glProgramUniform3fv(self.program, self.location, len, ptr),
+                            4 => glProgramUniform4fv(self.program, self.location, len, ptr),
+                            else => unreachable,
+                        },
+                    }
+                },
+                .matrix => {
+                    const transpose = 0;
+                    switch (data_info.dimensions) {
+                        2 => glProgramUniformMatrix2fv(self.program, self.location, len, transpose, ptr),
+                        3 => glProgramUniformMatrix3fv(self.program, self.location, len, transpose, ptr),
+                        4 => glProgramUniformMatrix4fv(self.program, self.location, len, transpose, ptr),
+                        else => unreachable,
+                    }
+                },
             }
         }
-        else struct {
-            pub fn set(self: Self, value: Element) void {
-                switch (data_info.kind) {
-                    .single => {
-                        switch (data_info.base_type) {
-                            .int => glProgramUniform1i(self.program, self.location, value),
-                            .unsigned_int => glProgramUniform1ui(self.program, self.location, value),
-                            .float => glProgramUniform1f(self.program, self.location, value)
-                        }
-                    },
-                    .vector => {
-                        const ptr = data_info.primitiveCPtrCast(&value);
-                        switch (data_info.base_type) {
-                            .int => switch(data_info.dimensions) {
-                                2 => glProgramUniform2iv(self.program, self.location, 1, ptr),
-                                3 => glProgramUniform3iv(self.program, self.location, 1, ptr),
-                                4 => glProgramUniform4iv(self.program, self.location, 1, ptr),
-                                else => unreachable,
-                            },
-                            .unsigned_int => switch(data_info.dimensions) {
-                                2 => glProgramUniform2uiv(self.program, self.location, 1, ptr),
-                                3 => glProgramUniform3uiv(self.program, self.location, 1, ptr),
-                                4 => glProgramUniform4uiv(self.program, self.location, 1, ptr),
-                                else => unreachable,
-                            },
-                            .float => switch(data_info.dimensions) {
-                                2 => glProgramUniform2fv(self.program, self.location, 1, ptr),
-                                3 => glProgramUniform3fv(self.program, self.location, 1, ptr),
-                                4 => glProgramUniform4fv(self.program, self.location, 1, ptr),
-                                else => unreachable,
-                            },
-                        }
-                    },
-                    .matrix => {
-                        const ptr = data_info.primitiveCPtrCast(&value);
-                        const transpose = 0;
-                        switch (data_info.dimensions) {
-                            2 => glProgramUniformMatrix2fv(self.program, self.location, 1, transpose, ptr),
-                            3 => glProgramUniformMatrix3fv(self.program, self.location, 1, transpose, ptr),
-                            4 => glProgramUniformMatrix4fv(self.program, self.location, 1, transpose, ptr),
-                            else => unreachable,
-                        }
-                    },
-                }
-            }
-        };
 
     };
 }
 
 pub fn initUniforms(program_handle: Handle, comptime Uniforms: type) Uniforms {
     var uniforms: Uniforms = undefined;
-    switch (@typeInfo(Uniforms)) {
-        .Struct => |Struct| {
-            inline for (Struct.fields) |field| {
-                const name = field.name;
-                _ = uniformInfo(field.field_type); // make sure this is in fact a valid Uniform() type
-                @field(uniforms, name) = .{
-                    .program = program_handle,
-                    .location = glGetUniformLocation(program_handle, name ++ ""),
-                };
-            }
-            return uniforms;
-        },
-        else => @compileError("uniforms type must be a struct, not " ++ @typeName(Uniforms)),
+    inline for (@typeInfo(Uniforms).Struct.fields) |field| {
+        @field(uniforms, field.name) = .{
+            .program = program_handle,
+            .location = glGetUniformLocation(program_handle, field.name ++ ""),
+        };
     }
+    return uniforms;
+}
+
+const TypeId = @import("builtin").TypeId;
+pub fn createUniformsStructFromDeclarations(comptime decls: []const type) type {
+    comptime {
+        var count = 0;
+        for (decls) |decl| {
+            const info = @typeInfo(decl);
+            if (info != .Struct) @compileError("uniform decls must be structs, not " ++ @typeName(decl));
+            count += info.Struct.fields.len;
+        }
+        var fields: [count]TypeId.StructField = undefined;
+        var i = 0;
+        for (decls) |decl| {
+            const info = @typeInfo(decl);
+            for (info.Struct.fields) |field| {
+                fields[i] = .{
+                    .name = field.name,
+                    .field_type = Uniform(field.field_type),
+                    .default_value = null,
+                    .is_comptime = false,
+                    .alignment = @alignOf(Uniform(field.field_type)),
+                };
+                i += 1;
+            }
+        }
+        return @Type(.{
+            .Struct = .{
+                .layout = .Auto,
+                .fields = &fields,
+                .decls = &[_]TypeId.Declaration {},
+                .is_tuple = false,
+            }
+        });
+    }
+
 }
 
 const UniformDataInfo = struct {
@@ -229,213 +223,4 @@ const UniformDataInfo = struct {
         return info;
     }
 
-    pub fn primitiveCPtrCast(comptime self: UniformDataInfo, ptr: anytype) ?*const self.base_type.toZigType() {
-        return @ptrCast(?*const self.base_type.toZigType(), ptr);
-    }
-
 };
-
-pub const UniformInfo = struct {
-    Element: type,
-    element_info: ElementInfo,
-
-    pub const ElementInfo = struct {
-        Primitive: type,
-        kind: Kind,
-
-        pub fn primitiveCPtrCast(comptime self: ElementInfo, ptr: anytype) ?*const self.Primitive {
-            return @ptrCast(?*const self.Primitive, ptr);
-        }
-
-        pub const SingleKind = union(enum) {
-            primitive: type,
-            vector: math.meta.VectorTypeInfo,
-            matrix: math.meta.MatrixTypeInfo,
-
-            pub fn getPrimitiveType(comptime self: @This()) type {
-                return switch (self) {
-                    .primitive => |primitive| primitive,
-                    .vector => |vector| vector.Element,
-                    .matrix => |matrix| matrix.Element,
-                };
-            }
-        };
-
-        pub const Kind = union(enum) {
-            single: SingleKind,
-            array: ArrayKind,
-
-            pub fn getPrimitiveType(comptime self: @This()) type {
-                return switch (self) {
-                    .single => |single| single.getPrimitiveType(),
-                    .array => |array| array.getPrimitiveType(),
-                };
-            }
-        };
-
-        pub const ArrayKind = struct {
-            element_kind: SingleKind,
-            length: usize,
-            Child: type,
-
-            pub fn getPrimitiveType(comptime self: @This()) type {
-                return self.element_kind.getPrimitiveType();
-            }
-        };
-
-        fn getKind(comptime E: type) Kind {
-            switch (@typeInfo(E)) {
-                .Int, .Float => return .{ .single = .{ .primitive = E } },
-                .Array => |Array| {
-                    const element_kind = getKind(Array.child);
-                    switch (element_kind) {
-                        .single => |single| return .{
-                            .array = .{
-                                .element_kind = single,
-                                .length = Array.len,
-                                .Child = Array.child,
-                            },
-                        },
-                        .array => @compileError("only single-dimensional arrays are supported for uniforms, not " ++ @typeName(E)),
-                    }
-                },
-                .Struct => |Struct| {
-                    if (Struct.layout != .Extern) {
-                        @compileError("only extern structs allowed for uniforms. cannot use " ++ @typeName(E));
-                    }
-                    const vectorInfo = math.meta.vectorTypeInfo(E).option();
-                    const matrixInfo = math.meta.matrixTypeInfo(E).option();
-                    if (matrixInfo) |info| {
-                        return .{
-                            .single = .{
-                                .matrix = info,
-                            },
-                        };
-                    }
-                    if (vectorInfo) |info| {
-                        return .{
-                            .single = .{
-                                .vector = info,
-                            },
-                        };
-                    }
-                    @compileError("only vector and matrix structs are supported for uniforms currently. invalid struct type " ++ @typeName(E));
-                },
-                else => @compileError("unsupported uniform element type " ++ @typeName(E)),
-            }
-        }
-
-        pub fn from(comptime E: type) ElementInfo {
-            const kind = getKind(E);
-            return .{
-                .Primitive = kind.getPrimitiveType(),
-                .kind = kind,
-            };
-        }
-    };
-};
-
-pub fn uniformInfo(comptime U: type) UniformInfo {
-    if (@hasDecl(U, "Element") and @hasField(U, "location")) {
-        const Element = U.Element;
-        var info: UniformInfo = undefined;
-        info.Element = Element;
-        info.element_info = UniformInfo.ElementInfo.from(Element);
-        switch (info.element_info.Primitive) {
-            i32, u32, f32 => {},
-            else => |P| @compileError("uniform must have primitive type i32, u32, or f32, not " ++ @typeName(P) ++ " (for uniform type " ++ @typeName(U) ++ ")"),
-        }
-        const single = switch (info.element_info.kind) {
-            .single => |s| s,
-            .array => |array| array.element_kind,
-        };
-        switch (single) {
-            .primitive => {},
-            .vector => |vector| {
-                if (vector.dimensions < 2 or vector.dimensions > 4) {
-                    @compileError("vector uniforms but have 2, 3, or 4 dimensions, unlike " ++ @typeName(Element));
-                }
-            },
-            .matrix => |matrix| {
-                if (matrix.row_count != matrix.col_count) {
-                    @compileError("non-square matrix uniforms are currently unsupported: " ++ @typeName(Element));
-                }
-                const d = matrix.row_count;
-                if (d < 2 or d > 4) {
-                    @compileError("matrix uniforms but have 2, 3, or 4 dimensions, unlike " ++ @typeName(Element));
-                }
-                if (matrix.Element != f32) {
-                    @compileError("only f32 matrix uniforms supported, unlike " ++ @typeName(Element));
-                }
-            },
-        }
-        return info;
-    } else {
-        @compileError("must provide Uniform(T) type, not " ++ @typeName(U));
-    }
-}
-
-// fn logKindInfo(comptime kind_type : [] const u8, comptime single : UniformInfo.ElementInfo.SingleKind) void {
-//     switch (single) {
-//         .primitive => |primitive| {
-//             std.log.debug("element_info.kind.{s}.primitive: {}", .{kind_type, @typeName(primitive)});
-//         },
-//         .vector => |vector| {
-//             std.log.debug("element_info.kind.{s}.vector.Element: {}", .{kind_type, @typeName(vector.Element)});
-//             std.log.debug("element_info.kind.{s}.vector.dimensions: {d}", .{kind_type, vector.dimensions});
-//         },
-//         .matrix => |matrix| {
-//             std.log.debug("element_info.kind.{s}.matrix.Element: {}", .{kind_type, @typeName(matrix.Element)});
-//             std.log.debug("element_info.kind.{s}.matrix.row_count: {d}", .{kind_type, matrix.row_count});
-//             std.log.debug("element_info.kind.{s}.matrix.col_count: {d}", .{kind_type, matrix.row_count});
-//         },
-//     }
-// }
-
-// fn logInfo(comptime U : type) void {
-//     const info = uniformInfo(U);
-//     const ei = info.element_info;
-//     std.log.debug("uniform: {}", .{@typeName(U)});
-//     std.log.debug("info.Element: {}", .{@typeName(info.Element)});
-//     std.log.debug("element_info.Primitive: {}", .{@typeName(ei.Primitive)});
-//     switch (ei.kind) {
-//         .single => |single| {
-//             logKindInfo("single", single);
-//         },
-//         .array => |array| {
-//             logKindInfo("array.element_kind", array.element_kind);
-//             std.log.debug("element_info.kind.array.length: {d}", .{array.length});
-//         },
-//     }
-// }
-
-// test "uniform infos" {
-//     std.testing.log_level = .debug;
-//     logInfo(Uniform(f32));
-//     logInfo(Uniform([32]f32));
-//     logInfo(Uniform(math.glm.Vec3));
-//     logInfo(Uniform([128]math.glm.Vec2));
-//     logInfo(Uniform(math.glm.Mat2));
-//     logInfo(Uniform([16]math.glm.Mat4));
-// }
-
-// test "uniform set" {
-//     std.testing.log_level = .debug;
-//     (Uniform(f32){}).set(4);
-//     (Uniform(math.glm.Vec3){}).set(math.glm.Vec3.zero);
-//     (Uniform(math.glm.Mat4){}).set(math.glm.Mat4.identity);
-//     (Uniform([18]f32){}).set(&[3]f32{1, 2, 3});
-// }
-
-// test "init uniforms" {
-//     std.testing.log_level = .debug;
-//     const Uniforms = struct {
-//         model_mat : Uniform(math.glm.Mat4),
-//         view_mat : Uniform(math.glm.Mat4),
-//         proj_mat : Uniform(math.glm.Mat4),
-//         color : Uniform(math.color.ColorF32),
-//         lookup : Uniform([32]f32),
-//     };
-//     _ = initUniforms(32, Uniforms);
-
-// }

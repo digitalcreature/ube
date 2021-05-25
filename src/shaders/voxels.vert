@@ -22,9 +22,10 @@ uniform mat4 proj;
 uniform mat4 view;
 uniform mat4 model;
 
+
 float get_ao(uint vert_id) {
     uint lighting = (encoded_lighting >> (8 * vert_id)) & 255;
-    return (float(lighting) / 3) * 0.5; // ao_strength;
+    return (float(lighting) / 3) * 0.75; // ao_strength;
 }
 
 #define TILE_WIDTH 0.5;

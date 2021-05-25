@@ -22,7 +22,7 @@ const std = @import("std");
 //     }),
 // };
 
-pub fn loadShader(comptime Uniforms : type, comptime name : []const u8) !Program(Uniforms) {
+pub fn loadShader(comptime UniformDecls : [] const type, comptime name : []const u8) !Program(UniformDecls) {
     const vert_source = @embedFile(name ++ ".vert");
     const frag_source = @embedFile(name ++ ".frag");
 
@@ -36,7 +36,7 @@ pub fn loadShader(comptime Uniforms : type, comptime name : []const u8) !Program
     frag_shader.source(frag_source);
     try frag_shader.compile();
 
-    var program = Program(Uniforms).init();    
+    var program = Program(UniformDecls).init();    
     program.attach(vert_shader);
     program.attach(frag_shader);
     try program.link();

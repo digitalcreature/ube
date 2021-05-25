@@ -48,10 +48,12 @@ pub fn Shader(comptime shader_type: ShaderType) type {
     };
 }
 
-pub fn Program(comptime Uniforms: type) type {
+pub fn Program(comptime UniformDecls: [] const type) type {
     return struct {
         handle: Handle,
         uniforms: Uniforms = undefined,
+
+        pub const Uniforms = createUniformsStructFromDeclarations(UniformDecls);
 
         const Self = @This();
 

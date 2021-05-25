@@ -9,17 +9,23 @@ const shaders = @import("shaders");
 
 const Allocator = std.mem.Allocator;
 
-pub const VoxelsUniforms = struct {
-    proj: gl.Uniform(Mat4),
-    view: gl.Uniform(Mat4),
-    model: gl.Uniform(Mat4),
-    voxel_size: gl.Uniform(f32),
-    light_dir: gl.Uniform(Vec3),
-    albedo: gl.UniformTextureUnit,
+const CameraUniformDecl = struct {
+    proj: Mat4,
+    view: Mat4,
 };
 
-pub fn loadVoxelsShader() !gl.Program(VoxelsUniforms) {
-    return try shaders.loadShader(VoxelsUniforms, "voxels");
+pub const VoxelsUniformDecls = &[_]type{
+    CameraUniformDecl, 
+    struct {
+        model: Mat4,
+        voxel_size: f32,
+        light_dir: Vec3,
+        albedo: i32,
+    },
+};
+
+pub fn loadVoxelsShader() !gl.Program(VoxelsUniformDecls) {
+    return try shaders.loadShader(VoxelsUniformDecls, "voxels");
 }
 
 pub const ChunkMesh = struct {
@@ -177,12 +183,11 @@ fn calculateEncodedLightVertex(chunk: Chunk, comptime face: Face, coords: Coords
     const side_b = if (Chunk.coordsAreInBounds(side_b_coords)) (chunk.voxels.get(side_b_coords) != 0) else false;
     var ao: u8 = 0;
     if (side_a and side_b) {
-        ao = 1;
+        ao = 3;
     }
     else {
         if (corner) ao += 1;
-        if (side_a) ao += 1;
-        if (side_b) ao += 1;
+        if (side_a or side_b) ao += 1;
     }
     return ao;
 }
