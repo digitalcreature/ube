@@ -48,6 +48,11 @@ fn addDeps(step: *LibExeObjStep) void {
         .path = "src/debughud/lib.zig",
         .dependencies = &[_]Pkg{ imgui, math, glfw },
     };
+    const threading: Pkg = .{
+        .name = "threading",
+        .path = "src/threading/lib.zig",
+        .dependencies = &[_]Pkg{ },
+    };
 
     step.addPackage(math);
     step.addPackage(utils);
@@ -59,6 +64,7 @@ fn addDeps(step: *LibExeObjStep) void {
     step.addPackage(shaders);
     step.addPackage(voxel);
     step.addPackage(debughud);
+    step.addPackage(threading);
 
     step.addIncludeDir("deps/inc");
     step.addCSourceFile("deps/src/glad.c", &[_][]const u8{"-std=c99"});
@@ -70,7 +76,7 @@ fn addDeps(step: *LibExeObjStep) void {
     step.linkSystemLibrary("gdi32");
     step.linkSystemLibrary("shell32");
     step.linkSystemLibrary("opengl32");
-    step.linkSystemLibrary("deps/Zig-ImGui/lib/win/cimguid");
+    step.linkSystemLibrary("deps/lib/cimguid");
     step.linkLibC();
 }
 
@@ -90,6 +96,7 @@ pub fn build(b: *Builder) void {
     exe.setTarget(target);
     exe.setBuildMode(mode);
     addDeps(exe);
+    exe.subsystem = .Windows;
     exe.install();
 
     const test_step = b.step("test", "Run library tests.");

@@ -10,22 +10,21 @@ pub const UniformLocation = c_int;
 pub const UniformTextureUnit = Uniform(i32);
 pub fn Uniform(comptime T: type) type {
     return struct {
-        pub const Element = T;
+        pub const Data = T;
 
         location: UniformLocation = 0,
         program: Handle = 0,
 
         const Self = @This();
 
-        const element_info = UniformInfo.ElementInfo.from(Element);
-        const data_info = UniformDataInfo.init(Element);
+        const data_info = UniformDataInfo.init(Data);
 
-        const Data = if (data_info.len != null)
+        const Value = if (data_info.len != null)
             []const data_info.zig_type
         else
             data_info.zig_type;
 
-        pub fn set(self: Self, value: Data) void {
+        pub fn set(self: Self, value: Value) void {
             const Ptr = *const data_info.base_type.toZigType();
             var ptr: Ptr = undefined;
             var len: i32 = undefined;

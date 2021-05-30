@@ -62,11 +62,11 @@ pub const Keyboard = struct {
     }
 
     pub fn isKeyDown(self: Self, comptime code: KeyCode) ?bool {
-        return self.isKey(.down);
+        return self.isKey(code, .down);
     }
 
     pub fn isKeyUp(self: Self, comptime code: KeyCode) ?bool {
-        return self.isKey(.up);
+        return self.isKey(code, .up);
     }
 
     fn getKeyState(self: Self, comptime code: KeyCode, index: usize) KeyState {

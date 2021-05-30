@@ -123,8 +123,9 @@ pub fn ops(comptime Self: type) type {
             2 => struct {},
             3 => struct {},
             4 => struct {
+
                 pub fn transformPosition(self: Self, vec: anytype) @TypeOf(vec) {
-                    const info = vectorTypeInfo(vec).assert();
+                    const info = vectorTypeInfo(@TypeOf(vec)).assert();
                     info.assertDimensions(3);
                     info.assertElementType(Element);
                     const vops = vector.ops(@TypeOf(vec)).linear;
@@ -132,7 +133,7 @@ pub fn ops(comptime Self: type) type {
                 }
 
                 pub fn transformDirection(self: Self, vec: anytype) @TypeOf(vec) {
-                    const info = vectorTypeInfo(vec).assert();
+                    const info = vectorTypeInfo(@TypeOf(vec)).assert();
                     info.assertDimensions(3);
                     info.assertElementType(Element);
                     const vops = vector.ops(@TypeOf(vec)).linear;
@@ -181,8 +182,8 @@ pub fn ops(comptime Self: type) type {
                 /// `fov` is the field of view in radians,
                 /// `aspect` is the screen aspect ratio (width / height)
                 /// `near` is the distance of the near clip plane, whereas `far` is the distance to the far clip plane.
-                pub fn createPerspective(fov: Element, aspect: Element, near: Element, far: Element) ?Self {
-                    if (std.math.fabs(aspect) - 0.001 < 0) return null;
+                pub fn createPerspective(fov: Element, aspect: Element, near: Element, far: Element) Self {
+                    // if (std.math.fabs(aspect) - 0.001 < 0) return null;
 
                     const tanHalfFovy = std.math.tan(fov / 2);
 

@@ -343,7 +343,7 @@ pub fn ops(comptime Self: type) type {
                     }
 
                     pub fn fromAffinePosition(v: anytype) Self {
-                        const info = vectorTypeInfo(@TypeOf(v));
+                        const info = vectorTypeInfo(@TypeOf(v)).assert();
                         info.assertDimensions(4);
                         info.assertElementType(Element);
                         const w = @field(v, info.field_names[3]);
@@ -355,7 +355,7 @@ pub fn ops(comptime Self: type) type {
                     }
 
                     pub fn fromAffineDirection(v: anytype) Self {
-                        const info = vectorTypeInfo(@TypeOf(v));
+                        const info = vectorTypeInfo(@TypeOf(v)).assert();
                         info.assertDimensions(4);
                         info.assertElementType(Element);
                         return new(.{
