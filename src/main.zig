@@ -49,6 +49,7 @@ pub fn main() !void {
     const keyboard = &window.keyboard;
     
     window.setVsyncMode(.enabled);
+    // window.setVsyncMode(.disabled);
 
     gl.init();
 
