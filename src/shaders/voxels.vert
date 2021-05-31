@@ -90,7 +90,7 @@ void main() {
     }
     pos += vec3(vx, vy, vz);
     pos *= voxel_size;
-    pos -= vec3(16.0); // temporary centering
+    // pos -= vec3(16.0); // temporary centering
     gl_Position = proj * view * model * vec4(pos, 1.0);
     float light = abs(dot(light_dir, norm));
     color = vec3(light * 0.75 + 0.25);

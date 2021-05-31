@@ -1,3 +1,4 @@
 pub usingnamespace @import("chunk.zig");
 pub usingnamespace @import("mesh.zig");
-pub const Config = @import("config.zig").Config;
+pub usingnamespace @import("volume.zig");
+pub usingnamespace @import("config.zig");

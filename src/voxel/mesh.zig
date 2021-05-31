@@ -73,6 +73,16 @@ pub const ChunkMesh = struct {
 
     pub const VAO = gl.VertexArrayExt(VertBufferBindings, u32, VAOMixin);
     
+
+    // 0 --- 1
+    // | \   |
+    // |  \  |
+    // |   \ |
+    // 2 --- 3
+    // 
+    // v+
+    // |
+    // 0 -- u+
     const quad_verts = [4]QuadVert{ 
         .{ .uv = vec2(0, 1) }, 
         .{ .uv = vec2(1, 1) }, 
@@ -120,9 +130,7 @@ fn generateChunkMesh(self: *ChunkMesh, chunk: Chunk) !void {
         comptime var f: u32 = 0;
         inline while (f < 6) : (f += 1) {
             const face = @intToEnum(Face, f);
-            if (!isEdge(loc, face)) {
-                const neighbor_loc = loc.add(face.normal());
-                const neighbor = voxels.get(neighbor_loc);
+            if (getNeighborVoxel(chunk, face, loc)) |neighbor| {
                 const needs_face = (neighbor == 0);
                 if (needs_face) {
                     const instance: ChunkMesh.QuadInstance = .{
@@ -135,7 +143,6 @@ fn generateChunkMesh(self: *ChunkMesh, chunk: Chunk) !void {
             }
         }
     }}}
-
     std.log.info("generated chunk mesh with {d} quads", .{self.*.quad_instances.items.len});
 }
 
@@ -143,23 +150,23 @@ fn calculateEncodedLight(chunk: Chunk, comptime face: Face, coords: Coords) u32{
     var encoded_light: u32 = 0;
     comptime var vertex_id: usize = 0;
     inline while (vertex_id < 4) : (vertex_id += 1) {
-        encoded_light |= calculateEncodedLightVertex(chunk, face, coords, vertex_id) << 8 * vertex_id;
+        encoded_light |= calculateEncodedLightVertex(chunk, face, coords, @intToEnum(QuadVertId, vertex_id)) << 8 * vertex_id;
     }
     return encoded_light;
 }
 
-fn calculateEncodedLightVertex(chunk: Chunk, comptime face: Face, coords: Coords, comptime vertex_id: usize) u32 {
+fn calculateEncodedLightVertex(chunk: Chunk, comptime face: Face, coords: Coords, comptime vertex_id: QuadVertId) u32 {
     const sign = comptime face.sign();
     const axis = comptime face.axis();
     const normal = comptime face.normal();
-    const uv = ChunkMesh.quad_verts[vertex_id].uv;
+    const uv = ChunkMesh.quad_verts[@enumToInt(vertex_id)].uv;
     const u = switch(sign) {
-        .pos => uv.x,
-        .neg => uv.y,
+        .positive => uv.x,
+        .negative => uv.y,
     };
     const v = switch(sign) {
-        .pos => uv.y,
-        .neg => uv.x,
+        .positive => uv.y,
+        .negative => uv.x,
     };
     const u_sign: i32 = if (u > 0) 1 else -1;
     const v_sign: i32 = if (v > 0) 1 else -1;
@@ -178,9 +185,9 @@ fn calculateEncodedLightVertex(chunk: Chunk, comptime face: Face, coords: Coords
     const corner_coords = neighbor_coords.add(tangent).add(bitangent);
     const side_a_coords = neighbor_coords.add(tangent);
     const side_b_coords = neighbor_coords.add(bitangent);
-    const corner = if (Chunk.coordsAreInBounds(corner_coords)) (chunk.voxels.get(corner_coords) != 0) else false;
-    const side_a = if (Chunk.coordsAreInBounds(side_a_coords)) (chunk.voxels.get(side_a_coords) != 0) else false;
-    const side_b = if (Chunk.coordsAreInBounds(side_b_coords)) (chunk.voxels.get(side_b_coords) != 0) else false;
+    const corner = (getNeighborVoxelFromCoords(chunk, corner_coords) orelse 0) != 0;
+    const side_a = (getNeighborVoxelFromCoords(chunk, side_a_coords) orelse 0) != 0;
+    const side_b = (getNeighborVoxelFromCoords(chunk, side_b_coords) orelse 0) != 0;
     var ao: u8 = 0;
     if (side_a and side_b) {
         ao = 3;
@@ -192,12 +199,58 @@ fn calculateEncodedLightVertex(chunk: Chunk, comptime face: Face, coords: Coords
     return ao;
 }
 
+fn getNeighborVoxelFromCoords(chunk: Chunk, coords: Coords) ?VoxelTypeId {
+    if(chunk.getNeighborCoords(coords)) |neighbor| {
+        return neighbor.chunk.voxels.get(neighbor.coords);
+    }
+    else {
+        return null;
+    }
+}
+
 fn isEdge(coords: Coords, comptime face: Face) bool {
     return switch (face.sign()) {
-        .pos => face.coord(coords) == Chunk.width - 1,
-        .neg => face.coord(coords) == 0,
+        .positive => face.coord(coords) == Chunk.width - 1,
+        .negative => face.coord(coords) == 0,
     };
 }
+
+fn getNeighborVoxel(chunk: Chunk, comptime face: Face, local_coords: Coords) ?VoxelTypeId {
+    if (!isEdge(local_coords, face)) {
+        return chunk.voxels.get(local_coords.add(face.normal()));
+    }
+    else {
+        const neighbor_chunk_opt = chunk.neighbors[@enumToInt(face)];
+        if (neighbor_chunk_opt) |neighbor_chunk| {
+            var neighbor_coords = local_coords.add(face.normal());
+            switch (face.sign()) {
+                .positive => neighbor_coords.set(@enumToInt(comptime face.axis()), 0),
+                .negative => neighbor_coords.set(@enumToInt(comptime face.axis()), Chunk.width - 1),
+            }
+            return neighbor_chunk.voxels.get(neighbor_coords);
+        }
+        else {
+            return null;
+        }
+    }
+}
+
+
+// 0 --- 1
+// | \   |
+// |  \  |
+// |   \ |
+// 2 --- 3
+// 
+// v+
+// |
+// 0 -- u+
+const QuadVertId = enum(u2) {
+    np = 0,
+    pp = 1,
+    nn = 2,
+    pn = 3,
+};
 
 const Face = enum(u32) {
     x_p = 0,
@@ -207,24 +260,28 @@ const Face = enum(u32) {
     y_n = 4,
     z_n = 5,
     
-    pub const Sign = enum { pos, neg };
+    pub const Sign = enum { positive = 0, negative = 1 };
     pub const Axis = enum(usize) { x = 0, y = 1, z = 2 };
 
+    pub fn init(axis: Axis, sign: Sign) Face {
+        return @intToEnum(Face, @enumToInt(axis) + (@enumToInt(sign) * 3));
+    }
+
     pub fn sign(self: Face) Sign {
-        return if (@enumToInt(self) >= 3) .neg else .pos;
+        return if (@enumToInt(self) >= 3) .negative else .positive;
     }
 
     pub fn axis(self: Face) Axis {
         return switch (self.sign()) {
-            .pos => @intToEnum(Axis, @enumToInt(self)),
-            .neg => @intToEnum(Axis, @enumToInt(self) - 3),
+            .positive => @intToEnum(Axis, @enumToInt(self)),
+            .negative => @intToEnum(Axis, @enumToInt(self) - 3),
         };
     }
 
     pub fn signFloat(self: Face) f32 {
         return switch (self.sign()) {
-            .pos => 1,
-            .neg => -1,
+            .positive => 1,
+            .negative => -1,
         };
     }
 

@@ -96,7 +96,7 @@ pub fn build(b: *Builder) void {
     exe.setTarget(target);
     exe.setBuildMode(mode);
     addDeps(exe);
-    exe.subsystem = .Windows;
+    // exe.subsystem = .Windows;
     exe.install();
 
     const test_step = b.step("test", "Run library tests.");

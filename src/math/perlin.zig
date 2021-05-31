@@ -5,7 +5,7 @@ const vector = @import("vector.zig");
 const meta = @import("meta.zig");
 
 fn castLsb(x : f32) usize {
-    return @floatToInt(usize, math.floor(x)) & 0xff;
+    return @intCast(usize, @floatToInt(isize, math.floor(x)) & 0xff);
 }
 
 pub fn noise1(pos_x: f32) f32 {

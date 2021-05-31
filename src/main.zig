@@ -21,20 +21,19 @@ pub const voxel_config: voxel.Config = .{
     .chunk_width = 64,
 };
 
+// pub usingnamespace if (builtin.os.tag == .windows) struct {
+//     pub export fn WinMain() i32 {
+//         if (main()) {
+//             return 0;
+//         }
+//         else |e| {
+//             @panic(@errorName(e));
+//         }
+//     }
+// }
+// else struct {
 
-pub usingnamespace if (builtin.os.tag == .windows) struct {
-    pub export fn WinMain() i32 {
-        if (main()) {
-            return 0;
-        }
-        else |e| {
-            @panic(@errorName(e));
-        }
-    }
-}
-else struct {
-
-};
+// };
 
 pub fn main() !void {
 
@@ -86,28 +85,34 @@ pub fn main() !void {
     var voxel_vao = voxel.ChunkMesh.initVAO();
     defer voxel_vao.deinit();
 
-    // voxel chunk
-    var chunk = voxel.Chunk.init();
-    for (chunk.voxels.data) |*yz_slice, x| {
-        for (yz_slice.*) |*z_slice, y| {
-            for (z_slice.*) |*v, z| {
-                const pos1 = autoVec(.{x, y, z}).intToFloat(Vec3);
-                const pos2 = autoVec(.{x + 32, y, z}).intToFloat(Vec3);
-                const noise1 = math.perlin.noise(pos1.scale(0.05));
-                const noise2 = math.perlin.noise(pos2.scale(0.05));
-                const fill: u8 = if (noise2 < 0) 1 else 2;
-                v.* = if (noise1 < 0.25) 0 else fill;
-            }
+    // volume
+    const volume = try voxel.Volume.init(std.heap.c_allocator, 4, 4, 4, ivec3(-2, -2, -2));
+    defer volume.deinit();
+
+    var chunks = volume.getChunkIterator();
+    {
+        const timer = try std.time.Timer.start();
+        defer std.log.info("generated {d} chunks in {d}s", .{volume.chunks.len, @intToFloat(f64, timer.read()) / std.time.ns_per_s});
+        while (chunks.next()) |chunk| {
+            generateChunk(chunk);
         }
     }
+    chunks.reset();
+    while (chunks.next()) |chunk| {
+        var mesh = try std.heap.c_allocator.create(voxel.ChunkMesh);
+        mesh.* = voxel.ChunkMesh.init(std.heap.c_allocator);
+        try mesh.generate(chunk.*);
+        mesh.updateBuffer();
+        chunk.mesh = mesh;
+    }
+    
 
-    // voxel mesh
-    var mesh = voxel.ChunkMesh.init(std.heap.c_allocator);
-    defer mesh.deinit();
-    try mesh.generate(chunk);
-    mesh.updateBuffer();
+    // // voxel mesh
+    // var mesh = voxel.ChunkMesh.init(std.heap.c_allocator);
+    // defer mesh.deinit();
+    // try mesh.generate(chunk);
+    // mesh.updateBuffer();
 
-    voxel_vao.vertices.quad_instances.bindBuffer(mesh.vbo);
     voxel_shader.use();
     voxel_vao.bind();
 
@@ -144,7 +149,14 @@ pub fn main() !void {
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
         gl.clear(.ColorDepth);
 
-        gl.drawElementsInstanced(.Triangles, 6, u32, mesh.quad_instances.items.len);
+        chunks.reset();
+        while (chunks.next()) |chunk| {
+            if (chunk.mesh) |mesh| {
+                voxel_vao.vertices.quad_instances.bindBuffer(mesh.vbo);
+                voxel_shader.uniforms.model.set(Mat4.createTranslation(chunk.position.intToFloat(Vec3).scale(voxel.Chunk.edge_distance)));
+                gl.drawElementsInstanced(.Triangles, 6, u32, mesh.quad_instances.items.len);
+            }
+        }
 
         imgui.beginFrame();
 
@@ -212,3 +224,19 @@ const Camera = struct {
 
 
 };
+
+pub fn generateChunk(chunk: *voxel.Chunk) void {
+    const offset = chunk.position.intToFloat(Vec3).scale(voxel.Chunk.edge_distance);
+    for (chunk.voxels.data) |*yz_slice, x| {
+        for (yz_slice.*) |*z_slice, y| {
+            for (z_slice.*) |*v, z| {
+                const pos1 = autoVec(.{x, y, z}).intToFloat(Vec3).scale(voxel.config.voxel_size);
+                const pos2 = autoVec(.{x + 32, y, z}).intToFloat(Vec3).scale(voxel.config.voxel_size);
+                const noise1 = math.perlin.noise(pos1.add(offset).scale(0.1));
+                const noise2 = math.perlin.noise(pos2.add(offset).scale(0.1));
+                const fill: u8 = if (noise2 < 0.1) 1 else 2;
+                v.* = if (noise1 < 0.25) 0 else fill;
+            }
+        }
+    }
+}
