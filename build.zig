@@ -38,20 +38,20 @@ fn addDeps(step: *LibExeObjStep) void {
         .path = "src/shaders/lib.zig",
         .dependencies = &[_]Pkg{ gl, math },
     };
+    const threading: Pkg = .{
+        .name = "threading",
+        .path = "src/threading/lib.zig",
+        .dependencies = &[_]Pkg{ },
+    };
     const voxel: Pkg = .{
         .name = "voxel",
         .path = "src/voxel/lib.zig",
-        .dependencies = &[_]Pkg{ gl, math, shaders },
+        .dependencies = &[_]Pkg{ gl, math, shaders, threading },
     };
     const debughud: Pkg = .{
         .name = "debughud",
         .path = "src/debughud/lib.zig",
         .dependencies = &[_]Pkg{ imgui, math, glfw },
-    };
-    const threading: Pkg = .{
-        .name = "threading",
-        .path = "src/threading/lib.zig",
-        .dependencies = &[_]Pkg{ },
     };
 
     step.addPackage(math);

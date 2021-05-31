@@ -127,62 +127,68 @@ pub const Volume = struct {
 
 };
 
-const Thread = std.Thread;
+const threading = @import("threading");
 
-pub const VolumeThreadGroup = struct {
 
-    allocator: *Allocator,
-    volume: *Volume,
-    threads: []*Thread,
-    mutex: std.Mutex,
-    iterator: Volume.Iterator,
-    chunk_callback: ChunkCallback,
+pub fn VolumeThreadGroup(comptime chunkTaskFn: fn(*Chunk) anyerror!void) type {
+    return threading.ThreadGroupStatic(Volume, *Chunk, Volume.Iterator, Volume.Iterator.init, chunkTaskFn);
+}
 
-    const Self = @This();
+
+// pub const VolumeThreadGroup = struct {
+
+//     allocator: *Allocator,
+//     volume: *Volume,
+//     threads: []*Thread,
+//     mutex: std.Mutex,
+//     iterator: Volume.Iterator,
+//     chunk_callback: ChunkCallback,
+
+//     const Self = @This();
     
-    pub const ChunkCallback = fn(*Chunk) void;
+//     pub const ChunkCallback = fn(*Chunk) anyerror!void;
 
-    pub fn init(allocator: *Allocator, volume: *Volume, chunk_callback: ChunkCallback) !*Self {
-        const self = try allocator.create(Self);
-        const thread_count = Thread.cpuCount() catch 4;
-        const threads = try allocator.alloc(*Thread, thread_count);
-        self.allocator = allocator;
-        self.volume = volume;
-        self.threads = threads;
-        self.mutex = .{};
-        self.iterator = volume.getChunkIterator();
-        self.chunk_callback = chunk_callback;
-        var i: usize = 0;
-        while (i < thread_count) : (i += 1) {
-            threads[i] = try Thread.spawn(self, threadFn);
-        }
-        return self;
-    }
+//     pub fn init(allocator: *Allocator, volume: *Volume, chunk_callback: ChunkCallback) !*Self {
+//         const self = try allocator.create(Self);
+//         const thread_count = Thread.cpuCount() catch 4;
+//         const threads = try allocator.alloc(*Thread, thread_count);
+//         self.allocator = allocator;
+//         self.volume = volume;
+//         self.threads = threads;
+//         self.mutex = .{};
+//         self.iterator = volume.getChunkIterator();
+//         self.chunk_callback = chunk_callback;
+//         var i: usize = 0;
+//         while (i < thread_count) : (i += 1) {
+//             threads[i] = try Thread.spawn(self, threadFn);
+//         }
+//         return self;
+//     }
 
-    pub fn wait(self: *Self) void {
-        for (self.threads) |thread| {
-            thread.wait();
-        }
-    }
+//     pub fn wait(self: *Self) void {
+//         for (self.threads) |thread| {
+//             thread.wait();
+//         }
+//     }
 
-    pub fn deinit(self: *Self) void {
-        self.wait();
-        self.allocator.free(self.threads);
-        self.allocator.destroy(self);
-    }
+//     pub fn deinit(self: *Self) void {
+//         self.wait();
+//         self.allocator.free(self.threads);
+//         self.allocator.destroy(self);
+//     }
 
-    fn threadFn(self: *Self) !void {
-        while (self.getNext()) |chunk| {
-            // std.log.info("{d}: {d}", .{Thread.getCurrentId(), chunk.position});
-            self.chunk_callback(chunk);
-        }
-    }
+//     fn threadFn(self: *Self) !void {
+//         while (self.getNext()) |chunk| {
+//             // std.log.info("{d}: {d}", .{Thread.getCurrentId(), chunk.position});
+//             try self.chunk_callback(chunk);
+//         }
+//     }
 
-    fn getNext(self: *Self) ?*Chunk {
-        const held = (&self.mutex).acquire();
-        const next = (&self.iterator).next();
-        held.release();
-        return next;
-    }
+//     fn getNext(self: *Self) ?*Chunk {
+//         const held = (&self.mutex).acquire();
+//         const next = (&self.iterator).next();
+//         held.release();
+//         return next;
+//     }
 
-};
+// };

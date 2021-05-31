@@ -97,10 +97,10 @@ pub fn main() !void {
     {
         const timer = try std.time.Timer.start();
         defer std.log.info("generated {d} chunks in {d}s", .{volume.chunks.len, @intToFloat(f64, timer.read()) / std.time.ns_per_s});
-        const group = try voxel.VolumeThreadGroup.init(default_allocator, volume, struct {
+        var group = try voxel.VolumeThreadGroup(struct {
             
-            pub fn generateChunk(chunk: *voxel.Chunk) void {
-                const mesh = default_allocator.create(voxel.ChunkMesh) catch unreachable;
+            pub fn generateChunk(chunk: *voxel.Chunk) !void {
+                const mesh = try default_allocator.create(voxel.ChunkMesh);
                 mesh.* = voxel.ChunkMesh.init(default_allocator);
                 chunk.mesh = mesh;
                 const offset = chunk.position.intToFloat(Vec3).scale(voxel.Chunk.edge_distance);
@@ -118,24 +118,26 @@ pub fn main() !void {
                 }
             }
 
-        }.generateChunk);
-        group.deinit();
-        // group.wait();
+        }.generateChunk).init(default_allocator, volume);
+        defer group.deinit();
+        try group.spawn();
+        group.wait();
     }
     {
         const timer = try std.time.Timer.start();
         defer std.log.info("generated {d} chunk meshes in {d}s", .{volume.chunks.len, @intToFloat(f64, timer.read()) / std.time.ns_per_s});
-        const group = try voxel.VolumeThreadGroup.init(default_allocator, volume, struct {
+        var group = try voxel.VolumeThreadGroup(struct {
 
-            pub fn generateChunkMesh(chunk: *voxel.Chunk) void {
+            pub fn generateChunkMesh(chunk: *voxel.Chunk) !void {
                 const mesh = chunk.mesh.?;
-                mesh.generate(chunk.*) catch unreachable;
+                try mesh.generate(chunk.*);
                 chunk.mesh = mesh;
             }
 
-        }.generateChunkMesh);
-        group.deinit();
-        // group.wait();
+        }.generateChunkMesh).init(default_allocator, volume);
+        defer group.deinit();
+        try group.spawn();
+        group.wait();
     }
     // chunks.reset();
     var chunks = volume.getChunkIterator();
