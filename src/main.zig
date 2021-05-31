@@ -35,6 +35,9 @@ pub const voxel_config: voxel.Config = .{
 
 // };
 
+var gpa = std.heap.GeneralPurposeAllocator(.{}){};
+const default_allocator = &gpa.allocator;
+
 pub fn main() !void {
 
     glfw.init();
@@ -87,35 +90,43 @@ pub fn main() !void {
     defer voxel_vao.deinit();
 
     // volume
-    const volume = try voxel.Volume.init(std.heap.c_allocator, 4, 4, 4, ivec3(-2, -2, -2));
+    const volume = try voxel.Volume.init(default_allocator, 4, 4, 4, ivec3(-2, -2, -2));
     defer volume.deinit();
 
-    var chunks = volume.getChunkIterator();
     {
         const timer = try std.time.Timer.start();
         defer std.log.info("generated {d} chunks in {d}s", .{volume.chunks.len, @intToFloat(f64, timer.read()) / std.time.ns_per_s});
-        while (chunks.next()) |chunk| {
-            generateChunk(chunk);
-        }
+        const group = try voxel.VolumeThreadGroup.init(default_allocator, volume, generateChunk);
+        group.deinit();
+        // group.wait();
     }
-    chunks.reset();
-    while (chunks.next()) |chunk| {
-        var mesh = try std.heap.c_allocator.create(voxel.ChunkMesh);
-        mesh.* = voxel.ChunkMesh.init(std.heap.c_allocator);
-        try mesh.generate(chunk.*);
-        mesh.updateBuffer();
-        chunk.mesh = mesh;
+    {
+        const timer = try std.time.Timer.start();
+        defer std.log.info("generated {d} chunk meshes in {d}s", .{volume.chunks.len, @intToFloat(f64, timer.read()) / std.time.ns_per_s});
+        const group = try voxel.VolumeThreadGroup.init(default_allocator, volume, generateChunkMesh);
+        group.deinit();
+        // group.wait();
     }
+    // var chunks = volume.getChunkIterator();
+    // chunks.reset();
+    // while (chunks.next()) |chunk| {
+    //     var mesh = try default_allocator.create(voxel.ChunkMesh);
+    //     mesh.* = voxel.ChunkMesh.init(default_allocator);
+    //     try mesh.generate(chunk.*);
+    //     mesh.updateBuffer();
+    //     chunk.mesh = mesh;
+    // }
     
 
     // // voxel mesh
-    // var mesh = voxel.ChunkMesh.init(std.heap.c_allocator);
+    // var mesh = voxel.ChunkMesh.init(default_allocator);
     // defer mesh.deinit();
     // try mesh.generate(chunk);
     // mesh.updateBuffer();
 
     voxel_shader.use();
     voxel_vao.bind();
+
 
     var debughud = DebugHud.init(&window);
     var camera = Camera.init();
@@ -150,7 +161,8 @@ pub fn main() !void {
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
         gl.clear(.ColorDepth);
 
-        chunks.reset();
+        var chunks = volume.getChunkIterator();
+        // chunks.reset();
         while (chunks.next()) |chunk| {
             if (chunk.mesh) |mesh| {
                 voxel_vao.vertices.quad_instances.bindBuffer(mesh.vbo);
@@ -240,4 +252,12 @@ pub fn generateChunk(chunk: *voxel.Chunk) void {
             }
         }
     }
+}
+
+pub fn generateChunkMesh(chunk: *voxel.Chunk) void {
+    var mesh = default_allocator.create(voxel.ChunkMesh) catch unreachable;
+    mesh.* = voxel.ChunkMesh.init(default_allocator);
+    mesh.generate(chunk.*) catch unreachable;
+    mesh.updateBuffer();
+    chunk.mesh = mesh;
 }
