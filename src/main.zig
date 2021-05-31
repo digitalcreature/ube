@@ -107,9 +107,13 @@ pub fn main() !void {
         group.deinit();
         // group.wait();
     }
-    // var chunks = volume.getChunkIterator();
+    var chunks = volume.getChunkIterator();
     // chunks.reset();
-    // while (chunks.next()) |chunk| {
+    while (chunks.next()) |chunk| {
+        if (chunk.mesh) |mesh| {
+            mesh.updateBuffer();
+        }
+    }
     //     var mesh = try default_allocator.create(voxel.ChunkMesh);
     //     mesh.* = voxel.ChunkMesh.init(default_allocator);
     //     try mesh.generate(chunk.*);
@@ -161,8 +165,7 @@ pub fn main() !void {
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
         gl.clear(.ColorDepth);
 
-        var chunks = volume.getChunkIterator();
-        // chunks.reset();
+        chunks.reset();
         while (chunks.next()) |chunk| {
             if (chunk.mesh) |mesh| {
                 voxel_vao.vertices.quad_instances.bindBuffer(mesh.vbo);
@@ -258,6 +261,5 @@ pub fn generateChunkMesh(chunk: *voxel.Chunk) void {
     var mesh = default_allocator.create(voxel.ChunkMesh) catch unreachable;
     mesh.* = voxel.ChunkMesh.init(default_allocator);
     mesh.generate(chunk.*) catch unreachable;
-    mesh.updateBuffer();
     chunk.mesh = mesh;
 }
