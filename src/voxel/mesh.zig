@@ -30,27 +30,29 @@ pub fn loadVoxelsShader() !gl.Program(VoxelsUniformDecls) {
 
 pub const ChunkMesh = struct {
 
-    vbo: QuadInstanceBuffer,
+    vbo: ?QuadInstanceBuffer = null,
     quad_instances: std.ArrayList(QuadInstance),
 
     const Self = @This();
 
     pub fn init(allocator: *Allocator) Self {
         return .{
-            .vbo = QuadInstanceBuffer.init(),
             .quad_instances = std.ArrayList(QuadInstance).init(allocator),
         };
     }
 
     pub fn deinit(self: *Self) void {
-        self.*.vbo.deinit();
-        self.*.quad_instances.deinit();
+        if (self.vbo) |*vbo| {
+            vbo.deinit();
+        }
+        self.quad_instances.deinit();
     }
 
     pub const generate = generateChunkMesh;
 
-    pub fn updateBuffer(self: Self) void {
-        self.vbo.data(self.quad_instances.items, .StaticDraw);
+    pub fn updateBuffer(self: *Self) void {
+        self.vbo = self.vbo orelse QuadInstanceBuffer.init();
+        self.vbo.?.data(self.quad_instances.items, .StaticDraw);
     }
 
 
@@ -143,7 +145,7 @@ fn generateChunkMesh(self: *ChunkMesh, chunk: Chunk) !void {
             }
         }
     }}}
-    std.log.info("generated chunk mesh with {d} quads", .{self.*.quad_instances.items.len});
+    // std.log.info("generated chunk mesh with {d} quads", .{self.*.quad_instances.items.len});
 }
 
 fn calculateEncodedLight(chunk: Chunk, comptime face: Face, coords: Coords) u32{

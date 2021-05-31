@@ -8,7 +8,6 @@
 //! to wake up. Spurious wakeups are possible.
 //! This API supports static initialization and does not require deinitialization.
 
-impl: Impl = .{},
 
 const std = @import("std");
 const Condition = @This();
@@ -16,27 +15,32 @@ const windows = std.os.windows;
 const linux = std.os.linux;
 const Mutex = std.Thread.Mutex;
 const assert = std.debug.assert;
+pub const Condition = struct {
 
-pub fn wait(cond: *Condition, mutex: *Mutex) void {
-    cond.impl.wait(mutex);
-}
+    impl: Impl = .{},
 
-pub fn signal(cond: *Condition) void {
-    cond.impl.signal();
-}
+    pub fn wait(cond: *Condition, mutex: *Mutex) void {
+        cond.impl.wait(mutex);
+    }
 
-pub fn broadcast(cond: *Condition) void {
-    cond.impl.broadcast();
-}
+    pub fn signal(cond: *Condition) void {
+        cond.impl.signal();
+    }
 
-const Impl = if (std.builtin.single_threaded)
-    SingleThreadedCondition
-else if (std.Target.current.os.tag == .windows)
-    WindowsCondition
-else if (std.Thread.use_pthreads)
-    PthreadCondition
-else
-    AtomicCondition;
+    pub fn broadcast(cond: *Condition) void {
+        cond.impl.broadcast();
+    }
+
+    const Impl = if (std.builtin.single_threaded)
+        SingleThreadedCondition
+    else if (std.Target.current.os.tag == .windows)
+        WindowsCondition
+    else if (std.Thread.use_pthreads)
+        PthreadCondition
+    else
+        AtomicCondition;
+
+};
 
 pub const SingleThreadedCondition = struct {
     pub fn wait(cond: *SingleThreadedCondition, mutex: *Mutex) void {

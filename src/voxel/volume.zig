@@ -179,8 +179,8 @@ pub const VolumeThreadGroup = struct {
     }
 
     fn getNext(self: *Self) ?*Chunk {
-        const held = self.mutex.acquire();
-        const next = self.iterator.next();
+        const held = (&self.mutex).acquire();
+        const next = (&self.iterator).next();
         held.release();
         return next;
     }

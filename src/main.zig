@@ -45,6 +45,8 @@ pub fn main() !void {
 
     var window = glfw.Window.init(1920, 1080, "ube");
     defer window.deinit();
+    
+    gl.init();
 
     const mouse = &window.mouse;
     mouse.setRawInputMode(.enabled);
@@ -54,7 +56,6 @@ pub fn main() !void {
     window.setVsyncMode(.enabled);
     // window.setVsyncMode(.disabled);
 
-    gl.init();
 
     imgui.init(&window);
     defer imgui.deinit();
@@ -96,19 +97,48 @@ pub fn main() !void {
     {
         const timer = try std.time.Timer.start();
         defer std.log.info("generated {d} chunks in {d}s", .{volume.chunks.len, @intToFloat(f64, timer.read()) / std.time.ns_per_s});
-        const group = try voxel.VolumeThreadGroup.init(default_allocator, volume, generateChunk);
+        const group = try voxel.VolumeThreadGroup.init(default_allocator, volume, struct {
+            
+            pub fn generateChunk(chunk: *voxel.Chunk) void {
+                const mesh = default_allocator.create(voxel.ChunkMesh) catch unreachable;
+                mesh.* = voxel.ChunkMesh.init(default_allocator);
+                chunk.mesh = mesh;
+                const offset = chunk.position.intToFloat(Vec3).scale(voxel.Chunk.edge_distance);
+                for (chunk.voxels.data) |*yz_slice, x| {
+                    for (yz_slice.*) |*z_slice, y| {
+                        for (z_slice.*) |*v, z| {
+                            const pos1 = autoVec(.{x, y, z}).intToFloat(Vec3).scale(voxel.config.voxel_size);
+                            const pos2 = autoVec(.{x + 32, y, z}).intToFloat(Vec3).scale(voxel.config.voxel_size);
+                            const noise1 = math.perlin.noise(pos1.add(offset).scale(0.1));
+                            const noise2 = math.perlin.noise(pos2.add(offset).scale(0.1));
+                            const fill: u8 = if (noise2 < 0.1) 1 else 2;
+                            v.* = if (noise1 < 0.25) 0 else fill;
+                        }
+                    }
+                }
+            }
+
+        }.generateChunk);
         group.deinit();
         // group.wait();
     }
     {
         const timer = try std.time.Timer.start();
         defer std.log.info("generated {d} chunk meshes in {d}s", .{volume.chunks.len, @intToFloat(f64, timer.read()) / std.time.ns_per_s});
-        const group = try voxel.VolumeThreadGroup.init(default_allocator, volume, generateChunkMesh);
+        const group = try voxel.VolumeThreadGroup.init(default_allocator, volume, struct {
+
+            pub fn generateChunkMesh(chunk: *voxel.Chunk) void {
+                const mesh = chunk.mesh.?;
+                mesh.generate(chunk.*) catch unreachable;
+                chunk.mesh = mesh;
+            }
+
+        }.generateChunkMesh);
         group.deinit();
         // group.wait();
     }
-    var chunks = volume.getChunkIterator();
     // chunks.reset();
+    var chunks = volume.getChunkIterator();
     while (chunks.next()) |chunk| {
         if (chunk.mesh) |mesh| {
             mesh.updateBuffer();
@@ -168,9 +198,11 @@ pub fn main() !void {
         chunks.reset();
         while (chunks.next()) |chunk| {
             if (chunk.mesh) |mesh| {
-                voxel_vao.vertices.quad_instances.bindBuffer(mesh.vbo);
-                voxel_shader.uniforms.model.set(Mat4.createTranslation(chunk.position.intToFloat(Vec3).scale(voxel.Chunk.edge_distance)));
-                gl.drawElementsInstanced(.Triangles, 6, u32, mesh.quad_instances.items.len);
+                if (mesh.vbo) |vbo| {
+                    voxel_vao.vertices.quad_instances.bindBuffer(vbo);
+                    voxel_shader.uniforms.model.set(Mat4.createTranslation(chunk.position.intToFloat(Vec3).scale(voxel.Chunk.edge_distance)));
+                    gl.drawElementsInstanced(.Triangles, 6, u32, mesh.quad_instances.items.len);
+                }
             }
         }
 
@@ -190,6 +222,7 @@ const Camera = struct {
     proj: Mat4 = Mat4.identity,
     view: Mat4 = Mat4.identity,
     pos: Vec3 = Vec3.zero,
+    move_speed: f32 = 25,
     look_angles: DVec2 = DVec2.zero,
 
     const Self = @This();
@@ -214,22 +247,22 @@ const Camera = struct {
         const forward = view.transformDirection(Vec3.unit("z"));
         const right = view.transformDirection(Vec3.unit("x"));
         if (window.keyboard.isKeyDown(.w).?) {
-            pos = pos.add(forward.scale(5 * @floatCast(f32, window.time.frame_time)));
+            pos = pos.add(forward.scale(self.move_speed * @floatCast(f32, window.time.frame_time)));
         }
         if (window.keyboard.isKeyDown(.s).?) {
-            pos = pos.add(forward.scale(-5 * @floatCast(f32, window.time.frame_time)));
+            pos = pos.add(forward.scale(-self.move_speed * @floatCast(f32, window.time.frame_time)));
         }
         if (window.keyboard.isKeyDown(.a).?) {
-            pos = pos.add(right.scale(-5 * @floatCast(f32, window.time.frame_time)));
+            pos = pos.add(right.scale(-self.move_speed * @floatCast(f32, window.time.frame_time)));
         }
         if (window.keyboard.isKeyDown(.d).?) {
-            pos = pos.add(right.scale(5 * @floatCast(f32, window.time.frame_time)));
+            pos = pos.add(right.scale(self.move_speed * @floatCast(f32, window.time.frame_time)));
         }
         if (window.keyboard.isKeyDown(.space).?) {
-            pos = pos.add(Vec3.unit("y").scale(5 * @floatCast(f32, window.time.frame_time)));
+            pos = pos.add(Vec3.unit("y").scale(self.move_speed * @floatCast(f32, window.time.frame_time)));
         }
         if (window.keyboard.isKeyDown(.left_shift).?) {
-            pos = pos.add(Vec3.unit("y").scale(-5 * @floatCast(f32, window.time.frame_time)));
+            pos = pos.add(Vec3.unit("y").scale(-self.move_speed * @floatCast(f32, window.time.frame_time)));
         }
         self.pos = pos;
         self.view = (Mat4.createTranslation(pos).invert() orelse Mat4.identity).mul(view);
@@ -240,26 +273,3 @@ const Camera = struct {
 
 
 };
-
-pub fn generateChunk(chunk: *voxel.Chunk) void {
-    const offset = chunk.position.intToFloat(Vec3).scale(voxel.Chunk.edge_distance);
-    for (chunk.voxels.data) |*yz_slice, x| {
-        for (yz_slice.*) |*z_slice, y| {
-            for (z_slice.*) |*v, z| {
-                const pos1 = autoVec(.{x, y, z}).intToFloat(Vec3).scale(voxel.config.voxel_size);
-                const pos2 = autoVec(.{x + 32, y, z}).intToFloat(Vec3).scale(voxel.config.voxel_size);
-                const noise1 = math.perlin.noise(pos1.add(offset).scale(0.1));
-                const noise2 = math.perlin.noise(pos2.add(offset).scale(0.1));
-                const fill: u8 = if (noise2 < 0.1) 1 else 2;
-                v.* = if (noise1 < 0.25) 0 else fill;
-            }
-        }
-    }
-}
-
-pub fn generateChunkMesh(chunk: *voxel.Chunk) void {
-    var mesh = default_allocator.create(voxel.ChunkMesh) catch unreachable;
-    mesh.* = voxel.ChunkMesh.init(default_allocator);
-    mesh.generate(chunk.*) catch unreachable;
-    chunk.mesh = mesh;
-}
