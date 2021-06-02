@@ -85,6 +85,8 @@ pub const Volume = struct {
         return Iterator.init(self);
     }
 
+    // TODO: make volume iterator threadsafe (@atomicRead/Write etc)
+    // TODO: maybe some way to split iterators across threads in the group?
     pub const Iterator  = struct {
         volume: *Volume,
         pos: Coords,
@@ -129,66 +131,114 @@ pub const Volume = struct {
 
 const threading = @import("threading");
 
-
-pub fn VolumeThreadGroup(comptime chunkTaskFn: fn(*Chunk) anyerror!void) type {
-    return threading.ThreadGroupStatic(Volume, *Chunk, Volume.Iterator, Volume.Iterator.init, chunkTaskFn);
+pub fn ChunkTaskFn(comptime State: type) type {
+    if (State == void) {
+        return fn(*Chunk) anyerror!void;
+    }
+    else {
+        return fn(State, *Chunk) anyerror!void;
+    }
 }
 
+pub fn VolumeThreadGroup(comptime chunkTaskFn: fn(*Chunk) anyerror!void) type {
+    return VolumeThreadGroupWithState(void, chunkTaskFn);
+}
 
-// pub const VolumeThreadGroup = struct {
+pub fn VolumeThreadGroupWithState(comptime State: type, comptime chunkTaskFn: ChunkTaskFn(State)) type {
 
-//     allocator: *Allocator,
-//     volume: *Volume,
-//     threads: []*Thread,
-//     mutex: std.Mutex,
-//     iterator: Volume.Iterator,
-//     chunk_callback: ChunkCallback,
+    const StateOrShim = if (State == void) u8 else State;
 
-//     const Self = @This();
-    
-//     pub const ChunkCallback = fn(*Chunk) anyerror!void;
+    const CombinedState = struct {
+        volume: *Volume,
+        iterator: *Volume.Iterator,
+        state: StateOrShim,
 
-//     pub fn init(allocator: *Allocator, volume: *Volume, chunk_callback: ChunkCallback) !*Self {
-//         const self = try allocator.create(Self);
-//         const thread_count = Thread.cpuCount() catch 4;
-//         const threads = try allocator.alloc(*Thread, thread_count);
-//         self.allocator = allocator;
-//         self.volume = volume;
-//         self.threads = threads;
-//         self.mutex = .{};
-//         self.iterator = volume.getChunkIterator();
-//         self.chunk_callback = chunk_callback;
-//         var i: usize = 0;
-//         while (i < thread_count) : (i += 1) {
-//             threads[i] = try Thread.spawn(self, threadFn);
-//         }
-//         return self;
-//     }
+        pub fn deinitThreadGroupState(self: *@This(), allocator: *Allocator) void {
+            allocator.destroy(self.iterator);
+        }
+    };
 
-//     pub fn wait(self: *Self) void {
-//         for (self.threads) |thread| {
-//             thread.wait();
-//         }
-//     }
+    const generator = struct {
+        pub fn generatorFn(state: CombinedState) anyerror!?*Chunk {
+            return state.iterator.next();
+        }
+    }.generatorFn;
 
-//     pub fn deinit(self: *Self) void {
-//         self.wait();
-//         self.allocator.free(self.threads);
-//         self.allocator.destroy(self);
-//     }
+    const task = struct {
+        pub fn taskFn(state: CombinedState, chunk: *Chunk) anyerror!void {
+            if (State == void) {
+                try chunkTaskFn(chunk);
+            }
+            else {
+                try chunkTaskFn(state.state, chunk);
+            }
+        }
+    }.taskFn;
 
-//     fn threadFn(self: *Self) !void {
-//         while (self.getNext()) |chunk| {
-//             // std.log.info("{d}: {d}", .{Thread.getCurrentId(), chunk.position});
-//             try self.chunk_callback(chunk);
-//         }
-//     }
+    const mixinWithState = struct {
+        pub fn mixinWithStateFn(comptime Self: type) type {
+            return struct {
+                pub fn init(allocator: *Allocator, volume: *Volume, state: StateOrShim) !Self {
+                    const iterator = try allocator.create(Volume.Iterator);
+                    iterator.* = volume.getChunkIterator();
+                    const combined_state = CombinedState{
+                        .volume = volume,
+                        .iterator = iterator,
+                        .state = state,
+                    };
+                    return Self.initWithState(allocator, combined_state);
+                }
+            };
+        }
 
-//     fn getNext(self: *Self) ?*Chunk {
-//         const held = (&self.mutex).acquire();
-//         const next = (&self.iterator).next();
-//         held.release();
-//         return next;
-//     }
+    }.mixinWithStateFn;
 
-// };
+
+    const mixin = if (State == void) struct {
+        pub fn mixinWithNoStateFn(comptime Self: type) type {
+            return struct {
+                pub fn init(allocator: *Allocator, volume: *Volume) !Self {
+                    return mixinWithState(Self).init(allocator, volume, 0);
+                }
+            };
+        }
+    }.mixinWithNoStateFn
+    else mixinWithState;
+
+    return threading.ThreadGroupBase(CombinedState, *Chunk, generator, task, .{ .use_mutex = true, }, mixin);
+}
+
+pub const VolumeChunkQueue = struct {
+
+    volume: *Volume,
+    queue: Queue,
+
+
+    pub const Queue = threading.Queue(*Chunk);
+    const Self = @This();
+
+    pub fn init(allocator: *Allocator, volume: *Volume, capacity: usize) !Self {
+        return Self{
+            .volume = volume,
+            .queue = try Queue.init(allocator, capacity),
+        };
+    }
+
+    pub fn deinit(self: *Self) void {
+        self.queue.deinit();
+    }
+
+    pub fn count(self: *Self) usize {
+        return self.queue.count();
+    }
+
+    pub fn enqueue(self: *Self, chunk: *Chunk) !void {
+        return self.queue.enqueue(item);
+    }
+
+    pub fn dequeue(self: *Self) ?*Chunk {
+        return self.queue.dequeue();
+    }
+
+
+};

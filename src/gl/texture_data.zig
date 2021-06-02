@@ -106,7 +106,7 @@ pub const PixelFormat = union(enum) {
     pub const RGBA_8 = PixelFormat.init(.rgba, .byte);
 
 
-    pub const Tag = @TagType(PixelFormat);
+    pub const Tag = std.meta.TagType(PixelFormat);
 
     pub fn toInt(self: PixelFormat) u32 {
         return switch (self) {

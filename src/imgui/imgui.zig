@@ -3266,6 +3266,10 @@ pub fn Vector(comptime T: type) type {
         items: [*]T,
 
         pub usingnamespace getFTABLE_ImVector(T);
+
+        pub fn slice(self: * const @This()) []T {
+            return self.items[0..@intCast(usize, self.len)];
+        }
     };
 }
 

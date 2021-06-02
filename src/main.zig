@@ -123,6 +123,8 @@ pub fn main() !void {
         try group.spawn();
         group.wait();
     }
+    // var dirty_chunks = try voxel.VolumeChunkQueue.init(default_allocator, volume, volume.chunks.len);
+    // defer dirty_chunks.deinit();
     {
         const timer = try std.time.Timer.start();
         defer std.log.info("generated {d} chunk meshes in {d}s", .{volume.chunks.len, @intToFloat(f64, timer.read()) / std.time.ns_per_s});
@@ -132,6 +134,7 @@ pub fn main() !void {
                 const mesh = chunk.mesh.?;
                 try mesh.generate(chunk.*);
                 chunk.mesh = mesh;
+                // try dirty_chunks.enqueue(chunk);
             }
 
         }.generateChunkMesh).init(default_allocator, volume);

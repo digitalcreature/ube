@@ -357,14 +357,14 @@ fn CheckShader(handle: gl.GLuint, desc: []const u8) bool {
     gl.glGetShaderiv(handle, gl.GL_COMPILE_STATUS, &status);
     gl.glGetShaderiv(handle, gl.GL_INFO_LOG_LENGTH, &log_length);
     if (status == gl.GL_FALSE)
-        std.debug.warn("ERROR: imgui_impl_opengl3.CreateDeviceObjects: failed to compile {}!\n", .{desc});
+        std.debug.warn("ERROR: imgui_impl_opengl3.CreateDeviceObjects: failed to compile {s}!\n", .{desc});
     if (log_length > 1) {
         var buf: imgui.Vector(u8) = undefined;
         buf.init();
         defer buf.deinit();
         buf.resize(@intCast(c_int, log_length + 1));
         gl.glGetShaderInfoLog(handle, log_length, null, @ptrCast([*]gl.GLchar, buf.begin()));
-        std.debug.warn("{}\n", .{buf.begin()});
+        std.debug.warn("{s}\n", .{buf.slice()});
     }
     return status != gl.GL_FALSE;
 }
@@ -376,14 +376,14 @@ fn CheckProgram(handle: gl.GLuint, desc: []const u8) bool {
     gl.glGetProgramiv(handle, gl.GL_LINK_STATUS, &status);
     gl.glGetProgramiv(handle, gl.GL_INFO_LOG_LENGTH, &log_length);
     if (status == gl.GL_FALSE)
-        std.debug.warn("ERROR: imgui_impl_opengl3.CreateDeviceObjects: failed to link {}! (with GLSL '{}')\n", .{ desc, g_GlslVersionString });
+        std.debug.warn("ERROR: imgui_impl_opengl3.CreateDeviceObjects: failed to link {s}! (with GLSL '{s}')\n", .{ desc, g_GlslVersionString });
     if (log_length > 1) {
         var buf: imgui.Vector(u8) = undefined;
         buf.init();
         defer buf.deinit();
         buf.resize(@intCast(c_int, log_length + 1));
         gl.glGetProgramInfoLog(handle, log_length, null, @ptrCast([*]gl.GLchar, buf.begin()));
-        std.debug.warn("{}\n", .{buf.begin()});
+        std.debug.warn("{s}\n", .{buf.slice()});
     }
     return status != gl.GL_FALSE;
 }
@@ -401,7 +401,7 @@ fn CreateDeviceObjects() bool {
     if (std.fmt.parseInt(u32, numberPart, 10)) |value| {
         glsl_version = value;
     } else |err| {
-        std.debug.warn("Couldn't parse glsl version from '{}', '{}'\n", .{ g_GlslVersionString, numberPart });
+        std.debug.warn("Couldn't parse glsl version from '{s}', '{s}'\n", .{ g_GlslVersionString, numberPart });
     }
 
     const vertex_shader_glsl_120 = "uniform mat4 ProjMtx;\n" ++

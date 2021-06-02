@@ -92,7 +92,8 @@ pub fn initUniforms(program_handle: Handle, comptime Uniforms: type) Uniforms {
     return uniforms;
 }
 
-const TypeId = @import("builtin").TypeId;
+const TypeInfo = std.builtin.TypeInfo;
+const builtin = std.builtin;
 pub fn createUniformsStructFromDeclarations(comptime decls: []const type) type {
     comptime {
         var count = 0;
@@ -101,7 +102,7 @@ pub fn createUniformsStructFromDeclarations(comptime decls: []const type) type {
             if (info != .Struct) @compileError("uniform decls must be structs, not " ++ @typeName(decl));
             count += info.Struct.fields.len;
         }
-        var fields: [count]TypeId.StructField = undefined;
+        var fields: [count]TypeInfo.StructField = undefined;
         var i = 0;
         for (decls) |decl| {
             const info = @typeInfo(decl);
@@ -120,7 +121,7 @@ pub fn createUniformsStructFromDeclarations(comptime decls: []const type) type {
             .Struct = .{
                 .layout = .Auto,
                 .fields = &fields,
-                .decls = &[_]TypeId.Declaration {},
+                .decls = &[_]TypeInfo.Declaration {},
                 .is_tuple = false,
             }
         });

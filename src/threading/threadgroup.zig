@@ -1,73 +1,97 @@
 const std = @import("std");
 const Thread = std.Thread;
-const Mutex = std.Mutex;
+const Mutex = Thread.Mutex;
 const Allocator = std.mem.Allocator;
 
+pub const fallback_cpu_count: usize = 4;
 var cpu_count: ?usize = null;
 
-pub fn TaskFn(comptime Item: type) type {
-    return fn(Item) anyerror!void;
+fn GeneratorFn(comptime State: type, comptime Item: type) type {
+    return fn(State) anyerror!?Item;
 }
 
-pub fn GetIteratorFn(comptime Collection: type, comptime Iterator: type) type {
-    return fn(*Collection) Iterator;
+fn TaskFn(comptime State: type, comptime Item: type) type {
+    return fn(State, Item) anyerror!void;
 }
 
-pub fn AtomicStaticIterator(comptime Collection: type, comptime Item: type, comptime Iterator: type, comptime getIterator: GetIteratorFn(Collection, Iterator)) type {
-    const NextFn = fn (*Iterator) ?Item;
-    if (!@hasDecl(Iterator, "next") or @TypeOf(Iterator.next) != NextFn) {
-        const iter_name = @typeName(Iterator);
-        const item_name = @typeName(Item);
-        @compileError("iterator type " ++ iter_name ++ " must have a decl `pub fn next(self: *" ++ iter_name ++ ") ?" ++ item_name++ "`");
-    }
+// const GeneratorInfo = struct {
+//     ArgType: type,
+//     ReturnType: type,
+// };
 
-    return struct {
+// fn generatorInfo(comptime GeneratorFn: type) GeneratorInfo {
+//     switch (@typeInfo(GeneratorFn)) {
+//         .Fn => |Fn| {
 
-        collection: *Collection,
-        iterator: Iterator,
-        mutex: Mutex,
-        
+//             if (Fn.args.len != 1) @compileError("generator fn must have a single argument");
+//             if (Fn.args[0].arg_type == null) @compileError("generator fn argument must not be inferred");
+//             const ArgType = Fn.args[0].arg_type.?;
 
-        const Self = @This();
+//             if (Fn.return_type == void) @compileError("generator fn must not return void");
+//             if (Fn.return_type == null) @compileError("generator fn must have a declared return type");
+//             const ReturnType = Fn.return_type.?;
 
-        pub fn init(collection: *Collection) Self {
-            return .{
-                .collection = collection,
-                .iterator = getIterator(collection),
-                .mutex = .{},
-            };
+//             switch (@typeInfo(ReturnType)) {
+//                 .ErrorUnion => |ErrorUnion| {
+//                     if (ErrorUnion.payload == void) @compileError("generator fn must not return void");
+//                     switch(@typeInfo(ErrorUnion.payload)) {
+//                         .Optional => {
+//                             return GeneratorInfo{
+//                                 .ArgType = ArgType,
+//                                 .ReturnType = ReturnType,
+//                             };
+//                         },
+//                         else => @compileError("generator fn must return an optional"),
+//                     }
+//                 },
+//                 else => @compileError("generator fn must return an error union"),
+//             }
+//         }
+//     }
+// }
+
+pub fn ThreadGroup(
+        comptime state_type: type,
+        comptime item_type: type,
+        comptime generator: GeneratorFn(state_type, item_type),
+        comptime task: TaskFn(state_type, item_type),
+        comptime config: struct {
+            use_mutex: bool = true,
+        },) type {
+
+    const emptyMixin = struct {
+        pub fn emptyMixinFn(comptime Self: type) type {
+            return struct{};
         }
-
-        pub fn next(self: *Self) ?Item {
-            const held = self.mutex.acquire();
-            const item = self.iterator.next();
-            held.release();
-            return item;
-        }
-
-    };
-
+    }.emptyMixinFn;
+    return ThreadGroupBase(state_type, item_type, generator, task, config, emptyMixin);
 }
-
-pub fn ThreadGroupStatic(comptime Collection: type, comptime Item: type, comptime Iterator: type, comptime getIterator: GetIteratorFn(Collection, Iterator), comptime taskFn: TaskFn(Item)) type {
-    const StaticIterator = AtomicStaticIterator(Collection, Item, Iterator, getIterator);
-    return ThreadGroup(Collection, Item, StaticIterator, StaticIterator.init, taskFn);
-}
-
-pub fn ThreadGroup(comptime Collection: type, comptime Item: type, comptime Iterator: type, comptime getIterator: GetIteratorFn(Collection, Iterator), comptime taskFn: TaskFn(Item)) type {
+pub fn ThreadGroupBase(
+        comptime state_type: type,
+        comptime item_type: type,
+        comptime generator: GeneratorFn(state_type, item_type),
+        comptime task: TaskFn(state_type, item_type),
+        comptime config: struct {
+            use_mutex: bool = true,
+        },
+        comptime mixin: fn(type) type,
+    ) type {
 
     return struct {
 
         allocator: *Allocator,
-        collection: *Collection,
+        state: State,
         threads: []*Thread,
-        iterator: Iterator,
+        mutex: (if (config.use_mutex) Mutex else u8) = (if (config.use_mutex) Mutex{} else 0),
+
+        pub const State = state_type;
+        pub const Item = item_type;
 
         const Self = @This();
 
-        pub const fallback_cpu_count = 4;
+        pub usingnamespace mixin(Self);
 
-        pub fn init(allocator: *Allocator, collection: *Collection) !Self {
+        pub fn initWithState(allocator: *Allocator, state: State) !Self {
             if (cpu_count == null) {
                 if (Thread.cpuCount()) |count| {
                     cpu_count = count;
@@ -80,19 +104,21 @@ pub fn ThreadGroup(comptime Collection: type, comptime Item: type, comptime Iter
             const thread_count = cpu_count.?;
             return Self{
                 .allocator = allocator,
-                .collection = collection,
+                .state = state,
                 .threads = try allocator.alloc(*Thread, thread_count),
-                .iterator = getIterator(collection),
             };
         }
-
+        
         pub fn deinit(self: *Self) void {
             self.allocator.free(self.threads);
+            if (@hasDecl(State, "deinitThreadGroupState")) {
+                self.state.deinitThreadGroupState(self.allocator);
+            }
         }
 
         pub fn spawn(self: *Self) !void {
             for (self.threads) |*thread| {
-                thread.* = try Thread.spawn(self, threadFn);
+                thread.* = try Thread.spawn(threadFn, self);
             }
         }
 
@@ -102,13 +128,23 @@ pub fn ThreadGroup(comptime Collection: type, comptime Item: type, comptime Iter
             }
         }
 
+        fn wrappedGenerator(self: *Self) !?Item {
+            if (config.use_mutex) {
+                var held = self.mutex.acquire();
+                defer held.release();   // use defer here so we still release the mutex if we get an error
+                const item = try generator(self.state);
+                return item;
+            }
+            else {
+                return generator(self.state);
+            }
+        }
 
         fn threadFn(self: *Self) !void {
-            while (self.iterator.next()) |item| {
-                try taskFn(item);
+            while (try wrappedGenerator(self)) |item| {
+                try task(self.state, item);
             }
         }
 
     };
-
 }
