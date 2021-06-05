@@ -1,6 +1,7 @@
 const std = @import("std");
 const Thread = std.Thread;
-const Mutex = Thread.Mutex;
+// const Mutex = Thread.Mutex;
+const Mutex = std.Mutex;
 const Allocator = std.mem.Allocator;
 
 pub const fallback_cpu_count: usize = 4;
@@ -118,7 +119,8 @@ pub fn ThreadGroupBase(
 
         pub fn spawn(self: *Self) !void {
             for (self.threads) |*thread| {
-                thread.* = try Thread.spawn(threadFn, self);
+                thread.* = try Thread.spawn(self, threadFn);
+                // thread.* = try Thread.spawn(threadFn, self);
             }
         }
 

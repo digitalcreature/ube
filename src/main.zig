@@ -123,21 +123,22 @@ pub fn main() !void {
         try group.spawn();
         group.wait();
     }
-    // var dirty_chunks = try voxel.VolumeChunkQueue.init(default_allocator, volume, volume.chunks.len);
-    // defer dirty_chunks.deinit();
+    var dirty_chunks = try voxel.VolumeChunkQueue.init(default_allocator, volume, volume.chunks.len);
+    defer dirty_chunks.deinit();
     {
         const timer = try std.time.Timer.start();
         defer std.log.info("generated {d} chunk meshes in {d}s", .{volume.chunks.len, @intToFloat(f64, timer.read()) / std.time.ns_per_s});
-        var group = try voxel.VolumeThreadGroup(struct {
+        var group = try voxel.VolumeThreadGroupWithState(*voxel.VolumeChunkQueue, struct {
 
-            pub fn generateChunkMesh(chunk: *voxel.Chunk) !void {
+            pub fn generateChunkMesh(output: *voxel.VolumeChunkQueue, chunk: *voxel.Chunk) !void {
                 const mesh = chunk.mesh.?;
                 try mesh.generate(chunk.*);
                 chunk.mesh = mesh;
+                try output.enqueue(chunk);
                 // try dirty_chunks.enqueue(chunk);
             }
 
-        }.generateChunkMesh).init(default_allocator, volume);
+        }.generateChunkMesh).init(default_allocator, volume, &dirty_chunks);
         defer group.deinit();
         try group.spawn();
         group.wait();

@@ -233,7 +233,7 @@ pub const VolumeChunkQueue = struct {
     }
 
     pub fn enqueue(self: *Self, chunk: *Chunk) !void {
-        return self.queue.enqueue(item);
+        return self.queue.enqueue(chunk);
     }
 
     pub fn dequeue(self: *Self) ?*Chunk {

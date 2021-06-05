@@ -67,6 +67,8 @@ fn addDeps(step: *LibExeObjStep) void {
     step.addPackage(threading);
 
     step.addIncludeDir("deps/inc");
+    // step.addIncludeDir("C:/Users/sam/zig-windows-x86_64-0.8.0/lib/libc/include/any-windows-any");
+    // step.addIncludeDir("C:/Program Files (x86)/Microsoft Visual Studio/2017/Community/VC/Tools/MSVC/14.11.25503/include");
     step.addCSourceFile("deps/src/glad.c", &[_][]const u8{"-std=c99"});
     step.addCSourceFile("deps/src/stb_image.c", &[_][]const u8{"-std=c99"});
     // step.addIncludeDir("GLFW/include/GLFW");
