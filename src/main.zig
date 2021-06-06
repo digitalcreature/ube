@@ -12,7 +12,9 @@ const img = @import("zigimg");
 const imgui = @import("imgui");
 const voxel = @import("voxel");
 const builting = @import("builtin");
+const Camera = @import("camera").Camera;
 const DebugHud = @import("debughud").DebugHud;
+
 
 pub const log_level = std.log.Level.info;
 
@@ -167,9 +169,9 @@ pub fn main() !void {
     voxel_shader.use();
     voxel_vao.bind();
 
-
-    var debughud = DebugHud.init(&window);
     var camera = Camera.init();
+    var debughud = DebugHud.init(&window, &camera);
+    
     while (!window.shouldClose()) {
         window.update();
 
@@ -178,8 +180,12 @@ pub fn main() !void {
         }
 
         if (keyboard.wasKeyPressed(.grave).?) {
+            mouse.setRawInputMode(if (mouse.cursor_mode) .disabled else .enabled);
+            mouse.cursor_mode = !mouse.cursor_mode;
+        }
+
+        if (keyboard.wasKeyPressed(.f_3).?) {
             debughud.is_visible = !debughud.is_visible;
-            mouse.setRawInputMode(if (debughud.is_visible) .disabled else .enabled);
         }
 
         if (keyboard.wasKeyPressed(.f_4).?) {
@@ -191,9 +197,9 @@ pub fn main() !void {
             window.setDisplayMode(new_mode, .enabled);
         }
         
-        if (!debughud.is_visible) {
-            camera.update(&window);
-        }
+        // if (!debughud.is_visible) {
+        camera.update(&window);
+        // }
 
         voxel_shader.uniforms.proj.set(camera.proj);
         voxel_shader.uniforms.view.set(camera.view);
@@ -222,60 +228,3 @@ pub fn main() !void {
         window.swapBuffers();
     }
 }
-
-const Camera = struct {
-
-    proj: Mat4 = Mat4.identity,
-    view: Mat4 = Mat4.identity,
-    pos: Vec3 = Vec3.zero,
-    move_speed: f32 = 25,
-    look_angles: DVec2 = DVec2.zero,
-
-    const Self = @This();
-
-    pub fn init() Self {
-        return .{};
-    }
-
-    pub fn update(self: *Self, window: *glfw.Window) void {
-        var mouse_delta = window.mouse.cursor_position_delta.scale(window.time.frame_time * 10);
-        var look_angles = self.look_angles.add(mouse_delta);
-        if (look_angles.y > 90) {
-            look_angles.y = 90;
-        }
-        if (look_angles.y < -90) {
-            look_angles.y = -90;
-        }
-        self.look_angles = look_angles;
-        const look_angles_radians = look_angles.scale(std.math.pi / 180.0).floatCast(Vec2);
-        const view = Mat4.createEulerZXY(-look_angles_radians.y, -look_angles_radians.x, 0);
-        var pos = self.pos;
-        const forward = view.transformDirection(Vec3.unit("z"));
-        const right = view.transformDirection(Vec3.unit("x"));
-        if (window.keyboard.isKeyDown(.w).?) {
-            pos = pos.add(forward.scale(self.move_speed * @floatCast(f32, window.time.frame_time)));
-        }
-        if (window.keyboard.isKeyDown(.s).?) {
-            pos = pos.add(forward.scale(-self.move_speed * @floatCast(f32, window.time.frame_time)));
-        }
-        if (window.keyboard.isKeyDown(.a).?) {
-            pos = pos.add(right.scale(-self.move_speed * @floatCast(f32, window.time.frame_time)));
-        }
-        if (window.keyboard.isKeyDown(.d).?) {
-            pos = pos.add(right.scale(self.move_speed * @floatCast(f32, window.time.frame_time)));
-        }
-        if (window.keyboard.isKeyDown(.space).?) {
-            pos = pos.add(Vec3.unit("y").scale(self.move_speed * @floatCast(f32, window.time.frame_time)));
-        }
-        if (window.keyboard.isKeyDown(.left_shift).?) {
-            pos = pos.add(Vec3.unit("y").scale(-self.move_speed * @floatCast(f32, window.time.frame_time)));
-        }
-        self.pos = pos;
-        self.view = (Mat4.createTranslation(pos).invert() orelse Mat4.identity).mul(view);
-        const frame_buffer_size = window.getFrameBufferSize();
-        const aspect: f32 = @intToFloat(f32, frame_buffer_size.x) / @intToFloat(f32, frame_buffer_size.y);
-        self.proj = Mat4.createPerspective(1.5708, aspect, 0.1, 1000);
-    }
-
-
-};

@@ -48,11 +48,17 @@ fn addDeps(step: *LibExeObjStep) void {
         .path = "src/voxel/lib.zig",
         .dependencies = &[_]Pkg{ gl, math, shaders, threading },
     };
+    const camera: Pkg = .{
+        .name = "camera",
+        .path = "src/camera/lib.zig",
+        .dependencies = &[_]Pkg{ imgui, math, glfw },
+    };
     const debughud: Pkg = .{
         .name = "debughud",
         .path = "src/debughud/lib.zig",
-        .dependencies = &[_]Pkg{ imgui, math, glfw },
+        .dependencies = &[_]Pkg{ imgui, math, glfw, camera },
     };
+    
 
     step.addPackage(math);
     step.addPackage(utils);
@@ -64,6 +70,7 @@ fn addDeps(step: *LibExeObjStep) void {
     step.addPackage(shaders);
     step.addPackage(voxel);
     step.addPackage(debughud);
+    step.addPackage(camera);
     step.addPackage(threading);
 
     step.addIncludeDir("deps/inc");

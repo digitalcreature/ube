@@ -9,6 +9,7 @@ pub const Mouse = struct {
     raw_input_supported: bool,
     last_cursor_position: Position = Position.zero,
     cursor_position_delta: Position = Position.zero,
+    cursor_mode: bool = false,
 
     const Self = @This();
 
