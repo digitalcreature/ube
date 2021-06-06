@@ -38,8 +38,74 @@ pub const voxel_config: voxel.Config = .{
 var gpa = std.heap.GeneralPurposeAllocator(.{}){};
 const default_allocator = &gpa.allocator;
 
-const GenerateGroup = voxel.VolumeThreadGroup(struct {
-    pub fn generateChunk(chunk: *voxel.Chunk) !void {
+const VolumeTask = struct {
+    frame: @Frame(generateVolume),
+    has_returned: bool = false,
+    volume: *voxel.Volume,
+    err: ?anyerror = null,
+
+    const Self = @This();
+
+    const GenerateGroup = voxel.VolumeThreadGroup(generateChunk);
+    const MesherGroup = voxel.VolumeThreadGroupWithState(*voxel.VolumeChunkQueue, generateChunkMesh);
+
+
+    pub fn init(volume: *voxel.Volume) Self {
+        var self = Self{
+            .frame = undefined,
+            .volume = volume,
+        };
+        return self;
+    }
+
+    pub fn deinit(self: *Self) !void {
+        return await self.frame;
+    }
+
+    pub fn start(self: *Self) void {
+        self.frame = async self.generateVolume();
+
+    }
+
+    pub fn update(self: *Self) !void {
+        if (!self.has_returned) {
+            resume self.frame;
+        }
+        else {
+            if (self.err) |err| return err;
+        }
+    }
+
+    fn generateVolume(self: *Self) !void {
+        defer self.has_returned = true;
+        errdefer |err| self.err = err;
+        // errdefer |err| std.log.err("{}", .{err});
+        var generate_group = try GenerateGroup.init(default_allocator, self.volume);
+        defer generate_group.deinit();
+        
+        var dirty_chunks = try voxel.VolumeChunkQueue.init(default_allocator, self.volume, self.volume.chunks.len);
+        defer dirty_chunks.deinit();
+
+        var mesher_group = try MesherGroup.init(default_allocator, self.volume, &dirty_chunks);
+        defer mesher_group.deinit();
+
+        try generate_group.spawn();
+        while (!generate_group.isFinished()) {
+            suspend {}
+        }
+        try mesher_group.spawn();
+        while (true) {
+            while (dirty_chunks.dequeue()) |chunk| {
+                if (chunk.mesh) |mesh| {
+                    mesh.updateBuffer();
+                }
+            }
+            if (mesher_group.isFinished()) break;
+            suspend {}
+        }
+    }
+
+    fn generateChunk(chunk: *voxel.Chunk) !void {
         const mesh = try default_allocator.create(voxel.ChunkMesh);
         mesh.* = voxel.ChunkMesh.init(default_allocator);
         chunk.mesh = mesh;
@@ -58,11 +124,7 @@ const GenerateGroup = voxel.VolumeThreadGroup(struct {
         }
     }
 
-}.generateChunk);
-
-const MesherGroup = voxel.VolumeThreadGroupWithState(*voxel.VolumeChunkQueue, struct {
-
-    pub fn generateChunkMesh(output: *voxel.VolumeChunkQueue, chunk: *voxel.Chunk) !void {
+    fn generateChunkMesh(output: *voxel.VolumeChunkQueue, chunk: *voxel.Chunk) !void {
         const mesh = chunk.mesh.?;
         try mesh.generate(chunk.*);
         chunk.mesh = mesh;
@@ -70,23 +132,8 @@ const MesherGroup = voxel.VolumeThreadGroupWithState(*voxel.VolumeChunkQueue, st
         // std.time.sleep(1_000_000_000);
     }
 
-}.generateChunkMesh);
+};
 
-fn generateVolume(generate_group: *GenerateGroup, mesher_group: *MesherGroup, dirty_chunks: *voxel.VolumeChunkQueue) !void {
-    try generate_group.spawn();
-    while (!generate_group.isFinished()) {
-        suspend {}
-    }
-    try mesher_group.spawn();
-    while (true) {
-        while (dirty_chunks.dequeue()) |chunk| {
-            if (chunk.mesh) |mesh| {
-                mesh.updateBuffer();
-            }
-        }
-        suspend {}
-    }
-}
 
 pub fn main() !void {
 
@@ -144,16 +191,10 @@ pub fn main() !void {
     const volume = try voxel.Volume.init(default_allocator, 4, 4, 4, ivec3(-2, -2, -2));
     defer volume.deinit();
 
-    var generate_group = try GenerateGroup.init(default_allocator, volume);
-    defer generate_group.deinit();
-    
-    var dirty_chunks = try voxel.VolumeChunkQueue.init(default_allocator, volume, volume.chunks.len);
-    defer dirty_chunks.deinit();
+    var volume_task = VolumeTask.init(volume);
+    volume_task.start();
 
-    var mesher_group = try MesherGroup.init(default_allocator, volume, &dirty_chunks);
-    defer mesher_group.deinit();
-
-    var generate_frame = async generateVolume(&generate_group, &mesher_group, &dirty_chunks);
+    // var generate_frame = async generateVolume(volume);
 
     voxel_shader.use();
     voxel_vao.bind();
@@ -193,9 +234,7 @@ pub fn main() !void {
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
         gl.clear(.ColorDepth);
 
-        resume generate_frame;
-
-        debughud.is_finished = mesher_group.isFinished();
+        try volume_task.update();
 
         chunks.reset();
         while (chunks.next()) |chunk| {

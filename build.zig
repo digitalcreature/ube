@@ -53,6 +53,11 @@ fn addDeps(step: *LibExeObjStep) void {
         .path = "src/debughud/lib.zig",
         .dependencies = &[_]Pkg{ imgui, math, glfw },
     };
+    const mesh: Pkg = .{
+        .name = "mesh",
+        .path = "src/mesh/lib.zig",
+        .dependencies = &[_]Pkg{ math, gl },
+    };
 
     step.addPackage(math);
     step.addPackage(utils);
@@ -65,6 +70,7 @@ fn addDeps(step: *LibExeObjStep) void {
     step.addPackage(voxel);
     step.addPackage(debughud);
     step.addPackage(threading);
+    step.addPackage(mesh);
 
     step.addIncludeDir("deps/inc");
     // step.addIncludeDir("C:/Users/sam/zig-windows-x86_64-0.8.0/lib/libc/include/any-windows-any");
