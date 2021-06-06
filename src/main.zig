@@ -160,9 +160,9 @@ pub fn main() !void {
     defer imgui.deinit();
 
     const atlas = gl.Texture2dArrayRgb8.init(); {
-        var grass_data = try gl.TextureData2dRgb8.initPngBytes(@embedFile("grass.png"));
+        var grass_data = try gl.TextureData2dRgb8.initPngBytes(@embedFile("assets/grass.png"));
         defer grass_data.deinit();
-        var stone_data = try gl.TextureData2dRgb8.initPngBytes(@embedFile("stone.png"));
+        var stone_data = try gl.TextureData2dRgb8.initPngBytes(@embedFile("assets/stone.png"));
         defer stone_data.deinit();
 
         atlas.alloc(32, 32, 2, null);
