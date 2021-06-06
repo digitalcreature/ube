@@ -84,6 +84,8 @@ pub fn ThreadGroupBase(
         state: State,
         threads: []*Thread,
         mutex: (if (config.use_mutex) Mutex else u8) = (if (config.use_mutex) Mutex{} else 0),
+        running_thread_count: usize,
+        has_spawned: bool = false,
 
         pub const State = state_type;
         pub const Item = item_type;
@@ -107,6 +109,7 @@ pub fn ThreadGroupBase(
                 .allocator = allocator,
                 .state = state,
                 .threads = try allocator.alloc(*Thread, thread_count),
+                .running_thread_count = thread_count,
             };
         }
         
@@ -118,6 +121,9 @@ pub fn ThreadGroupBase(
         }
 
         pub fn spawn(self: *Self) !void {
+            if (self.has_spawned) return error.AlreadySpawned;
+            self.has_spawned = true;
+            self.running_thread_count = self.threads.len;
             for (self.threads) |*thread| {
                 thread.* = try Thread.spawn(self, threadFn);
                 // thread.* = try Thread.spawn(threadFn, self);
@@ -128,6 +134,10 @@ pub fn ThreadGroupBase(
             for (self.threads) |thread| {
                 thread.wait();
             }
+        }
+
+        pub fn isFinished(self: *Self) bool {
+            return @atomicLoad(usize, &self.running_thread_count, .Monotonic) == 0;
         }
 
         fn wrappedGenerator(self: *Self) !?Item {
@@ -146,6 +156,9 @@ pub fn ThreadGroupBase(
             while (try wrappedGenerator(self)) |item| {
                 try task(self.state, item);
             }
+            var running_count = @atomicLoad(usize, &self.running_thread_count, .Acquire);
+            running_count -= 1;
+            @atomicStore(usize, &self.running_thread_count, running_count, .Release);
         }
 
     };

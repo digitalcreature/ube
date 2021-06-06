@@ -8,6 +8,7 @@ pub const DebugHud = struct {
     is_visible: bool = false,
     window: *glfw.Window,
     frame_time_display: glfw.Time = 0.0,
+    is_finished: bool = false,
     
     const Self = @This();
 
@@ -48,6 +49,12 @@ pub const DebugHud = struct {
             imgui.Text("mouse_pos:\t\t  %f, %f", mouse_pos.x, mouse_pos.y);
             imgui.Text("mouse_delta:\t\t  %f, %f", mouse_delta.x, mouse_delta.y);
             imgui.Text("raw_input_supported: %i", @as(i32, @boolToInt(self.window.mouse.raw_input_supported)));
+            if (self.is_finished) {
+                imgui.Text("\n\nmeshing finished");
+            }
+            else {
+                imgui.Text("\n\nmeshing...");
+            }
         }
     }
 };

@@ -94,75 +94,49 @@ pub fn main() !void {
     const volume = try voxel.Volume.init(default_allocator, 4, 4, 4, ivec3(-2, -2, -2));
     defer volume.deinit();
 
-    {
-        const timer = try std.time.Timer.start();
-        defer std.log.info("generated {d} chunks in {d}s", .{volume.chunks.len, @intToFloat(f64, timer.read()) / std.time.ns_per_s});
-        var group = try voxel.VolumeThreadGroup(struct {
-            
-            pub fn generateChunk(chunk: *voxel.Chunk) !void {
-                const mesh = try default_allocator.create(voxel.ChunkMesh);
-                mesh.* = voxel.ChunkMesh.init(default_allocator);
-                chunk.mesh = mesh;
-                const offset = chunk.position.intToFloat(Vec3).scale(voxel.Chunk.edge_distance);
-                for (chunk.voxels.data) |*yz_slice, x| {
-                    for (yz_slice.*) |*z_slice, y| {
-                        for (z_slice.*) |*v, z| {
-                            const pos1 = autoVec(.{x, y, z}).intToFloat(Vec3).scale(voxel.config.voxel_size);
-                            const pos2 = autoVec(.{x + 32, y, z}).intToFloat(Vec3).scale(voxel.config.voxel_size);
-                            const noise1 = math.perlin.noise(pos1.add(offset).scale(0.1));
-                            const noise2 = math.perlin.noise(pos2.add(offset).scale(0.1));
-                            const fill: u8 = if (noise2 < 0.1) 1 else 2;
-                            v.* = if (noise1 < 0.25) 0 else fill;
-                        }
+    var generate_group = try voxel.VolumeThreadGroup(struct {
+        
+        pub fn generateChunk(chunk: *voxel.Chunk) !void {
+            const mesh = try default_allocator.create(voxel.ChunkMesh);
+            mesh.* = voxel.ChunkMesh.init(default_allocator);
+            chunk.mesh = mesh;
+            const offset = chunk.position.intToFloat(Vec3).scale(voxel.Chunk.edge_distance);
+            for (chunk.voxels.data) |*yz_slice, x| {
+                for (yz_slice.*) |*z_slice, y| {
+                    for (z_slice.*) |*v, z| {
+                        const pos1 = autoVec(.{x, y, z}).intToFloat(Vec3).scale(voxel.config.voxel_size);
+                        const pos2 = autoVec(.{x + 32, y, z}).intToFloat(Vec3).scale(voxel.config.voxel_size);
+                        const noise1 = math.perlin.noise(pos1.add(offset).scale(0.1));
+                        const noise2 = math.perlin.noise(pos2.add(offset).scale(0.1));
+                        const fill: u8 = if (noise2 < 0.1) 1 else 2;
+                        v.* = if (noise1 < 0.25) 0 else fill;
                     }
                 }
             }
+        }
 
-        }.generateChunk).init(default_allocator, volume);
-        defer group.deinit();
-        try group.spawn();
-        group.wait();
-    }
+    }.generateChunk).init(default_allocator, volume);
+    
+    defer generate_group.deinit();
+    
+    try generate_group.spawn();
+    var generate_group_was_finished = false;
+
     var dirty_chunks = try voxel.VolumeChunkQueue.init(default_allocator, volume, volume.chunks.len);
     defer dirty_chunks.deinit();
-    {
-        const timer = try std.time.Timer.start();
-        defer std.log.info("generated {d} chunk meshes in {d}s", .{volume.chunks.len, @intToFloat(f64, timer.read()) / std.time.ns_per_s});
-        var group = try voxel.VolumeThreadGroupWithState(*voxel.VolumeChunkQueue, struct {
 
-            pub fn generateChunkMesh(output: *voxel.VolumeChunkQueue, chunk: *voxel.Chunk) !void {
-                const mesh = chunk.mesh.?;
-                try mesh.generate(chunk.*);
-                chunk.mesh = mesh;
-                try output.enqueue(chunk);
-                // try dirty_chunks.enqueue(chunk);
-            }
+    var mesher_group = try voxel.VolumeThreadGroupWithState(*voxel.VolumeChunkQueue, struct {
 
-        }.generateChunkMesh).init(default_allocator, volume, &dirty_chunks);
-        defer group.deinit();
-        try group.spawn();
-        group.wait();
-    }
-    // chunks.reset();
-    var chunks = volume.getChunkIterator();
-    while (chunks.next()) |chunk| {
-        if (chunk.mesh) |mesh| {
-            mesh.updateBuffer();
+        pub fn generateChunkMesh(output: *voxel.VolumeChunkQueue, chunk: *voxel.Chunk) !void {
+            const mesh = chunk.mesh.?;
+            try mesh.generate(chunk.*);
+            chunk.mesh = mesh;
+            try output.enqueue(chunk);
+            // std.time.sleep(1_000_000_000);
         }
-    }
-    //     var mesh = try default_allocator.create(voxel.ChunkMesh);
-    //     mesh.* = voxel.ChunkMesh.init(default_allocator);
-    //     try mesh.generate(chunk.*);
-    //     mesh.updateBuffer();
-    //     chunk.mesh = mesh;
-    // }
-    
 
-    // // voxel mesh
-    // var mesh = voxel.ChunkMesh.init(default_allocator);
-    // defer mesh.deinit();
-    // try mesh.generate(chunk);
-    // mesh.updateBuffer();
+    }.generateChunkMesh).init(default_allocator, volume, &dirty_chunks);
+    defer mesher_group.deinit();
 
     voxel_shader.use();
     voxel_vao.bind();
@@ -170,6 +144,7 @@ pub fn main() !void {
 
     var debughud = DebugHud.init(&window);
     var camera = Camera.init();
+    var chunks = volume.getChunkIterator();
     while (!window.shouldClose()) {
         window.update();
 
@@ -200,6 +175,20 @@ pub fn main() !void {
 
         gl.clearColor(math.color.ColorF32.rgb(0.2, 0.3, 0.3));
         gl.clear(.ColorDepth);
+
+        if (generate_group.isFinished()) {
+            if (!generate_group_was_finished) {
+                try mesher_group.spawn();
+            }
+            generate_group_was_finished = true;
+            while (dirty_chunks.dequeue()) |chunk| {
+                if (chunk.mesh) |mesh| {
+                    mesh.updateBuffer();
+                }
+            }
+        }
+
+        debughud.is_finished = mesher_group.isFinished();
 
         chunks.reset();
         while (chunks.next()) |chunk| {
