@@ -213,8 +213,7 @@ pub fn main() !void {
         }
 
         if (keyboard.wasKeyPressed(.grave).?) {
-            mouse.setRawInputMode(if (mouse.cursor_mode) .disabled else .enabled);
-            mouse.cursor_mode = !mouse.cursor_mode;
+            mouse.setRawInputMode(if (mouse.cursor_mode == .disabled) .disabled else .enabled);
         }
 
         if (keyboard.wasKeyPressed(.f_3).?) {
@@ -230,9 +229,7 @@ pub fn main() !void {
             window.setDisplayMode(new_mode, .enabled);
         }
         
-        // if (!debughud.is_visible) {
         camera.update(&window);
-        // }
 
         voxel_shader.uniforms.proj.set(camera.proj);
         voxel_shader.uniforms.view.set(camera.view);
