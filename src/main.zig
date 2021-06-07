@@ -216,7 +216,7 @@ pub fn main() !void {
             mouse.setRawInputMode(if (mouse.cursor_mode == .disabled) .disabled else .enabled);
         }
 
-        if (keyboard.wasKeyPressed(global_config.action_debugmode).?) {
+        if (keyboard.wasKeyPressed(global_config.action_debughud).?) {
             debughud.is_visible = !debughud.is_visible;
         }
 

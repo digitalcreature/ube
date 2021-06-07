@@ -5,4 +5,3 @@
 /build/
 /build-*/
 /docgen_tmp/
-config.zig
