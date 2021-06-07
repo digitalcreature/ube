@@ -14,13 +14,13 @@ const voxel = @import("voxel");
 const builting = @import("builtin");
 const Camera = @import("camera").Camera;
 const DebugHud = @import("debughud").DebugHud;
-
+const global_config = @import("config.zig").global_config;
 
 pub const log_level = std.log.Level.info;
 
 pub const voxel_config: voxel.Config = .{
-    .voxel_size = 0.5,
-    .chunk_width = 64,
+    .voxel_size = global_config.voxel_size,
+    .chunk_width = global_config.chunk_width,
 };
 
 // pub usingnamespace if (builtin.os.tag == .windows) struct {
@@ -142,7 +142,7 @@ pub fn main() !void {
     glfw.init();
     defer glfw.deinit();
 
-    var window = glfw.Window.init(1920, 1080, "ube");
+    var window = glfw.Window.init(global_config.win_width, global_config.win_height, "ube");
     defer window.deinit();
     
     gl.init();
@@ -208,19 +208,19 @@ pub fn main() !void {
     while (!window.shouldClose()) {
         window.update();
 
-        if (keyboard.wasKeyPressed(.escape).?) {
+        if (keyboard.wasKeyPressed(global_config.action_close).?) {
             window.setShouldClose(true);
         }
 
-        if (keyboard.wasKeyPressed(.grave).?) {
+        if (keyboard.wasKeyPressed(global_config.action_cursor_mode).?) {
             mouse.setRawInputMode(if (mouse.cursor_mode == .disabled) .disabled else .enabled);
         }
 
-        if (keyboard.wasKeyPressed(.f_3).?) {
+        if (keyboard.wasKeyPressed(global_config.action_debugmode).?) {
             debughud.is_visible = !debughud.is_visible;
         }
 
-        if (keyboard.wasKeyPressed(.f_4).?) {
+        if (keyboard.wasKeyPressed(global_config.action_fullscreen).?) {
             const display_mode = window.display_mode;
             const new_mode: glfw.Window.DisplayMode = switch(display_mode) {
                 .windowed => .borderless,

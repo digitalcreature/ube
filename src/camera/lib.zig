@@ -3,6 +3,8 @@ const glfw = @import("glfw");
 const std = @import("std");
 usingnamespace math.glm;
 
+const global_config = @import("../config.zig").global_config;
+
 pub const Camera = struct {
 
     proj: Mat4 = Mat4.identity,
@@ -33,22 +35,22 @@ pub const Camera = struct {
             var pos = self.pos;
             const forward = view.transformDirection(Vec3.unit("z"));
             const right = view.transformDirection(Vec3.unit("x"));
-            if (window.keyboard.isKeyDown(.w).?) {
+            if (window.keyboard.isKeyDown(global_config.action_forward).?) {
                 pos = pos.add(forward.scale(self.move_speed * @floatCast(f32, window.time.frame_time)));
             }
-            if (window.keyboard.isKeyDown(.s).?) {
+            if (window.keyboard.isKeyDown(global_config.action_back).?) {
                 pos = pos.add(forward.scale(-self.move_speed * @floatCast(f32, window.time.frame_time)));
             }
-            if (window.keyboard.isKeyDown(.a).?) {
+            if (window.keyboard.isKeyDown(global_config.action_left).?) {
                 pos = pos.add(right.scale(-self.move_speed * @floatCast(f32, window.time.frame_time)));
             }
-            if (window.keyboard.isKeyDown(.d).?) {
+            if (window.keyboard.isKeyDown(global_config.action_right).?) {
                 pos = pos.add(right.scale(self.move_speed * @floatCast(f32, window.time.frame_time)));
             }
-            if (window.keyboard.isKeyDown(.space).?) {
+            if (window.keyboard.isKeyDown(global_config.action_up).?) {
                 pos = pos.add(Vec3.unit("y").scale(self.move_speed * @floatCast(f32, window.time.frame_time)));
             }
-            if (window.keyboard.isKeyDown(.left_shift).?) {
+            if (window.keyboard.isKeyDown(global_config.action_down).?) {
                 pos = pos.add(Vec3.unit("y").scale(-self.move_speed * @floatCast(f32, window.time.frame_time)));
             }
             self.pos = pos;
