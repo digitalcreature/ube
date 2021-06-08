@@ -15,6 +15,8 @@ const builting = @import("builtin");
 const Camera = @import("camera").Camera;
 const DebugHud = @import("debughud").DebugHud;
 
+const res = @import("res");
+
 
 pub const log_level = std.log.Level.info;
 
@@ -101,6 +103,7 @@ const VolumeTask = struct {
                 if (chunk.mesh) |mesh| {
                     mesh.updateBuffer();
                 }
+                suspend {}
             }
             if (mesher_group.isFinished()) break;
             suspend {}
@@ -160,9 +163,9 @@ pub fn main() !void {
     defer imgui.deinit();
 
     const atlas = gl.Texture2dArrayRgb8.init(); {
-        var grass_data = try gl.TextureData2dRgb8.initPngBytes(@embedFile("grass.png"));
+        var grass_data = try gl.TextureData2dRgb8.initPngBytes(res.voxel.@"grass.png");
         defer grass_data.deinit();
-        var stone_data = try gl.TextureData2dRgb8.initPngBytes(@embedFile("stone.png"));
+        var stone_data = try gl.TextureData2dRgb8.initPngBytes(res.voxel.@"stone.png");
         defer stone_data.deinit();
 
         atlas.alloc(32, 32, 2, null);

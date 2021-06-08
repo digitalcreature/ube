@@ -24,8 +24,10 @@ pub const VoxelsUniformDecls = &[_]type{
     },
 };
 
+const res = @import("res");
 pub fn loadVoxelsShader() !gl.Program(VoxelsUniformDecls) {
-    return try shaders.loadShader(VoxelsUniformDecls, "voxels");
+    return try gl.Program(VoxelsUniformDecls).buildFromResources("voxels", res.shader);
+    // return try shaders.loadShader(VoxelsUniformDecls, "voxels");
 }
 
 pub const ChunkMesh = struct {

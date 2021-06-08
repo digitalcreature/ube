@@ -52,21 +52,62 @@ pub fn Program(comptime UniformDecls: [] const type) type {
     return struct {
         handle: Handle,
         uniforms: Uniforms = undefined,
+        shaders: Shaders = .{},
+
+        const Shaders = struct {
+            vert: ?Shader(.Vertex) = null,
+            geom: ?Shader(.Geometry) = null,
+            frag: ?Shader(.Fragment) = null,
+        };
 
         pub const Uniforms = createUniformsStructFromDeclarations(UniformDecls);
 
         const Self = @This();
 
         pub fn init() Self {
-            return .{ .handle = glCreateProgram() };
+            return .{ 
+                .handle = glCreateProgram(),
+            };
         }
 
         pub fn deinit(self: Self) void {
+            inline for (@typeInfo(Shaders).Struct.fields) |field| {
+                if (@field(self.shaders, field.name)) |shader| {
+                    shader.deinit();
+                }
+            }
             glDeleteProgram(self.handle);
         }
 
         pub fn attach(self: Self, shader: anytype) void {
             glAttachShader(self.handle, shader.handle);
+        }
+
+        pub fn compileAndAttachShaderFromSource(self: *Self, comptime shader_type: ShaderType, source: [:0]const u8) !void {
+            const shader = Shader(shader_type).init();
+            shader.source(source);
+            try shader.compile();
+            switch (shader_type) {
+                .Vertex => self.shaders.vert = shader,
+                .Geometry => self.shaders.geom = shader,
+                .Fragment => self.shaders.frag = shader,
+            }
+            self.attach(shader);
+        }
+
+        pub fn buildFromResources(comptime name: []const u8, comptime res: type) !Self {
+            var program = init();
+            if (@hasDecl(res, name ++ ".vert")) {
+                try program.compileAndAttachShaderFromSource(.Vertex, @field(res, name ++ ".vert"));
+            }
+            if (@hasDecl(res, name ++ ".geom")) {
+                try program.compileAndAttachShaderFromSource(.Geometry, @field(res, name ++ ".geom"));
+            }
+            if (@hasDecl(res, name ++ ".frag")) {
+                try program.compileAndAttachShaderFromSource(.Fragment, @field(res, name ++ ".frag"));
+            }
+            try program.link();
+            return program;
         }
 
         pub fn link(self: *Self) !void {

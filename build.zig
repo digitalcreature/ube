@@ -1,9 +1,15 @@
-usingnamespace @import("std").build;
+const std = @import("std");
+usingnamespace std.build;
+const buildres = @import("buildres.zig");
 
 fn addDeps(step: *LibExeObjStep) void {
     const math: Pkg = .{
         .name = "math",
         .path = "src/math/lib.zig",
+    };
+    const res: Pkg = .{
+        .name = "res",
+        .path = "res/.zig",
     };
     const utils: Pkg = .{
         .name = "utils",
@@ -46,7 +52,7 @@ fn addDeps(step: *LibExeObjStep) void {
     const voxel: Pkg = .{
         .name = "voxel",
         .path = "src/voxel/lib.zig",
-        .dependencies = &[_]Pkg{ gl, math, shaders, threading },
+        .dependencies = &[_]Pkg{ gl, math, shaders, threading, res },
     };
     const camera: Pkg = .{
         .name = "camera",
@@ -65,6 +71,7 @@ fn addDeps(step: *LibExeObjStep) void {
     };
 
     step.addPackage(math);
+    step.addPackage(res);
     step.addPackage(utils);
     step.addPackage(gl);
     step.addPackage(glfw);
@@ -104,6 +111,8 @@ pub fn build(b: *Builder) void {
 
     // Standard release options allow the person running `zig build` to select
     // between Debug, ReleaseSafe, ReleaseFast, and ReleaseSmall.
+    // between Debug, ReleaseSafe, ReleaseFast, and ReleaseSmall.
+    // between Debug, ReleaseSafe, ReleaseFast, and ReleaseSmall.
     const mode = b.standardReleaseOptions();
 
     b.installBinFile("deps/lib/glfw3.dll", "glfw3.dll");
@@ -114,6 +123,9 @@ pub fn build(b: *Builder) void {
     // exe.subsystem = .Windows;
     exe.install();
 
+    // var buildres_step = Step.init(.Custom, "buildres", std.heap.page_allocator, buildResources);
+    // exe.step.dependOn(&buildres_step);
+
     const test_step = b.step("test", "Run library tests.");
     const file = b.addTest("src/main.zig");
     file.setTarget(target);
@@ -121,6 +133,7 @@ pub fn build(b: *Builder) void {
     addDeps(file);
 
     test_step.dependOn(&file.step);
+
 
     const run_cmd = exe.run();
     run_cmd.step.dependOn(b.getInstallStep());
@@ -130,4 +143,8 @@ pub fn build(b: *Builder) void {
 
     const run_step = b.step("run", "Run the app");
     run_step.dependOn(&run_cmd.step);
+}
+
+fn buildResources(step: *Step) !void {
+    try buildres.buildResources("res");
 }

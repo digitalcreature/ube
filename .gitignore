@@ -5,3 +5,4 @@
 /build/
 /build-*/
 /docgen_tmp/
+res/**/.zig
