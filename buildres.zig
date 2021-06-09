@@ -22,7 +22,7 @@ fn readDir(dir: *fs.Dir) anyerror!void {
     try readDirIndent(dir, 0);
 }
 
-const indent_str = "                                                         ";
+const indent_str = " " ** 128;
 
 fn readDirIndent(dir: *fs.Dir, indent: u8) anyerror!void {
     std.log.info("{s}{s}/", .{indent_str[0..(indent * 3)], dir.name});
