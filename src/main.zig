@@ -246,7 +246,7 @@ pub fn main() !void {
         while (chunks.next()) |chunk| {
             if (chunk.mesh) |mesh| {
                 if (mesh.vbo) |vbo| {
-                    voxel_vao.vertices.quad_instances.bindBuffer(vbo);
+                    voxel_vao.buffers.quad_instances.bindBuffer(vbo);
                     voxel_shader.uniforms.model.set(Mat4.createTranslation(chunk.position.intToFloat(Vec3).scale(voxel.Chunk.edge_distance)));
                     gl.drawElementsInstanced(.Triangles, 6, u32, mesh.quad_instances.items.len);
                 }

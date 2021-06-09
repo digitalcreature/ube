@@ -5,7 +5,6 @@ const gl = @import("gl");
 usingnamespace @import("types.zig");
 usingnamespace math.glm;
 usingnamespace @import("chunk.zig");
-const shaders = @import("shaders");
 
 const Allocator = std.mem.Allocator;
 
@@ -27,7 +26,6 @@ pub const VoxelsUniformDecls = &[_]type{
 const res = @import("res");
 pub fn loadVoxelsShader() !gl.Program(VoxelsUniformDecls) {
     return try gl.Program(VoxelsUniformDecls).buildFromResources("voxels", res.shader);
-    // return try shaders.loadShader(VoxelsUniformDecls, "voxels");
 }
 
 pub const ChunkMesh = struct {
@@ -75,7 +73,7 @@ pub const ChunkMesh = struct {
         quad_instances: gl.VertexBufferBind(QuadInstance, .{.bind_index = 1, .attrib_start = 1, .divisor = 1}),
     };
 
-    pub const VAO = gl.VertexArrayExt(VertBufferBindings, u32, VAOMixin);
+    pub const VAO = gl.VertexArray(VertBufferBindings, u32);
     
 
     // 0 --- 1
@@ -96,24 +94,25 @@ pub const ChunkMesh = struct {
 
     pub fn initVAO() VAO {
         var vao = VAO.init();
+        vao.owns_ibo = true;
         const indices : [6]u32 = .{ 0, 1, 3, 0, 3, 2};
         var ibo = gl.IndexBuffer32.initData(&indices, .StaticDraw);
         vao.bindIndexBuffer(ibo);
         var quad_vbo = gl.VertexBuffer(QuadVert).initData(&quad_verts, .StaticDraw);
-        vao.vertices.quad.bindBuffer(quad_vbo);
+        vao.buffers.quad.bindBuffer(quad_vbo);
         return vao;
     }
 
 };
 
-fn VAOMixin(comptime VAO: type) type {
-    return struct {
-        pub fn on_deinit(self: VAO) void {
-            self.deinitBoundIndexBuffer();
-            self.vertices.quad.deinitBoundBuffer();
-        }
-    };
-}
+// fn VAOMixin(comptime VAO: type) type {
+//     return struct {
+//         pub fn on_deinit(self: VAO) void {
+//             self.deinitBoundIndexBuffer();
+//             self.buffers.quad.deinitBoundBuffer();
+//         }
+//     };
+// }
 
 fn generateChunkMesh(self: *ChunkMesh, chunk: Chunk) !void {
     const voxels = &chunk.voxels;

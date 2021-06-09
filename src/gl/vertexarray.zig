@@ -16,6 +16,24 @@ pub const VertexBufferBindConfig = struct {
     divisor : ?c_uint = null,
 };
 
+pub const VertexBufferBindInfo = struct {
+    
+    Attribs: type,
+    config: VertexBufferBindConfig,
+
+    const Self = @This();
+
+    pub fn tryGet(comptime T: type) ?Self {
+        if (@hasDecl(T, "info") and @TypeOf(T.info) == Self) {
+            return T.info;
+        }
+        else {
+            return null;
+        }
+    }
+
+};
+
 pub fn VertexBufferBind(comptime Attribs: type, comptime config : VertexBufferBindConfig) type {
     switch (@typeInfo(Attribs)) {
         .Struct => |Struct| {
@@ -28,6 +46,8 @@ pub fn VertexBufferBind(comptime Attribs: type, comptime config : VertexBufferBi
                     vbo : ?VertexBuffer(Attribs) = null,
 
                     pub const binding_index = config.bind_index;
+
+                    pub const info = VertexBufferBindInfo{ .Attribs = Attribs, .config = config };
 
                     const Self = @This();
 
@@ -161,8 +181,9 @@ pub fn VertexArray(comptime VertexBufferBinds: type, comptime index_element: typ
 pub fn VertexArrayExt(comptime VertexBufferBinds: type, comptime index_element: type, comptime Mixin : fn(comptime type) type) type {
     return struct {
         handle: Handle,
-        vertices: VertexBufferBinds,
+        buffers: VertexBufferBinds,
         ibo: ?IndexBuffer(IndexElement) = null,
+        owns_ibo: bool = false,
 
         pub const IndexElement = index_element;
 
@@ -173,48 +194,52 @@ pub fn VertexArrayExt(comptime VertexBufferBinds: type, comptime index_element: 
         pub fn init() Self {
             var self: Self = undefined;
             glCreateVertexArrays(1, &self.handle);
-            const binds_info = @typeInfo(VertexBufferBinds);
-            switch (binds_info) {
-                .Struct => |Struct| {
-                    inline for (Struct.fields) |field| {
-                        @field(self.vertices, field.name) = field.field_type.init(self.handle);
-                    }
-                },
-                else => @compileError("vertex buffer binds type must be a struct, not " ++ @typeName(VertexBufferBinds)),
-            }
+            self.initVertexBufferBinds(VertexBufferBinds, &self.buffers);
             return self;
+        }
+
+        fn initVertexBufferBinds(self: *Self, comptime Binds: type, binds: *Binds) void {
+            if (VertexBufferBindInfo.tryGet(Binds)) |info| {
+                binds.* = Binds.init(self.handle);
+            }
+            else {
+                switch (@typeInfo(Binds)) {
+                    .Struct => |Struct| {
+                        inline for (Struct.fields) |field| {
+                            self.initVertexBufferBinds(field.field_type, &@field(binds, field.name));
+                        }
+                    },
+                    else => @compileError("vertex buffer binds type bust be a struct, not " ++ @typeName(Binds)),
+                }
+            }
         }
 
         pub fn deinit(self: Self) void {
             glDeleteVertexArrays(1, &self.handle);
-            if (@hasDecl(Self, "on_deinit")) {
-                self.on_deinit();
-            }
-        }
-
-        pub fn deinitBoundIndexBuffer(self: Self) void {
-            if (self.ibo) |buffer| {
-                buffer.deinit();
+            if (self.owns_ibo) {
+                if (self.ibo) |ibo| {
+                    ibo.deinit();
+                }
             }
         }
 
         /// given a struct with vertex buffer fields, attempt to bind buffers according to matching bind point field names. attrib types are checked
-        pub fn bindVertexBuffers(self: Self, buffers: anytype) void {
-            const Buffers = @TypeOf(buffers);
-            switch (@typeInfo(Buffer)) {
-                .Struct => |Struct| {
-                    inline for (Struct.fields) |field| {
-                        if (@hasField(VertexBufferBinds, field.name)) {
-                            const BindType = @TypeOf(@field(VertexBufferBinds, field.name));
-                            if (field.field_type == VertexBuffer(BindType.AttribsType)) {
-                                @field(VertexBufferBinds, field.name).bindBuffer(@field(buffers, field.name));
-                            }
-                        }
-                    }
-                },
-                else => @compileError("cannot bind non-struct vertex buffer value of type " ++ @typeName(Buffers)),
-            }
-        }
+        // pub fn bindVertexBuffers(self: Self, buffers: anytype) void {
+        //     const Buffers = @TypeOf(buffers);
+        //     switch (@typeInfo(Buffer)) {
+        //         .Struct => |Struct| {
+        //             inline for (Struct.fields) |field| {
+        //                 if (@hasField(VertexBufferBinds, field.name)) {
+        //                     const BindType = @TypeOf(@field(VertexBufferBinds, field.name));
+        //                     if (field.field_type == VertexBuffer(BindType.AttribsType)) {
+        //                         @field(VertexBufferBinds, field.name).bindBuffer(@field(buffers, field.name));
+        //                     }
+        //                 }
+        //             }
+        //         },
+        //         else => @compileError("cannot bind non-struct vertex buffer value of type " ++ @typeName(Buffers)),
+        //     }
+        // }
 
         pub fn bindIndexBuffer(self: *Self, buffer: IndexBuffer(IndexElement)) void {
             glVertexArrayElementBuffer(self.handle, buffer.handle);
@@ -223,6 +248,11 @@ pub fn VertexArrayExt(comptime VertexBufferBinds: type, comptime index_element: 
 
         pub fn bind(self: Self) void {
             glBindVertexArray(self.handle);
+        }
+
+        /// this is just glBindVertexArray(0), it doesnt need to be called from the currently bound array
+        pub fn unbind(self: Self) void {
+            glBindVertexArray(0);
         }
     };
 }
