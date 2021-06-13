@@ -60,7 +60,10 @@ pub fn vectorTypeInfo(comptime T: type) CompileErrorUnion(VectorTypeInfo) {
         .Struct => |Struct| {
             // if (Struct.layout == .Extern) {
             const fields = Struct.fields;
-            if (fields.len < 1) return .{ .err = "vector struct must have at least one member" };
+            switch (fields.len) {
+                1, 2, 3, 4 => {},
+                else => return .{ .err = "vector struct must have 1, 2, 3, or 4 dimensions" }
+            }
             const dimensions = fields.len;
             const Element = fields[0].field_type;
             comptime var i: comptime_int = 1;

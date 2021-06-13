@@ -2,8 +2,8 @@ const std = @import("std");
 const math = @import("math");
 const gl = @import("gl");
 
-usingnamespace @import("types.zig");
 usingnamespace math.glm;
+usingnamespace @import("types.zig");
 usingnamespace @import("chunk.zig");
 
 const Allocator = std.mem.Allocator;

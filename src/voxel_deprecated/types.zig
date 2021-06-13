@@ -2,8 +2,11 @@ const std = @import("std");
 const math = @import("math");
 
 usingnamespace math.glm;
+usingnamespace math.meta;
+
 
 pub const VoxelTypeId = u16;
+pub const Voxel = u16;
 
 pub const ByteCoords = math.vector.Vector(u8, 3);
 pub const Coords = math.vector.Vector(i32, 3);
@@ -31,3 +34,6 @@ pub fn coordsToByteCoords(coords: Coords) ByteCoords {
         };
     }
 }
+
+pub const Cardinal = math.cardinals.Cardinal3;
+pub const Axis = Cardinal.Axis;

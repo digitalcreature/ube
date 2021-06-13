@@ -3,9 +3,14 @@ usingnamespace std.build;
 const buildres = @import("buildres.zig");
 
 fn addDeps(step: *LibExeObjStep) void {
+    const util: Pkg = .{
+        .name = "util",
+        .path = "src/util/lib.zig",
+    };
     const math: Pkg = .{
         .name = "math",
         .path = "src/math/lib.zig",
+        .dependencies = &[_]Pkg{ util },
     };
     const res: Pkg = .{
         .name = "res",
@@ -42,7 +47,7 @@ fn addDeps(step: *LibExeObjStep) void {
     const voxel: Pkg = .{
         .name = "voxel",
         .path = "src/voxel/lib.zig",
-        .dependencies = &[_]Pkg{ gl, math, threading, res },
+        .dependencies = &[_]Pkg{ gl, math, threading, res, util },
     };
     const camera: Pkg = .{
         .name = "camera",
@@ -61,6 +66,7 @@ fn addDeps(step: *LibExeObjStep) void {
     };
 
     step.addPackage(math);
+    step.addPackage(util);
     step.addPackage(res);
     step.addPackage(utils);
     step.addPackage(gl);
@@ -89,7 +95,7 @@ fn addDeps(step: *LibExeObjStep) void {
     step.linkLibC();
 }
 
-pub fn build(b: *Builder) void {
+pub fn build(b: *Builder) !void {
     // Standard target options allows the person running `zig build` to choose
     // what target to build for. Here we do not override the defaults, which
     // means any target is allowed, and the default is native. Other options
@@ -103,8 +109,11 @@ pub fn build(b: *Builder) void {
     // between Debug, ReleaseSafe, ReleaseFast, and ReleaseSmall.
     const mode = b.standardReleaseOptions();
 
+    // var embed_step = try buildres.createEmbedResourcesStep(b, "res");
+
     b.installBinFile("deps/lib/glfw3.dll", "glfw3.dll");
     const exe = b.addExecutable("ube", "src/main.zig");
+    // exe.step.dependOn(&embed_step.step);
     exe.setTarget(target);
     exe.setBuildMode(mode);
     addDeps(exe);

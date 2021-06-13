@@ -4,3 +4,4 @@ pub const glm = @import("glm.zig");
 pub const meta = @import("meta.zig");
 pub const color = @import("color.zig");
 pub const perlin = @import("perlin.zig");
+pub const cardinal = @import("cardinal.zig");

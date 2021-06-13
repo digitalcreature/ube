@@ -256,3 +256,7 @@ pub fn VertexArrayExt(comptime VertexBufferBinds: type, comptime index_element: 
         }
     };
 }
+
+fn getVertexBufferStructFromBindStruct(comptime Binds: type) type {
+    
+}

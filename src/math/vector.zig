@@ -1,6 +1,7 @@
 const std = @import("std");
 const meta = std.meta;
 usingnamespace @import("meta.zig");
+const cardinal = @import("cardinal.zig");
 
 pub fn ops(comptime Self: type) type {
     const self_info = vectorTypeInfo(Self).assert();
@@ -23,6 +24,9 @@ pub fn ops(comptime Self: type) type {
         };
 
         pub const basic_noformat = struct {
+
+            pub const Cardinal = cardinal.Cardinal(dimensions);
+            pub const Axis = Cardinal.Axis;
 
             // constructors
             pub fn new(val: [dimensions]Element) Self {
@@ -79,15 +83,31 @@ pub fn ops(comptime Self: type) type {
 
             // element access
 
-            pub fn get(self: Self, comptime i: usize) Element {
-                comptime if (i < 0 or i >= dimensions) comptimeError("index must be positive and less than {d} (was {d})", .{ dimensions, i });
-                return @field(self, field_names[i]);
+            pub fn get(self: Self, comptime axis: Axis) Element {
+                return @field(self, field_names[axis.toIndex()]);
             }
 
-            pub fn set(self: *Self, comptime i: usize, val: Element) void {
-                comptime if (i < 0 or i >= dimensions) comptimeError("index must be positive and less than {d} (was {d})", .{ dimensions, i });
-                @field(self.*, field_names[i]) = val;
+            pub fn getPtr(self: *Self, comptime axis: Axis) *Element {
+                return &@field(self, field_names[axis.toIndex()]);
             }
+
+            pub fn set(self: *Self, comptime axis: Axis, val: Element) void {
+                @field(self, field_names[axis.toIndex()]) = val;
+            }
+
+            // comparison
+
+            pub fn equals(self: Self, rhs: anytype) bool {
+                const info = vectorTypeInfo(@TypeOf(rhs)).assert();
+                comptime info.assertDimensions(self_info.dimensions);
+                inline for (self_info.field_names) |name, i| {
+                    if (@field(self, name) != @field(rhs, info.field_names[i])) {
+                        return false;
+                    }
+                }
+                return true;
+            }
+
 
             // casts
 
@@ -164,6 +184,17 @@ pub fn ops(comptime Self: type) type {
 
         pub const arithmetic_noformat = struct {
             pub usingnamespace basic;
+
+            pub const zero = fill(0);
+            pub const one = fill(1);
+
+            pub fn unit(comptime dir: Cardinal) Self {
+                var result = zero;
+                const axis = dir.axis();
+                const sign = dir.sign().toScalar(Element);
+                @field(result, self_info.field_names[@enumToInt(axis)]) = sign;
+                return result;
+            }
 
             pub fn add(self: Self, rhs: anytype) Self {
                 const info = vectorTypeInfo(@TypeOf(rhs)).assert();
@@ -251,31 +282,8 @@ pub fn ops(comptime Self: type) type {
         };
 
         pub const linear_noformat = struct {
+            
             pub usingnamespace arithmetic;
-
-            pub const zero = fill(0);
-            pub const one = fill(1);
-
-            pub fn unit(comptime fieldName: []const u8) Self {
-                var result = zero;
-                switch (fieldName[0]) {
-                    '+' => @field(result, fieldName[1..]) = 1,
-                    '-' => @field(result, fieldName[1..]) = -1,
-                    else => @field(result, fieldName) = 1,
-                }
-                return result;
-            }
-
-            pub fn uniti(comptime field_index: u8) Self {
-                if (field_index > dimensions * 2) {
-                    @compileError("field index out of bounds for unit vector of type " ++ @typeName(Self));
-                }
-                if (field_index >= dimensions) {
-                    return unit("-" ++ field_names[field_index - dimensions]);
-                } else {
-                    return unit(field_names[field_index]);
-                }
-            }
 
             pub fn dot(self: Self, rhs: anytype) Element {
                 return sum(mul(self, rhs));
